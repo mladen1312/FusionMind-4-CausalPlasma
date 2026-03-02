@@ -2,10 +2,10 @@
 
 > **The first application of Pearl's causal inference framework to tokamak plasma physics.**
 
-[![Tests](https://img.shields.io/badge/tests-56%20passed-brightgreen)](#testing)
+[![Tests](https://img.shields.io/badge/tests-90%20passed-brightgreen)](#testing)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](#installation)
 [![License](https://img.shields.io/badge/license-Proprietary-red)](LICENSE)
-[![Patent Families](https://img.shields.io/badge/patents-7%20families-orange)](#patent-portfolio)
+[![Patent Families](https://img.shields.io/badge/patents-8%20families-orange)](#patent-portfolio)
 [![Real Data](https://img.shields.io/badge/validated-MAST%20%7C%20Alcator%20C--Mod-purple)](#real-data-validation)
 
 ---
@@ -179,6 +179,7 @@ print(f"Reasoning: {result['explanation']}")
 | PF5 | Active Experiment Design Engine (AEDE) | `fusionmind4/experiments/` | 7/10 | PoC validated |
 | PF6 | Integrated Causal Plasma System | System-level | 8/10 | Architecture defined |
 | **PF7** | **CausalShield-RL** | `fusionmind4/learning/` | **9/10** | **PoC validated** |
+| **PF8** | **LLM-Augmented Causal Reasoning** | `fusionmind4/copilot/` | **9/10** | **PoC validated** |
 
 ---
 
@@ -226,6 +227,9 @@ FusionMind-4-CausalPlasma/
 │   │   ├── neural_scm.py           #   Learnable neural SCM world model
 │   │   ├── gym_plasma_env.py       #   Gym environment wrapping FM3Lite
 │   │   └── causal_reward.py        #   Causal reward shaping
+│   ├── copilot/                    # PF8: LLM-Augmented Causal Reasoning
+│   │   ├── causal_context.py       #   DAG + SCM → structured LLM prompt
+│   │   └── query_engine.py         #   NL → Pearl's Ladder classification
 │   └── utils/                      # Shared utilities
 │       ├── fm3lite.py              #   FM3-Lite physics simulation engine
 │       ├── plasma_vars.py          #   14 plasma variables + ground truth DAG
