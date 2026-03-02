@@ -2,7 +2,7 @@
 
 > **The first application of Pearl's causal inference framework to tokamak plasma physics.**
 
-[![Tests](https://img.shields.io/badge/tests-90%20passed-brightgreen)](#testing)
+[![Tests](https://img.shields.io/badge/tests-116%20passed-brightgreen)](#testing)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](#installation)
 [![License](https://img.shields.io/badge/license-Proprietary-red)](LICENSE)
 [![Patent Families](https://img.shields.io/badge/patents-8%20families-orange)](#patent-portfolio)
@@ -176,7 +176,7 @@ print(f"Reasoning: {result['explanation']}")
 | PF2 | Counterfactual Plasma Controller (CPC) | `fusionmind4/control/` | 10/10 | PoC validated |
 | PF3 | Universal Plasma Foundation Model (UPFM) | `fusionmind4/foundation/` | 8/10 | PoC validated (6 devices) |
 | PF4 | Diffusion-Based 3D Reconstruction (D3R) | `fusionmind4/reconstruction/` | 8/10 | PoC validated (156:1) |
-| PF5 | Active Experiment Design Engine (AEDE) | `fusionmind4/experiments/` | 7/10 | PoC validated |
+| PF5 | Active Experiment Design Engine (AEDE) | `fusionmind4/experiment/` | 7/10 | PoC validated |
 | PF6 | Integrated Causal Plasma System | System-level | 8/10 | Architecture defined |
 | **PF7** | **CausalShield-RL** | `fusionmind4/learning/` | **9/10** | **PoC validated** |
 | **PF8** | **LLM-Augmented Causal Reasoning** | `fusionmind4/copilot/` | **9/10** | **PoC validated** |
@@ -204,10 +204,10 @@ print(f"Reasoning: {result['explanation']}")
 ```
 FusionMind-4-CausalPlasma/
 │
-├── fusionmind4/                    # Main package (5,321 lines)
+├── fusionmind4/                    # Main package (9,500+ lines)
 │   ├── discovery/                  # PF1: Causal discovery
 │   │   ├── ensemble.py             #   Bayesian ensemble fusion (9-step pipeline)
-│   │   ├── notears.py              #   NOTEARS/DYNOTEARS DAG learning
+│   │   ├── notears.py              #   NOTEARS (DAG constraint) + DYNOTEARS (temporal)
 │   │   ├── granger.py              #   Physics-aware Granger causality
 │   │   ├── pc.py                   #   PC algorithm (conditional independence)
 │   │   ├── physics.py              #   Physics priors + PINN validation
@@ -220,8 +220,8 @@ FusionMind-4-CausalPlasma/
 │   │   └── core.py                 #   Dimensionless tokenization (βn,ν*,ρ*,q95,H98)
 │   ├── reconstruction/             # PF4: Diffusion 3D reconstruction
 │   │   └── core.py                 #   Conditional denoising diffusion model
-│   ├── experiments/                # PF5: Active experiment design
-│   │   └── core.py                 #   Bootstrap uncertainty + experiment ranking
+│   ├── experiment/                 # PF5: Active Experiment Design Engine
+│   │   └── aede.py                 #   EIG scoring, factorial design, confounder resolution
 │   ├── learning/                   # PF7: CausalShield-RL
 │   │   ├── causal_rl_hybrid.py     #   Full hybrid agent (CPDE→SCM→PPO)
 │   │   ├── neural_scm.py           #   Learnable neural SCM world model
