@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use FusionMind 4.0, please cite it as below."
+title: "FusionMind 4.0: Causal Inference for Fusion Plasma Control"
+authors:
+  - family-names: "Mester"
+    given-names: "Mladen"
+    orcid: ""
+type: software
+version: "4.1.0"
+date-released: "2026-03-02"
+url: "https://github.com/mladen1312/FusionMind-4-CausalPlasma"
+repository-code: "https://github.com/mladen1312/FusionMind-4-CausalPlasma"
+license: "Proprietary"
+keywords:
+  - fusion
+  - plasma
+  - causal inference
+  - do-calculus
+  - tokamak
+  - reinforcement learning
+  - structural causal model
+abstract: >-
+  FusionMind 4.0 is the first application of Pearl's causal inference
+  framework (do-calculus, structural causal models, counterfactual
+  reasoning) to tokamak plasma physics. It implements 7 patentable
+  inventions (PF1-PF7) including a causal discovery engine, counterfactual
+  controller, universal foundation model, diffusion-based 3D reconstruction,
+  active experiment design, and a causal RL hybrid agent. Validated on real
+  tokamak data from MAST (UKAEA) and Alcator C-Mod (MIT PSFC).
