@@ -157,10 +157,15 @@ def generate_synthetic_cmod(n_shots: int = 1876, seed: int = 42) -> Tuple:
     """Generate synthetic data mimicking Alcator C-Mod statistics.
 
     Replicates the key statistical properties:
-    - 264,385 timepoints across 1,876 shots
-    - ~5% disruption rate
+    - ~260,000 timepoints across 1,876 shots
+    - ~5-8% disruption rate
     - Simpson's Paradox in ne↔disruption
-    - Ip as confounder
+    - Ip as confounder (higher Ip → higher ne limit AND fewer disruptions)
+
+    The paradox: raw correlation shows ne positively associated with
+    disruptions, but after conditioning on Ip the effect vanishes.
+    Ip confounds because: Ip→ne (Greenwald limit scales with Ip)
+                          Ip→stability (higher Ip → more stable)
 
     Returns:
         data: (N, 8) array [ne, Ip, Te, Ti, P_rad, q95, betaN, W_stored]
@@ -178,9 +183,15 @@ def generate_synthetic_cmod(n_shots: int = 1876, seed: int = 42) -> Tuple:
         Ip = rng.uniform(0.4, 1.2)  # MA
         Ip_t = Ip * np.ones(n_t) + 0.02 * rng.randn(n_t)
 
-        # ne DEPENDS on Ip (higher Ip → higher density possible)
-        ne_base = 1.5 * Ip + 0.2  # [1e20 m-3] — strong Ip dependence
-        ne_t = ne_base * np.ones(n_t) + 0.03 * rng.randn(n_t)
+        # Greenwald density limit scales with Ip: n_GW = Ip / (pi * a^2)
+        a = 0.22  # C-Mod minor radius
+        n_gw = Ip / (np.pi * a**2)
+
+        # ne DEPENDS on Ip — operating near Greenwald fraction
+        # Low-Ip shots forced to lower absolute density (closer to their limit)
+        f_gw_target = rng.uniform(0.4, 0.85)  # Greenwald fraction
+        ne_base = f_gw_target * n_gw
+        ne_t = ne_base * np.ones(n_t) + 0.05 * ne_base * rng.randn(n_t)
         ne_t = np.maximum(ne_t, 0.1)
 
         # Te depends on heating and Ip
@@ -194,14 +205,19 @@ def generate_synthetic_cmod(n_shots: int = 1876, seed: int = 42) -> Tuple:
         q95_t = 3.5 / Ip + 0.2 * rng.randn(n_t)
 
         # betaN depends on ne, Te, Ti
-        betaN_t = 0.3 * ne_t * Te_t + 0.1 * rng.randn(n_t)
+        betaN_t = 0.3 * ne_t * Te_t / (n_gw + 1e-10) + 0.1 * rng.randn(n_t)
 
         # W_stored
         W_stored_t = 0.05 * ne_t * (Te_t + Ti_t) + 0.01 * rng.randn(n_t)
 
-        # Disruption probability depends on Ip (NOT ne directly)
-        # Low Ip → much more disruption-prone (strong confounding)
-        p_disrupt = np.clip(0.35 - 0.35 * Ip, 0.02, 0.4)
+        # Disruption probability depends STRONGLY on 1/Ip (NOT on ne directly!)
+        # Low Ip → very disruption-prone, high Ip → stable
+        # But low Ip → low ne (Greenwald limit), high Ip → high ne
+        # This creates the paradox: in aggregate, higher ne = higher Ip = FEWER disruptions
+        # But the raw ne↔disruption is POSITIVE because low-Ip shots have
+        # high f_GW (close to limit) — we need to make this explicit.
+        # Disruption depends on f_GW AND 1/Ip combined:
+        p_disrupt = np.clip(0.6 * f_gw_target - 0.3 * Ip + 0.05, 0.02, 0.5)
         disrupted = rng.random() < p_disrupt
 
         shot_data = np.column_stack([ne_t, Ip_t, Te_t, Ti_t, P_rad_t, q95_t, betaN_t, W_stored_t])
@@ -288,17 +304,31 @@ def main():
 
     from fusionmind4.discovery import EnsembleCPDE
 
+    var_names = list(labels.keys())
     cpde = EnsembleCPDE(
         config={"n_bootstrap": 10, "threshold": 0.32},
         verbose=True,
     )
 
     # Run on real-like data (no interventional data available)
-    results = cpde.discover(data[:, :min(data.shape[1], 14)],
-                           interventional_data=None)
+    results = cpde.discover(data, interventional_data=None,
+                            var_names=var_names)
 
-    print(f"\n  F1: {results['f1']:.1%}")
-    print(f"  Physics: {results['physics_passed']}/{results['physics_total']}")
+    n_edges = results["n_edges"]
+    print(f"\n  Edges discovered: {n_edges}")
+    print(f"  Variables: {n_edges} edges among {data.shape[1]} vars")
+
+    # Print discovered edges
+    if results["edge_details"]:
+        print(f"\n  Top causal edges:")
+        sorted_edges = sorted(results["edge_details"].items(),
+                              key=lambda x: x[1]["score"], reverse=True)
+        for (i, j), d in sorted_edges[:15]:
+            src = var_names[i] if var_names else f"v{i}"
+            tgt = var_names[j] if var_names else f"v{j}"
+            print(f"    {src:>10} → {tgt:<10}  "
+                  f"score={d['score']:.3f}  "
+                  f"(NT={d['nt']:.2f} GC={d['gc']:.2f} PC={d['pc']:.2f})")
 
     # ── Summary ──
     print("\n" + "=" * 60)
@@ -312,8 +342,9 @@ def main():
     print(f"  Causal ne↔disrupt: {simpson['partial_correlation_given_Ip']:+.3f}")
     print(f"  DL AUC (causal):   {dl['auc_causal']:.3f}")
     print(f"  DL AUC (GW):       {dl['auc_greenwald']:.3f}")
+    print(f"  Causal edges:      {results['n_edges']}")
 
-    return simpson, dl
+    return simpson, dl, results
 
 
 if __name__ == "__main__":

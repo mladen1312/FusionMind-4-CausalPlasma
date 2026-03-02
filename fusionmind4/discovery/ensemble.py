@@ -46,18 +46,26 @@ class EnsembleCPDE:
 
     def discover(self, data: np.ndarray,
                  interventional_data: Optional[Dict] = None,
-                 seed: int = 42) -> Dict:
+                 seed: int = 42,
+                 var_names: Optional[list] = None) -> Dict:
         """Run full causal discovery pipeline.
 
         Args:
             data: (n_samples, n_vars) observational data
             interventional_data: Optional {actuator_id: (data_low, data_high)}
             seed: Random seed
+            var_names: Optional list of variable names (for real data)
 
         Returns:
             Dictionary with dag, metrics, physics_checks, edge_details
         """
         rng = np.random.RandomState(seed)
+        n_vars = data.shape[1]
+        is_standard = (n_vars == N_VARS)  # True if FM3-Lite 14-var data
+
+        if self.verbose:
+            mode = "standard (14-var)" if is_standard else f"real data ({n_vars}-var)"
+            print(f"  Mode: {mode}, samples: {data.shape[0]:,}")
 
         # ── Step 1: NOTEARS bootstrap ──
         if self.verbose:
@@ -80,7 +88,7 @@ class EnsembleCPDE:
         # ── Step 4: Interventional scoring ──
         if self.verbose:
             print("[4/5] Interventional scoring...")
-        int_scores = np.zeros((N_VARS, N_VARS))
+        int_scores = np.zeros((n_vars, n_vars))
         if interventional_data:
             scorer = InterventionalScorer(effect_threshold=0.3)
             int_scores = scorer.score(interventional_data)
@@ -89,7 +97,11 @@ class EnsembleCPDE:
         if self.verbose:
             print("[5/5] Ensemble fusion + DAG enforcement...")
 
-        physics_prior = get_physics_prior_matrix()
+        # Physics prior: only available for standard 14-var layout
+        if is_standard:
+            physics_prior = get_physics_prior_matrix()
+        else:
+            physics_prior = np.zeros((n_vars, n_vars))
 
         # Weighted combination
         w_nt = self.config["notears_weight"]
@@ -97,12 +109,21 @@ class EnsembleCPDE:
         w_pc = self.config["pc_weight"]
         w_phy = self.config["physics_weight"]
 
+        # When no physics priors, redistribute weight to algorithms
+        if not is_standard:
+            total_alg = w_nt + w_gc + w_pc
+            if total_alg > 0:
+                w_nt = w_nt / total_alg
+                w_gc = w_gc / total_alg
+                w_pc = w_pc / total_alg
+            w_phy = 0.0
+
         # Build ensemble adjacency with edge details
-        dag = np.zeros((N_VARS, N_VARS))
+        dag = np.zeros((n_vars, n_vars))
         edge_details = {}
 
-        for i in range(N_VARS):
-            for j in range(N_VARS):
+        for i in range(n_vars):
+            for j in range(n_vars):
                 if i == j:
                     continue
 
@@ -135,20 +156,37 @@ class EnsembleCPDE:
         # ── DAG enforcement ──
         dag = self._enforce_dag(dag, edge_details)
 
-        # ── Remove indirect actuator paths ──
-        dag, edge_details = self._remove_indirect(dag, edge_details)
+        # ── Remove indirect paths (only with physics for standard) ──
+        if is_standard:
+            dag, edge_details = self._remove_indirect(dag, edge_details)
 
         # ── Physics validation ──
-        physics_checks = validate_physics(dag)
+        if is_standard:
+            physics_checks = validate_physics(dag)
+        else:
+            physics_checks = {"passed": 0, "total": 0, "checks": {},
+                             "note": "Physics priors not applicable to real data layout"}
 
         # ── Evaluation against ground truth ──
-        metrics = evaluate_dag(dag)
+        if is_standard:
+            metrics = evaluate_dag(dag)
+        else:
+            n_edges = int(np.sum(dag > 0))
+            metrics = {
+                "f1": 0.0, "precision": 0.0, "recall": 0.0, "shd": 0,
+                "tp": 0, "fp": 0, "fn": 0,
+                "n_edges_discovered": n_edges,
+                "note": "No ground truth for real data — manual validation required",
+            }
 
         return {
             "dag": dag,
             "edge_details": edge_details,
             "metrics": metrics,
             "physics_checks": physics_checks,
+            "n_vars": n_vars,
+            "n_edges": int(np.sum(dag > 0)),
+            "var_names": var_names,
             "f1": metrics["f1"],
             "precision": metrics["precision"],
             "recall": metrics["recall"],
@@ -187,8 +225,9 @@ class EnsembleCPDE:
                 continue  # Keep physics-supported edges
 
             # Pattern: Actuator → far downstream (skip mediator)
+            n = adj.shape[0]
             if i in ACTUATOR_IDS:
-                for k in range(N_VARS):
+                for k in range(n):
                     if k == i or k == j:
                         continue
                     ik = details.get((i, k), {})
@@ -202,7 +241,7 @@ class EnsembleCPDE:
             # Pattern: Non-actuator indirect with physics mediator
             if d["nt"] > 0.8 and d["gc"] > 0:
                 continue  # Strong evidence
-            for k in range(N_VARS):
+            for k in range(n):
                 if k == i or k == j:
                     continue
                 if adj[i, k] > 0 and adj[k, j] > 0:
