@@ -173,15 +173,70 @@ class SimplifiedDiffusionReconstructor:
         )
         score += 0.1 * laplacian
 
-        # 3. Plasma boundary constraint
+        # 3. Grad-Shafranov equilibrium prior
+        score += self._grad_shafranov_score(x_t, mask)
+
+        # 4. Plasma boundary constraint
         score *= mask
 
-        # 4. Positivity (temperatures must be positive)
+        # 5. Positivity (temperatures must be positive)
         score[x_t < 0] += 0.5
 
         # Scale by noise level
         alpha_t = self.alpha_bar[t]
         score *= (1 - alpha_t) * 0.1
+
+        return score
+
+    def _grad_shafranov_score(self, x_t: np.ndarray,
+                               mask: np.ndarray) -> np.ndarray:
+        """Grad-Shafranov equilibrium prior for the score function.
+
+        Enforces that plasma quantities should be approximately constant
+        on flux surfaces (toroidal symmetry). In tokamak equilibrium,
+        T_e(psi) and n_e(psi) are flux functions — they depend only on
+        the poloidal flux coordinate, not on poloidal angle.
+
+        This prior penalizes variation along flux surfaces (poloidal
+        direction) relative to variation across them (radial direction),
+        acting as a physics-informed regularizer in the diffusion process.
+        """
+        N = self.grid_size
+        score = np.zeros_like(x_t)
+
+        # Approximate flux surfaces as ellipses centered at R0
+        R0_idx = N // 2  # Midplane index
+        Z0_idx = N // 2
+
+        # For each approximate flux surface (radial shell)
+        for r_idx in range(2, N // 2 - 1):
+            # Extract values along this flux surface (elliptical path)
+            # Simplified: take a ring of points at roughly constant r_norm
+            ring_values = []
+            ring_coords = []
+
+            n_theta = max(8, 2 * r_idx)  # Angular resolution
+            for theta_idx in range(n_theta):
+                theta = 2 * np.pi * theta_idx / n_theta
+                # Elliptical flux surface (kappa=1.7 elongation)
+                i_R = int(R0_idx + r_idx * np.cos(theta))
+                i_Z = int(Z0_idx + int(r_idx * 1.7) * np.sin(theta))
+
+                if 0 <= i_R < N and 0 <= i_Z < N and mask[i_Z, i_R] > 0:
+                    ring_values.append(x_t[i_Z, i_R])
+                    ring_coords.append((i_Z, i_R))
+
+            if len(ring_values) < 3:
+                continue
+
+            # Flux-surface average
+            ring_mean = np.mean(ring_values)
+
+            # Penalize deviation from flux-surface average
+            # (Grad-Shafranov: quantities should be constant on flux surfaces)
+            gs_weight = 0.05  # Strength of GS prior
+            for val, (iz, ir) in zip(ring_values, ring_coords):
+                score[iz, ir] += gs_weight * (ring_mean - val)
 
         return score
 
