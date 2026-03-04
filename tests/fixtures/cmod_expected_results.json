@@ -1,0 +1,37 @@
+{
+  "simpson": {
+    "raw_correlation": -0.011,
+    "partial_correlation": 0.1816,
+    "detected": false
+  },
+  "density_limit": {
+    "auc_greenwald": 0.6429,
+    "auc_causal": 0.6707
+  },
+  "cpde": {
+    "n_edges": 14,
+    "elapsed": 0.7
+  },
+  "var_names": [
+    "ne",
+    "Ip",
+    "Te",
+    "Ti",
+    "P_rad",
+    "q95",
+    "betaN",
+    "W_stored"
+  ],
+  "labels": {
+    "ne": 0,
+    "Ip": 1,
+    "Te": 2,
+    "Ti": 3,
+    "P_rad": 4,
+    "q95": 5,
+    "betaN": 6,
+    "W_stored": 7
+  },
+  "n_shots": 1876,
+  "subset_size": 5000
+}

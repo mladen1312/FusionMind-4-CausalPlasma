@@ -68,16 +68,38 @@ class EnsembleCPDE:
             print(f"  Mode: {mode}, samples: {data.shape[0]:,}")
 
         # ── Step 1: NOTEARS bootstrap ──
-        if self.verbose:
-            print("[1/5] NOTEARS bootstrap...")
-        nt = NOTEARSDiscovery(lambda1=0.05, w_threshold=0.10)
-        notears_stability = nt.fit_bootstrap(data, self.config["n_bootstrap"], rng)
+        # Try C++ AVX-512 kernel first (888x faster), fall back to Python
+        try:
+            from ..realtime.causal_bindings import (
+                fast_notears_bootstrap, fast_granger, CAUSAL_CPP_AVAILABLE,
+            )
+            use_cpp = CAUSAL_CPP_AVAILABLE
+        except ImportError:
+            use_cpp = False
+
+        if use_cpp:
+            if self.verbose:
+                print("[1/5] NOTEARS bootstrap (C++ AVX-512)...")
+            notears_stability = fast_notears_bootstrap(
+                data, n_bootstrap=self.config["n_bootstrap"],
+                lambda1=0.05, w_threshold=0.10, seed=seed,
+            )
+        else:
+            if self.verbose:
+                print("[1/5] NOTEARS bootstrap...")
+            nt = NOTEARSDiscovery(lambda1=0.05, w_threshold=0.10)
+            notears_stability = nt.fit_bootstrap(data, self.config["n_bootstrap"], rng)
 
         # ── Step 2: Granger causality ──
-        if self.verbose:
-            print("[2/5] Granger causality...")
-        gc = GrangerCausalityTest(max_lag=5, alpha=0.05, bonferroni=True)
-        granger_matrix = gc.test_all_pairs(data)
+        if use_cpp:
+            if self.verbose:
+                print("[2/5] Granger causality (C++ OpenMP)...")
+            granger_matrix = fast_granger(data, max_lag=5, alpha=0.05)
+        else:
+            if self.verbose:
+                print("[2/5] Granger causality...")
+            gc = GrangerCausalityTest(max_lag=5, alpha=0.05, bonferroni=True)
+            granger_matrix = gc.test_all_pairs(data)
 
         # ── Step 3: PC algorithm bootstrap ──
         if self.verbose:

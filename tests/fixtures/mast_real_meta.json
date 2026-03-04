@@ -1,0 +1,143 @@
+{
+  "var_names": [
+    "betan",
+    "betap",
+    "q95",
+    "q_axis",
+    "li",
+    "elongation",
+    "ne_core",
+    "Te_core",
+    "P_NBI",
+    "D_alpha",
+    "Ip"
+  ],
+  "var_labels": [
+    "\u03b2N",
+    "\u03b2p",
+    "q95",
+    "q_axis",
+    "li",
+    "\u03ba",
+    "ne_core",
+    "Te_core",
+    "P_NBI",
+    "D_alpha",
+    "Ip"
+  ],
+  "shots": [
+    {
+      "shot_id": 27880,
+      "n_timepoints": 88,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.4650000035762787
+      ]
+    },
+    {
+      "shot_id": 27881,
+      "n_timepoints": 56,
+      "valid_vars": 10,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.3050000071525574
+      ]
+    },
+    {
+      "shot_id": 27882,
+      "n_timepoints": 53,
+      "valid_vars": 10,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.2849999964237213
+      ]
+    },
+    {
+      "shot_id": 27885,
+      "n_timepoints": 90,
+      "valid_vars": 9,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.48500001430511475
+      ]
+    },
+    {
+      "shot_id": 27886,
+      "n_timepoints": 86,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.4399999976158142
+      ]
+    },
+    {
+      "shot_id": 27887,
+      "n_timepoints": 69,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.36500000953674316
+      ]
+    },
+    {
+      "shot_id": 27888,
+      "n_timepoints": 89,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.4650000035762787
+      ]
+    },
+    {
+      "shot_id": 27889,
+      "n_timepoints": 94,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.48500001430511475
+      ]
+    },
+    {
+      "shot_id": 27890,
+      "n_timepoints": 55,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.5649999976158142
+      ]
+    },
+    {
+      "shot_id": 27891,
+      "n_timepoints": 48,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.36000001430511475
+      ]
+    },
+    {
+      "shot_id": 27892,
+      "n_timepoints": 47,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.48500001430511475
+      ]
+    },
+    {
+      "shot_id": 27893,
+      "n_timepoints": 54,
+      "valid_vars": 11,
+      "efit_time_range": [
+        -0.05000000074505806,
+        0.5249999761581421
+      ]
+    }
+  ],
+  "total_timepoints": 829,
+  "n_vars": 11,
+  "source": "UKAEA FAIR-MAST S3 (https://s3.echo.stfc.ac.uk/mast/level1/shots/)",
+  "download_date": "2026-03-04",
+  "citation": "Jackson et al., IEEE Trans. Plasma Sci., 2025"
+}

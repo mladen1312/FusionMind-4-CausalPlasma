@@ -1,0 +1,149 @@
+{
+  "n_edges": 3,
+  "n_edges_range": [
+    5,
+    8
+  ],
+  "edges": [
+    {
+      "src": "betan",
+      "tgt": "betap",
+      "src_idx": 0,
+      "tgt_idx": 1,
+      "score": 0.4
+    },
+    {
+      "src": "betan",
+      "tgt": "elongation",
+      "src_idx": 0,
+      "tgt_idx": 5,
+      "score": 0.4267
+    },
+    {
+      "src": "betan",
+      "tgt": "ne_core",
+      "src_idx": 0,
+      "tgt_idx": 6,
+      "score": 0.4
+    },
+    {
+      "src": "betap",
+      "tgt": "li",
+      "src_idx": 1,
+      "tgt_idx": 4,
+      "score": 0.32
+    },
+    {
+      "src": "q95",
+      "tgt": "q_axis",
+      "src_idx": 2,
+      "tgt_idx": 3,
+      "score": 0.4
+    },
+    {
+      "src": "q95",
+      "tgt": "ne_core",
+      "src_idx": 2,
+      "tgt_idx": 6,
+      "score": 0.4
+    },
+    {
+      "src": "li",
+      "tgt": "betan",
+      "src_idx": 4,
+      "tgt_idx": 0,
+      "score": 0.44
+    },
+    {
+      "src": "elongation",
+      "tgt": "D_alpha",
+      "src_idx": 5,
+      "tgt_idx": 9,
+      "score": 0.4267
+    },
+    {
+      "src": "P_NBI",
+      "tgt": "Ip",
+      "src_idx": 8,
+      "tgt_idx": 10,
+      "score": 0.32
+    }
+  ],
+  "physics_results": [
+    {
+      "src": "P_NBI",
+      "tgt": "betan",
+      "expected": true,
+      "found": false,
+      "description": "NBI heating increases normalized beta"
+    },
+    {
+      "src": "P_NBI",
+      "tgt": "betap",
+      "expected": true,
+      "found": false,
+      "description": "NBI heating increases poloidal beta"
+    },
+    {
+      "src": "P_NBI",
+      "tgt": "Te_core",
+      "expected": true,
+      "found": false,
+      "description": "NBI heating increases core temperature"
+    },
+    {
+      "src": "ne_core",
+      "tgt": "betap",
+      "expected": true,
+      "found": false,
+      "description": "Density contributes to pressure/betap"
+    },
+    {
+      "src": "Ip",
+      "tgt": "q95",
+      "expected": true,
+      "found": false,
+      "description": "Current determines safety factor"
+    },
+    {
+      "src": "ne_core",
+      "tgt": "D_alpha",
+      "expected": true,
+      "found": false,
+      "description": "Density affects edge recycling"
+    },
+    {
+      "src": "q_axis",
+      "tgt": "li",
+      "expected": true,
+      "found": false,
+      "description": "Core q relates to internal inductance"
+    }
+  ],
+  "physics_score": "0/7",
+  "physics_passes": 0,
+  "physics_total": 7,
+  "correlations": {
+    "betan__betap": 0.9389,
+    "betan__li": -0.7359,
+    "betan__elongation": 0.4537,
+    "betap__li": -0.8889,
+    "betap__elongation": 0.3892,
+    "q95__q_axis": 0.8255,
+    "q95__ne_core": -0.3877,
+    "q_axis__li": -0.3206
+  },
+  "config": {
+    "n_bootstrap": 10,
+    "threshold": 0.18,
+    "physics_weight": 0.25,
+    "notears_weight": 0.3,
+    "granger_weight": 0.25,
+    "pc_weight": 0.2
+  },
+  "elapsed_seconds": 0.8,
+  "dag_shape": [
+    11,
+    11
+  ]
+}

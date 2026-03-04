@@ -43,20 +43,21 @@ class LargeScaleMASTLoader:
     BUCKET = "mast"
 
     # Expanded shot ranges covering multiple MAST campaigns
-    # M5-M9 campaigns, NBI-heated, conventional/SuperX divertor
+    # Confirmed dense ranges from S3 probing
     SHOT_RANGES = [
-        # M7 campaign (2007-2008): good NBI heating
+        # M5-M6 campaigns (2004-2006)
         range(18000, 18200),
-        # M8 campaign (2009-2010): conventional
+        range(20000, 20200),
+        # M7 campaign (2007-2008)
         range(22000, 22200),
+        # M8 campaign (2009-2010)
+        range(24000, 24200),
         range(24600, 24700),
-        range(25000, 25200),
-        # M9 campaign (2013): last MAST campaign
+        # M9 pre-upgrade (2011-2013)
+        range(26000, 26200),
         range(27800, 28100),
-        range(28500, 28700),
         range(29000, 29200),
         range(29500, 29700),
-        range(30000, 30100),
     ]
 
     SIGNAL_GROUPS = {
@@ -83,20 +84,39 @@ class LargeScaleMASTLoader:
                 anon=True,
                 client_kwargs={
                     'endpoint_url': self.S3_ENDPOINT,
-                    'connect_timeout': self.timeout,
-                    'read_timeout': self.timeout,
                 },
             )
         return self._fs
 
     def discover_available_shots(self) -> list:
-        """Probe S3 to find which shots have zarr data."""
+        """Probe S3 to find which shots have zarr data.
+        Uses sparse sampling first, then fills dense ranges."""
         fs = self._get_fs()
         available = []
         total_probed = 0
 
+        # Phase 1: Quick sparse probe to find dense ranges
+        dense_ranges = []
         for rng in self.SHOT_RANGES:
-            for shot_id in rng:
+            rng_list = list(rng)
+            # Sample every 10th shot
+            probes = rng_list[::10][:10]
+            hits = 0
+            for shot_id in probes:
+                total_probed += 1
+                path = f"{self.BUCKET}/level1/shots/{shot_id}.zarr"
+                try:
+                    if fs.exists(path):
+                        hits += 1
+                except Exception:
+                    pass
+            if hits > 0:
+                dense_ranges.append(rng_list)
+                print(f"    Range {rng_list[0]}-{rng_list[-1]}: {hits}/{len(probes)} probed OK")
+
+        # Phase 2: Fill from dense ranges
+        for rng_list in dense_ranges:
+            for shot_id in rng_list:
                 if len(available) >= self.target * 2:
                     break
                 total_probed += 1
@@ -106,8 +126,8 @@ class LargeScaleMASTLoader:
                         available.append(shot_id)
                 except Exception:
                     pass
-
             if len(available) >= self.target * 2:
+                break
                 break
 
         print(f"  Probed {total_probed} shots, found {len(available)} available")
@@ -709,7 +729,8 @@ def compute_auc(y_true: np.ndarray, y_score: np.ndarray) -> float:
     fpr = fp / fp[-1]
 
     # Trapezoidal integration
-    auc = np.trapz(tpr, fpr)
+    _trapz = getattr(np, 'trapezoid', getattr(np, 'trapz', None))
+    auc = _trapz(tpr, fpr)
     return float(abs(auc))
 
 
