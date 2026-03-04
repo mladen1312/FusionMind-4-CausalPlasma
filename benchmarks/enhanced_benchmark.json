@@ -1,0 +1,29 @@
+{
+  "edge_f1": 0.8571428571428571,
+  "edge_precision": 0.9230769230769231,
+  "edge_recall": 0.8,
+  "direction_accuracy": 0.5555555555555556,
+  "scm_cv_r2_overall": 0.9213610830542555,
+  "scm_cv_r2_per_var": {
+    "betan": 0.9673726502461927,
+    "betap": 0.7443119117828688,
+    "q_95": 0.9474159211430002,
+    "q_axis": 0.0,
+    "elongation": 0.0,
+    "li": -0.14974294271739236,
+    "wplasmd": 0.9575192419735105,
+    "betat": 0.990185690125705,
+    "Ip": 0.0,
+    "Prad": 0.0
+  },
+  "intervention_accuracy": 0.7685502510560294,
+  "counterfactual_consistency": 0.9090909090909091,
+  "disruption_auc": 0.9998189873417722,
+  "disruption_baseline": 0.9224325744079799,
+  "n_shots": 44,
+  "n_timepoints": 3293,
+  "n_vars": 10,
+  "n_edges": 13,
+  "latency_cpde": 2.432210922241211,
+  "latency_scm": 1.4176299571990967
+}

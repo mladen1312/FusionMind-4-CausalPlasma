@@ -1,0 +1,125 @@
+{
+  "benchmark_100seg": {
+    "n_segments": 100,
+    "success_rate": 1.0,
+    "acyclicity_rate": 1.0,
+    "f1_mean": 0.31479156332308955,
+    "f1_std": 0.08438380332786985,
+    "f1_median": 0.3157894736842105,
+    "precision_mean": 0.4315388409749865,
+    "precision_std": 0.06689305909727325,
+    "recall_mean": 0.2658333333333333,
+    "recall_std": 0.1352441208416182,
+    "scm_r2_mean": 0.3418231113255024,
+    "timing_mean": 0.2002643823623657,
+    "timing_p95": 0.22970310449600218,
+    "do_rate": 1.0,
+    "cf_rate": 1.0,
+    "shd_mean": 2.1515151515151514,
+    "stable_edges": [
+      [
+        "betat->q_95",
+        100
+      ],
+      [
+        "betat->betan",
+        100
+      ],
+      [
+        "betat->betap",
+        100
+      ],
+      [
+        "betat->wplasmd",
+        90
+      ],
+      [
+        "betat->q_axis",
+        70
+      ],
+      [
+        "betat->elongation",
+        67
+      ],
+      [
+        "betat->li",
+        55
+      ],
+      [
+        "wplasmd->q_95",
+        15
+      ],
+      [
+        "wplasmd->betan",
+        15
+      ],
+      [
+        "wplasmd->q_axis",
+        14
+      ],
+      [
+        "li->betan",
+        12
+      ],
+      [
+        "li->q_95",
+        12
+      ],
+      [
+        "li->betat",
+        11
+      ],
+      [
+        "li->betap",
+        10
+      ],
+      [
+        "wplasmd->betap",
+        9
+      ],
+      [
+        "wplasmd->elongation",
+        9
+      ],
+      [
+        "li->elongation",
+        9
+      ],
+      [
+        "li->q_axis",
+        7
+      ],
+      [
+        "li->wplasmd",
+        7
+      ],
+      [
+        "elongation->q_axis",
+        7
+      ]
+    ],
+    "algo_contributions": {
+      "notears": 0.15440007276613907,
+      "granger": 0.9669215110776893,
+      "pc": 0.5074024226110363,
+      "physics": 0.15329744279946164
+    }
+  },
+  "cross_shot_bootstrap": {
+    "n_bootstrap": 30,
+    "f1_mean": 0.3312064410278074,
+    "f1_std": 0.08801295689111156,
+    "precision_mean": 0.43384397193220725,
+    "recall_mean": 0.2861111111111111
+  },
+  "full_data": {
+    "n_timepoints": 3293,
+    "n_shots": 44,
+    "f1": 0.3157894736842105,
+    "precision": 0.42857142857142855,
+    "recall": 0.25,
+    "scm_r2_mean": 0.3067972660064697,
+    "n_edges": 7,
+    "timing_s": 0.35860681533813477
+  }
+}
