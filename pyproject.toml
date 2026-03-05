@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fusionmind4"
-version = "4.1.0"
+version = "4.7.1"
 description = "Causal AI for Fusion Plasma Control — Pearl's do-calculus applied to tokamak physics"
 readme = "README.md"
 license = {text = "Proprietary"}

@@ -26,16 +26,34 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[full,dev]"
 
-      - name: Run tests
+      - name: Compile C++ engines
         run: |
-          pytest tests/ -v --tb=short
+          cd fusionmind4/realtime/cpp
+          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_stack.so stack_api.cpp
+          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_rt.so fast_engine_api.cpp
+          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_causal.so causal_kernels.cpp
+          ls -la *.so
 
-      - name: Run tests with coverage
+      - name: Run tests
+        env:
+          FM_SKIP_S3: "1"
+        run: |
+          pytest tests/ -v --tb=short --ignore=tests/test_real_data.py
+
+      - name: Run real-data tests (fixtures only)
+        env:
+          FM_SKIP_S3: "1"
+        run: |
+          pytest tests/test_real_data.py -v --tb=short -k "not LiveS3"
+
+      - name: Coverage report
         if: matrix.python-version == '3.12'
+        env:
+          FM_SKIP_S3: "1"
         run: |
           pip install pytest-cov
-          pytest tests/ --cov=fusionmind4 --cov-report=term-missing
+          pytest tests/ --cov=fusionmind4 --cov-report=term-missing --ignore=tests/test_real_data.py
 
-      - name: Verify quickstart example
+      - name: Verify quickstart
         run: |
           python examples/quickstart.py

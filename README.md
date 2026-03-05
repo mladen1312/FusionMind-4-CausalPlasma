@@ -4,12 +4,13 @@
 >
 > *Not another black-box RL controller. The only system that can tell you WHY.*
 
-[![Tests](https://img.shields.io/badge/tests-285%20passed-brightgreen)](#testing)
+[![Tests](https://img.shields.io/badge/tests-297%20passed-brightgreen)](#testing)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](#installation)
 [![License](https://img.shields.io/badge/license-Proprietary-red)](LICENSE)
 [![Patent Families](https://img.shields.io/badge/patents-8%20families-orange)](#patent-portfolio)
 [![Real Data](https://img.shields.io/badge/validated-44%20shots%20MAST-purple)](#benchmark-results)
 [![SCM R²](https://img.shields.io/badge/SCM%20R²-92.1%25%20(CV)-success)](#benchmark-results)
+[![C++ Latency](https://img.shields.io/badge/latency-83ns%20(Phase%201)-blue)](#benchmark-results)
 
 ---
 
@@ -192,7 +193,8 @@ All results are **5-fold cross-validated** on real data from the FAIR-MAST archi
 | **Counterfactual Consistency** | **90.9%** | Physical consistency of "what if" scenarios |
 | **Disruption Detection AUC** | **1.000** | vs. 0.922 correlational baseline (+8.4% improvement) |
 | **System Reliability** | **100%** | 100 segments, zero crashes, zero invalid DAGs |
-| **C++ Inference Latency** | **0.27μs** | 3,700,000 predictions per second |
+| **C++ Phase 1 Latency** | **83ns** | Wrapper mode: safety veto in 83 nanoseconds |
+| **C++ Phase 3 Latency** | **705ns** | Full stack: all 4 layers in 705 nanoseconds |
 
 ### Why Disruption AUC = 1.000 While Baseline = 0.922
 
@@ -331,6 +333,22 @@ fusionmind4/
 
 ---
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Architecture](docs/ARCHITECTURE.md) | Full system architecture, module map, C++ memory layout |
+| [Stack Engine](docs/STACK_ENGINE.md) | 4-layer stack user guide, all phases, code examples |
+| [Deployment](docs/DEPLOYMENT.md) | Installation, compilation, tokamak-specific config |
+| [Benchmarks](docs/BENCHMARKS.md) | All benchmark results, latency tables, comparisons |
+| [API Reference](docs/API_REFERENCE.md) | Complete API for all classes and methods |
+| [CPDE Pipeline](docs/CPDE_PIPELINE.md) | Causal discovery algorithm details |
+| [CausalShield-RL](docs/CAUSALSHIELD_RL.md) | Reinforcement learning integration |
+| [Causal Copilot](docs/CAUSAL_COPILOT.md) | Natural language query interface |
+| [Real Data Validation](docs/REAL_DATA_VALIDATION.md) | MAST and C-Mod validation details |
+
+---
+
 ## Installation
 
 ```bash
@@ -344,6 +362,15 @@ pip install -e .
 - Python 3.10+
 - NumPy, SciPy, scikit-learn
 - Optional: MLX (Apple Silicon), PyTorch (Neural SCM)
+
+### C++ Compilation (Required for Production Latency)
+
+```bash
+cd fusionmind4/realtime/cpp
+g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_stack.so stack_api.cpp
+g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_rt.so fast_engine_api.cpp
+g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_causal.so causal_kernels.cpp
+```
 
 ### Quick Start
 
@@ -378,22 +405,23 @@ print(f"Risk: {action.risk_score}, Explanation: {action.causal_explanation}")
 ## Testing
 
 ```bash
-# Full test suite (285 tests)
+# Full test suite (297 tests)
 python -m pytest -v
 
 # Quick (excluding real S3 data download)
 FM_SKIP_S3=1 python -m pytest --ignore=tests/test_real_data.py -q
 
 # Just the controller
-python -m pytest tests/test_causal_controller.py -v
+python -m pytest tests/test_causal_controller.py tests/test_stack.py -v
 ```
 
 | Module | Tests | Coverage |
 |--------|-------|----------|
+| `test_stack.py` | 37 | 4-layer stack, all phases, upgrade, 100-step sim |
 | `test_causal_controller.py` | 20 | 3 operating modes, safety, disruption explanation |
 | `test_causal_kernels.py` | 20 | C++ AVX-512 kernels |
 | `test_copilot.py` | 34 | Causal query classification (HR/EN) |
-| `test_cpde.py` | 16 | Core CPDE pipeline |
+| `test_cpde.py` | 23 | Core CPDE pipeline |
 | `test_cpp_engine.py` | 14 | C++ inference, latency <5μs |
 | `test_learning.py` | 33 | Neural SCM, Gym env, causal RL |
 | `test_mlx_backend.py` | 24 | Apple Silicon (skip on Linux) |

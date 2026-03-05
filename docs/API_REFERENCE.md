@@ -1,168 +1,186 @@
-# API Reference — FusionMind 4.0
+# API Reference
 
-## Core Modules
+## Core Classes
 
-### `fusionmind4.discovery` — Causal Discovery (PF1)
+### FusionMindStack
 
-#### `EnsembleCPDE`
+**Module:** `fusionmind4.control.stack`
 
-Main entry point for causal discovery.
+The unified 4-layer control interface. Primary class for all deployments.
 
 ```python
-from fusionmind4.discovery import EnsembleCPDE
+FusionMindStack(dag, scm, var_names, config=StackConfig())
+FusionMindStack.from_data(data, var_names, phase=Phase.PHASE_1)
+```
 
-cpde = EnsembleCPDE(config={
-    "n_bootstrap": 10,       # Bootstrap iterations for NOTEARS
-    "threshold": 0.32,       # Edge inclusion threshold
-    "use_physics_priors": True,
-    "use_pc_veto": True,
-    "use_interventional": True,
-})
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `step(state, actuators, external_action=None)` | `ActionCommand` | Execute one control cycle |
+| `evaluate_external_action(state, action)` | `ActionCommand` | Evaluate external RL action (Phase 1) |
+| `set_targets(targets)` | None | Set plasma targets (Phase 2+) |
+| `upgrade_phase(new_phase)` | `str` | Live phase upgrade |
+| `explain_state(state)` | `Dict` | Causal analysis of current state |
+| `explain_disruption(pre, post)` | `Dict` | Post-mortem root cause analysis |
+| `predict_intervention(state, intervention)` | `Dict` | do-calculus: P(Y\|do(X=x)) |
+| `counterfactual(state, hypothetical)` | `Dict` | What would have happened if... |
+| `get_stats()` | `Dict` | Performance statistics |
 
-results = cpde.discover(
-    data,                     # np.ndarray (n_samples, n_variables)
-    interventional_data=None, # Optional dict of intervention results
-    variable_names=None,      # Optional list of variable names
+### CppStack
+
+**Module:** `fusionmind4.realtime.stack_bindings`
+
+C++ engine wrapper for sub-microsecond latency.
+
+```python
+CppStack(n_vars, phase=1, var_names=None)
+```
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `load_scm(dag, scm)` | None | Load DAG + SCM from Python objects |
+| `load_safety_limits(limits_dict)` | None | Configure physics boundaries |
+| `load_policy_weights(W1,b1,W2,b2,W3,b3)` | None | Load RL policy (Layer 1) |
+| `set_phase(phase)` | None | Switch phase live |
+| `set_setpoints(targets)` | None | Set target parameters |
+| `step(values, timestamp, actuators, external_action=None)` | `StackStepResult` | Execute one C++ cycle |
+| `do_intervention(baseline, intervention)` | `Dict` | C++ do-calculus (~300ns) |
+| `counterfactual(factual, hypothetical)` | `Dict` | C++ counterfactual (~400ns) |
+| `benchmark(n_cycles=10000)` | `Dict` | Latency benchmark |
+| `get_stats()` | `Dict` | Cycle/veto/approve counts |
+
+### NonlinearPlasmaSCM
+
+**Module:** `fusionmind4.discovery.nonlinear_scm`
+
+GradientBoosting structural causal model. Higher R² than linear SCM.
+
+```python
+NonlinearPlasmaSCM(dag, var_names, n_estimators=100, max_depth=3)
+```
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `fit(X)` | None | Fit nonlinear equations from data |
+| `predict(X)` | `ndarray` | Predict all variables from parents |
+| `do(interventions, baseline)` | `ndarray` | do-calculus intervention |
+| `counterfactual(factual, interventions)` | `ndarray` | Counterfactual query |
+| `cross_validate(X, n_folds=5)` | `Dict` | Cross-validated R² per variable |
+| `summary()` | `str` | Human-readable model summary |
+
+### EnsembleCPDE
+
+**Module:** `fusionmind4.discovery.ensemble`
+
+Ensemble causal discovery pipeline (NOTEARS + Granger + PC + Physics).
+
+```python
+EnsembleCPDE(config=None)
+```
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `discover(data, interventional_data=None)` | `Dict` | Full pipeline: DAG + metrics + edge details |
+
+### PlasmaSCM
+
+**Module:** `fusionmind4.control.scm`
+
+Linear structural causal model (fast, analytical counterfactuals).
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `fit(dag, data, var_names)` | None | Fit linear equations |
+| `predict(obs)` | `ndarray` | Predict from parents |
+| `do_intervention(obs, interventions)` | `ndarray` | do-calculus |
+| `counterfactual_query(factual, intervention)` | `ndarray` | Counterfactual |
+
+### NeuralSCM
+
+**Module:** `fusionmind4.learning.neural_scm`
+
+Neural network structural equations (learnable nonlinear SCM).
+
+### CausalRLHybrid
+
+**Module:** `fusionmind4.learning.causal_rl_hybrid`
+
+PPO agent with causal reward shaping and SCM world model.
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `fit(data)` | None | Train world model + policy |
+| `act(state)` | `Dict` | Select action with causal explanation |
+| `online_update(transition)` | None | Update from new observation |
+| `summary()` | `Dict` | Model statistics |
+
+---
+
+## Data Structures
+
+### PlasmaState
+
+```python
+PlasmaState(values: Dict[str, float], timestamp: float, shot_id: int = 0)
+```
+
+### ActionCommand
+
+```python
+ActionCommand(
+    actuator_values: Dict[str, float],
+    source_layer: int,           # 0=L0, 1=L1, 2=L2, 3=L3
+    risk_score: float,           # 0.0 - 1.0
+    vetoed: bool,
+    explanation: str,
+    causal_paths: List[str],
+    counterfactual: str,
 )
-# Returns dict: dag, edges, f1, precision, recall, physics_passed, physics_total
 ```
 
-#### `NOTEARSDiscovery`
+### Phase
 
 ```python
-from fusionmind4.discovery.notears import NOTEARSDiscovery
-notears = NOTEARSDiscovery(lambda1=0.1, max_iter=100)
-W = notears.fit(data)                    # Returns adjacency matrix
-W, stability = notears.fit_bootstrap(data, n_bootstrap=10)
+Phase.PHASE_1  # Wrapper (L0+L3)
+Phase.PHASE_2  # Hybrid (L0+L2+L3)
+Phase.PHASE_3  # Full Stack (L0+L1+L2+L3)
 ```
 
-#### `GrangerCausality`
+### SafetyLimits
 
 ```python
-from fusionmind4.discovery.granger import GrangerCausality
-gc = GrangerCausality(max_lag=5, alpha=0.05)
-G = gc.fit(data)                          # Returns adjacency matrix
-```
-
-#### `PCAlgorithm`
-
-```python
-from fusionmind4.discovery.pc import PCAlgorithm
-pc = PCAlgorithm(alpha=0.05)
-skeleton = pc.fit(data)                   # Returns undirected adjacency
-```
-
-#### `PlasmaPhysicsPriors` / `PhysicsValidator`
-
-```python
-from fusionmind4.discovery.physics import PlasmaPhysicsPriors, PhysicsValidator
-priors = PlasmaPhysicsPriors()
-mask = priors.get_hard_mask(n_vars)       # Forbidden edges
-soft = priors.get_soft_prior(n_vars)      # Expected edges
-
-validator = PhysicsValidator()
-passed, total, details = validator.validate(dag, variable_names)
-```
-
----
-
-### `fusionmind4.control` — Counterfactual Controller (PF2)
-
-#### `PlasmaSCM`
-
-```python
-from fusionmind4.control import PlasmaSCM
-scm = PlasmaSCM()
-scm.fit(dag, data)                        # Fit linear SCM to data
-prediction = scm.predict(observation)     # Forward prediction
-equations = scm.get_equations()           # Human-readable equations
-```
-
-#### `InterventionEngine`
-
-```python
-from fusionmind4.control import InterventionEngine
-ie = InterventionEngine(scm)
-result = ie.do_intervention({'P_ECRH': 10.0})    # P(Y|do(X=x))
-paths = ie.trace_causal_paths('P_ECRH', 'Te')    # Explain mechanism
-```
-
-#### `CounterfactualEngine`
-
-```python
-from fusionmind4.control import CounterfactualEngine
-ce = CounterfactualEngine(scm)
-cf = ce.counterfactual(
-    factual={'P_NBI': 5.0, 'Te': 3.2},
-    intervention={'P_NBI': 8.0}
+SafetyLimits(
+    q95_min=2.0, q95_warning=2.5,
+    betan_max=3.5, betan_warning=3.0,
+    li_max=2.0, li_warning=1.5,
+    max_rate_of_change=0.2,
 )
-# "What would Te have been if P_NBI had been 8.0 instead of 5.0?"
 ```
 
 ---
 
-### `fusionmind4.foundation` — Foundation Model (PF3)
+## Discovery Algorithms
 
-#### `DimensionlessTokenizer`
-
-```python
-from fusionmind4.foundation import DimensionlessTokenizer
-tokenizer = DimensionlessTokenizer()
-tokens = tokenizer.tokenize(plasma_state)  # Returns [βn, ν*, ρ*, q95, H98]
-consistency = tokenizer.cross_device_cv(multi_device_data)
-```
-
----
-
-### `fusionmind4.learning` — CausalShield-RL (PF7)
-
-#### `CausalRLHybrid`
-
-```python
-from fusionmind4.learning import CausalRLHybrid
-
-hybrid = CausalRLHybrid()
-hybrid.discover_causal_graph(data, interventional_data)
-hybrid.fit_world_model(data)
-hybrid.train(n_episodes=300)
-
-action = hybrid.act(observation)                  # Get action
-result = hybrid.act_with_explanation(observation)  # Action + explanation
-hybrid.online_update(new_data)                    # Online adaptation
-summary = hybrid.summary()                         # System status
-```
-
-#### `NeuralSCM`
-
-```python
-from fusionmind4.learning import NeuralSCM
-
-nscm = NeuralSCM(variable_names, dag)
-nscm.fit(data, epochs=100, lr=1e-3)
-prediction = nscm.predict(observation)
-intervention = nscm.do_intervention(observation, {'P_NBI': 8.0})
-jacobian = nscm.jacobian(observation)              # Sensitivity matrix
-nscm.update(new_data, epochs=10)                  # Online update
-```
+| Module | Algorithm | Description |
+|--------|-----------|-------------|
+| `discovery.notears` | NOTEARS | DAG learning with h(W)=tr(e^{W∘W})-d constraint |
+| `discovery.granger` | Granger Causality | Temporal causality (conditional, spectral, BIC lag) |
+| `discovery.temporal` | Temporal Granger | Selective conditioning (top-K confounders) |
+| `discovery.pc` | PC Algorithm | Constraint-based (stable variant + Meek R1-R4) |
+| `discovery.physics` | Physics Priors | Known tokamak relationships + PINN validation |
+| `discovery.interventional` | Interventional Scoring | do-calculus validation of edges |
 
 ---
 
-### `fusionmind4.utils` — Utilities
+## Copilot
 
-#### `FM3LitePhysicsEngine`
+**Module:** `fusionmind4.copilot`
 
-```python
-from fusionmind4.utils import FM3LitePhysicsEngine
-
-engine = FM3LitePhysicsEngine(n_samples=10000, seed=42, noise_level=0.03)
-data, interventional = engine.generate()
-# data: np.ndarray (n_samples, 14)
-# interventional: dict mapping variable names to intervention results
-```
-
-#### `PlasmaVariables`
+Natural language interface for causal queries (supports Croatian and English).
 
 ```python
-from fusionmind4.utils.plasma_vars import VARIABLE_NAMES, GROUND_TRUTH_EDGES, evaluate_dag
-f1, precision, recall, tp, fp, fn = evaluate_dag(discovered_dag)
+from fusionmind4.copilot import CausalCopilot
+
+copilot = CausalCopilot(dag, scm, var_names)
+response = copilot.query("What happens if I increase Ip by 10%?")
+response = copilot.query("Zašto je došlo do disrupcije?")
 ```
