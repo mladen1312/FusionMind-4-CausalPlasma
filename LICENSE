@@ -1,11 +1,57 @@
-Proprietary License
+Business Source License 1.1
 
-Copyright (c) 2026 Dr. Mladen Mester. All rights reserved.
+Parameters
 
-This software and associated documentation files (the "Software") are
-proprietary and confidential. Patent pending (PF1-PF6).
+Licensor:             Dr. Mladen Mester
+Licensed Work:        FusionMind 4.0 — Causal AI for Fusion Plasma Control
+                      The Licensed Work is (c) 2025-2026 Dr. Mladen Mester.
 
-No part of this Software may be reproduced, distributed, or transmitted
-in any form without the prior written permission of the copyright holder.
+Additional Use Grant: You may make use of the Licensed Work, provided that
+                      you may not use the Licensed Work for a Production Use.
+                      
+                      "Production Use" means use of the Licensed Work in a
+                      plasma control system, tokamak facility, reactor control
+                      room, or any commercial product that operates on plasma
+                      diagnostic data in real-time or near-real-time for the
+                      purpose of controlling or monitoring fusion plasma.
 
-For licensing inquiries, contact: [email]
+                      Research, academic, educational, and evaluation uses are
+                      permitted without a commercial license.
+
+Change Date:          2030-03-05
+
+Change License:       Apache License, Version 2.0
+
+For information about alternative licensing arrangements for the Licensed Work,
+please contact: mladen@fusionmind.ai
+
+-----------------------------------------------------------------------------
+
+Notice
+
+Business Source License 1.1 (BUSL-1.1)
+
+The text of this license can be found at:
+https://mariadb.com/bsl11/
+
+As stated above, the Licensed Work will be made available under the terms
+of the Apache License, Version 2.0 on the Change Date.
+
+-----------------------------------------------------------------------------
+
+Patent Notice
+
+This software implements methods covered by pending patent applications:
+  PF1: Causal Plasma Discovery Engine (CPDE)
+  PF2: Counterfactual Plasma Controller (CPC) 
+  PF3: Universal Plasma Foundation Model (UPFM)
+  PF4: Diffusion-Based 3D Plasma State Reconstruction (D3R)
+  PF5: Active Experiment Design Engine (AEDE)
+  PF6: Integrated Causal Control System
+  PF7: Causal RL Integration (CausalShield-RL)
+  PF8: LLM-Augmented Causal Plasma Reasoning (Causal Copilot)
+
+Use of the patented methods in commercial products requires a separate
+patent license regardless of the software license terms.
+
+Copyright (c) 2025-2026 Dr. Mladen Mester. All rights reserved.
