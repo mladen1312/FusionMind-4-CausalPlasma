@@ -27,13 +27,14 @@ OUT_DIR  := $(CPP_DIR)
 # Targets
 LIB_RT     := $(OUT_DIR)/libfusionmind_rt.so
 LIB_CAUSAL := $(OUT_DIR)/libfusionmind_causal.so
+LIB_STACK  := $(OUT_DIR)/libfusionmind_stack.so
 
-.PHONY: all rt causal bench test clean info
+.PHONY: all rt causal stack bench test test-all clean info
 
-all: rt causal
+all: rt causal stack
 	@echo ""
 	@echo "=== Build complete ==="
-	@ls -la $(LIB_RT) $(LIB_CAUSAL)
+	@ls -la $(LIB_RT) $(LIB_CAUSAL) $(LIB_STACK)
 
 rt: $(LIB_RT)
 
@@ -49,18 +50,33 @@ $(LIB_CAUSAL): $(CPP_DIR)/causal_kernels.cpp
 		-o $@ $<
 	@echo "Built: $@ (AVX-512 + OpenMP causal discovery)"
 
+stack: $(LIB_STACK)
+
+$(LIB_STACK): $(CPP_DIR)/stack_api.cpp $(CPP_DIR)/stack_engine.hpp
+	$(CXX) $(CXXFLAGS) $(SHARED) \
+		-o $@ $<
+	@echo "Built: $@ (4-layer stack: L0 realtime + L1 RL + L2 SCM + L3 safety)"
+
 bench: all
 	@echo ""
 	@echo "=== Running benchmarks ==="
-	python3 scripts/benchmark_cpp.py
+	python3 -c "from fusionmind4.realtime.stack_bindings import CppStack; \
+		s=CppStack(10,3); r=s.benchmark(10000,['var_0','var_1']); \
+		print('Stack P50: %(p50_ns).0fns  P95: %(p95_ns).0fns  Throughput: %(throughput_Mops).2f Mops' % r)"
 
 test: all
 	@echo ""
 	@echo "=== Running tests ==="
-	python3 -m pytest tests/test_cpp_engine.py tests/test_causal_kernels.py -v --tb=short
+	FM_SKIP_S3=1 python3 -m pytest tests/ -v --tb=short -q
+
+test-all: all
+	@echo ""
+	@echo "=== Running ALL tests (including real data download) ==="
+	python3 -m pytest tests/ -v --tb=short
 
 clean:
-	rm -f $(LIB_RT) $(LIB_CAUSAL)
+	rm -f $(LIB_RT) $(LIB_CAUSAL) $(LIB_STACK)
+	rm -f $(OUT_DIR)/*.so
 	@echo "Cleaned build artifacts"
 
 info:

@@ -131,20 +131,19 @@ class CppStack:
 
         # Load equations
         for j in range(self.n_vars):
-            if hasattr(scm, 'equations'):
-                eq = scm.equations.get(j, scm.linear_models.get(j, {}))
-            elif hasattr(scm, 'linear_models'):
-                eq = scm.linear_models.get(j, {})
-            else:
-                continue
+            eq = {}
+            if hasattr(scm, 'equations') and j in scm.equations:
+                eq = scm.equations[j]
+            elif hasattr(scm, 'linear_models') and j in scm.linear_models:
+                eq = scm.linear_models[j]
 
             parents = eq.get('parents', eq.get('pa', []))
             coefs = eq.get('coefs', eq.get('coef', []))
             intercept = eq.get('intercept', 0.0)
             r2 = scm.r2_scores.get(j, 0.0) if hasattr(scm, 'r2_scores') else 0.0
 
-            pa_arr = np.array(parents, dtype=np.int32)
-            co_arr = np.array(coefs, dtype=np.float32)
+            pa_arr = np.array(parents, dtype=np.int32) if parents else np.zeros(1, dtype=np.int32)
+            co_arr = np.array(coefs, dtype=np.float32) if coefs else np.zeros(1, dtype=np.float32)
 
             _lib.fm_stack_load_equation(
                 ctypes.c_void_p(self._ptr),

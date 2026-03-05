@@ -18,6 +18,9 @@ venv/
 .coverage
 htmlcov/
 
+# C++ build artifacts
+*.so
+
 # Data files (large)
 *.h5
 *.hdf5
