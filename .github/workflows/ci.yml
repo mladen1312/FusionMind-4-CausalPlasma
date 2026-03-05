@@ -29,10 +29,20 @@ jobs:
       - name: Compile C++ engines
         run: |
           cd fusionmind4/realtime/cpp
-          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_stack.so stack_api.cpp
-          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_rt.so fast_engine_api.cpp
-          g++ -O3 -march=native -shared -fPIC -std=c++17 -o libfusionmind_causal.so causal_kernels.cpp
+          # Stack engine (primary — no AVX-512, fully portable)
+          g++ -O3 -shared -fPIC -std=c++17 -o libfusionmind_stack.so stack_api.cpp
+          # ML prediction engine (portable)
+          g++ -O3 -shared -fPIC -std=c++17 -o libfusionmind_rt.so fast_engine_api.cpp
           ls -la *.so
+
+      - name: Compile AVX-512 kernels (optional)
+        continue-on-error: true
+        run: |
+          cd fusionmind4/realtime/cpp
+          # Causal kernels use AVX-512 — requires Intel/AMD Zen4+
+          g++ -O3 -mavx512f -shared -fPIC -std=c++17 -o libfusionmind_causal.so causal_kernels.cpp 2>/dev/null || \
+          g++ -O3 -shared -fPIC -std=c++17 -DFUSIONMIND_NO_AVX512 -o libfusionmind_causal.so causal_kernels.cpp 2>/dev/null || \
+          echo "AVX-512 kernels not available on this CPU (Python fallback will be used)"
 
       - name: Run tests
         env:
