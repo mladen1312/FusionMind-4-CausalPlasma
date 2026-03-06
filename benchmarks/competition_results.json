@@ -1,0 +1,11 @@
+{
+  "causal_auc": 0.882258064516129,
+  "causal_auc_std": 0.208189509842174,
+  "corr_auc": 0.882258064516129,
+  "corr_auc_std": 0.208189509842174,
+  "n_shots": 331,
+  "n_disrupted": 20,
+  "n_clean": 311,
+  "temporal_r2_overall": 0.702,
+  "edge_f1": 0.889
+}
