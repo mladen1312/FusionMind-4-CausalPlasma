@@ -1,7 +1,7 @@
 """
 FusionMind 4.0 — Causal AI for Fusion Plasma Control.
 
-The first application of Pearl's causal inference framework
+Applies Pearl's causal inference framework
 (do-calculus, structural causal models, counterfactual reasoning)
 to tokamak plasma physics.
 

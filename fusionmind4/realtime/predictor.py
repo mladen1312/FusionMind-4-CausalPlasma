@@ -7,8 +7,8 @@ Two parallel prediction channels running simultaneously:
 Channel A — Fast ML Predictor (< 1 ms):
   Random Forest / Gradient Boosted Trees on 0D plasma parameters.
   Trained on historical disruption database.  No causal reasoning
-  but extremely fast — matches KSTAR LSTM (AUC 0.88) and JET CNN
-  (AUC 0.92) class performance.
+  but extremely fast — targets performance comparable to FRNN (AUC 0.92 on DIII-D/JET)
+  and KSTAR disruption predictors.
 
 Channel B — Causal Predictor (< 5 ms):
   Uses discovered causal graph (CPDE) + SCM counterfactuals.
@@ -24,8 +24,8 @@ Fusion Arbitrator combines both:
   - Safety override: if EITHER predicts imminent disruption → mitigate
 
 Competitive targets:
-  KSTAR LSTM:  AUC 0.88, F1 0.91,  inference ~3.1 ms
-  JET CNN:     AUC 0.92, TPR 87.5%, inference ~5 ms
+  FRNN (Kates-Harbeck 2019, DIII-D/JET): AUC 0.92, TPR 87.5%
+  KSTAR predictors (various): AUC ~0.88–0.95
   DECAF:       Physics-based, real-time avoidance demonstrated
   FusionMind:  AUC 0.974 (C-Mod causal), + explainability
 

@@ -1,6 +1,6 @@
 # FusionMind 4.0 — Causal AI for Fusion Plasma Control
 
-> **The first application of Pearl's causal inference framework to real tokamak plasma data.**
+> **Pearl's do-calculus and structural causal models applied to real tokamak plasma data.**
 >
 > *Not another black-box RL controller. The only system that can tell you WHY.*
 
@@ -26,7 +26,7 @@ We proved this on real Alcator C-Mod data: electron density *correlates* +0.53 w
 
 **2. Regulators require explainability.**
 
-ITER costs $25B. The IAEA and EU AI Act require that every AI decision in a nuclear facility be **explainable**. DeepMind's RL is a black box — it cannot answer "WHY did you do that?" FusionMind can: *"I increased Ip by 50kA because the causal path li → q95 → stability shows q95 is dropping below safe threshold. Counterfactual: without this action, disruption in 200ms."*
+ITER costs $25B. The EU AI Act (Article 13) requires that high-risk AI systems provide clear explanations of their capabilities and limitations. While fusion is not yet explicitly categorized, any AI making safety-critical decisions in a nuclear-adjacent facility will face increasing regulatory scrutiny. DeepMind's RL is a black box — it cannot answer "WHY did you do that?" FusionMind can: *"I increased Ip by 50kA because the causal path li → q95 → stability shows q95 is dropping below safe threshold. Counterfactual: without this action, disruption in 200ms."*
 
 **3. RL fails on distribution shift.**
 
@@ -198,19 +198,22 @@ All results are **5-fold cross-validated** on real data from the FAIR-MAST archi
 
 ### Why Disruption AUC = 1.000 While Baseline = 0.922
 
-The causal model selects **only causally relevant features** for disruption prediction (parents and children of βN in the DAG), plus their temporal derivatives. The correlational baseline uses all features indiscriminately, including confounders that reduce predictive power. This is exactly the Simpson's Paradox effect we demonstrated on C-Mod data.
+The causal model selects **only causally relevant features** for disruption prediction (parents and children of βN in the DAG), plus their temporal derivatives. The correlational baseline uses all features indiscriminately, including confounders that reduce predictive power.
+
+**Important caveats:** The AUC=1.000 is measured on a small dataset (44 shots, 3,293 timepoints) using physics-based proxy labels (not true disruption labels). On such a small sample, perfect AUC likely reflects overfitting to the specific disruption proxy rather than generalizable performance. Published disruption predictors on larger datasets (FRNN on thousands of shots) typically achieve AUC 0.95–0.98. Our result should be considered preliminary until validated on larger multi-machine datasets with true disruption labels.
 
 ### Comparison with Existing Systems
 
 | System | Approach | Explainable? | Cross-device? | do-calculus? |
 |--------|----------|:------------:|:-------------:|:------------:|
-| DeepMind/CFS (TORAX) | RL + differentiable sim | ✗ | ✗ | ✗ |
-| KSTAR RL | Model-free RL | ✗ | ✗ | ✗ |
-| Princeton FRNN | Deep learning | ✗ | Limited | ✗ |
-| TokaMind | Foundation model | ✗ | Partial | ✗ |
-| **FusionMind 4.0** | **Causal inference (Pearl)** | **✓** | **✓** | **✓** |
+| DeepMind RL (Nature 2022) | RL for magnetic control (TCV) | ✗ | ✗ | ✗ |
+| FRNN (Kates-Harbeck 2019) | Deep learning (DIII-D, JET) | ✗ | Limited | ✗ |
+| KSTAR disruption predictors | Various ML (KSTAR) | ✗ | ✗ | ✗ |
+| TokaMind (IBM/UKAEA 2026) | Foundation model (MAST) | ✗ | Partial | ✗ |
+| EUROfusion causal projects | Transfer entropy, Granger | Partial | ✗ | ✗ |
+| **FusionMind 4.0** | **Pearl's do-calculus + SCM** | **✓** | **✓** | **✓** |
 
-**No existing system can answer "What would have happened if..." — only FusionMind can.**
+**Note:** Prior work has applied causal inference methods to fusion data (Murari et al. on JET using transfer entropy, Rossi et al. in EUROfusion, Granger causality on WEST). FusionMind's contribution is the integration of Pearl's full causal hierarchy — do-calculus interventions and three-step counterfactual reasoning — into a real-time control stack validated on real tokamak data.
 
 ---
 
@@ -218,11 +221,11 @@ The causal model selects **only causally relevant features** for disruption pred
 
 ### ITER ($25B) — Regulatory Compliance
 
-**Problem:** IAEA and EU AI Act require explainable AI decisions in nuclear facilities. Current RL controllers are black boxes.
+**Problem:** As fusion approaches commercial deployment, AI-controlled plasma will face increasing regulatory scrutiny. The EU AI Act (Article 13) mandates transparency for high-risk AI systems. Current RL controllers are black boxes that cannot explain their decisions.
 
 **Solution:** FusionMind MODE A wraps their existing controller. Every action gets a causal explanation: *"Approved because causal path Ip → q95 shows safety margin of 1.5. Counterfactual: without this action, disruption probability increases to 73% within 200ms via path li → q_axis → instability."*
 
-**Value:** The **only** path to regulatory approval for AI-controlled plasma. Without explainability, ITER cannot use AI for safety-critical decisions.
+**Value:** Provides the explainability layer that future regulators will require for AI-controlled nuclear-adjacent facilities.
 
 ### Commonwealth Fusion Systems ($2B) — Protecting SPARC
 
@@ -471,8 +474,22 @@ python benchmarks/realworld_benchmark.py
 ## Validated On Real Data
 
 - **FAIR-MAST** (UKAEA): 44 shots, 3,293 timepoints, 10 plasma variables. F1=85.7%, SCM R²=92.1%.
-- **Alcator C-Mod** (MIT PSFC): 2,333 discharges, 264K+ timepoints. Simpson's Paradox detected. AUC=0.974.
+- **Alcator C-Mod** (MIT PSFC): Analysis of density limit database (2,333 discharges, 264K+ timepoints). Simpson's Paradox detected in density-disruption relationship (r=+0.53 marginal, r=+0.02 conditioned on Ip). **Note:** The specific database was assembled from publicly available C-Mod data; the Simpson's Paradox finding requires independent replication.
 - **FM3-Lite** (synthetic): Full physics simulation. F1=79.2%, 84% recall, PINN 8/8 physics checks.
+
+---
+
+## Known Limitations
+
+**Small dataset.** Current validation uses 44 MAST discharges (3,293 timepoints). This is above the minimum for NOTEARS (n>200 per variable) but results should be considered preliminary. Multi-machine validation (JET, DIII-D, ASDEX-U) is needed.
+
+**AUC=1.000 caveat.** The disruption detection AUC uses physics-based proxy labels on a small dataset, not true disruption labels. This likely reflects overfitting to the proxy. Published disruption predictors on larger datasets achieve AUC 0.95–0.98.
+
+**C++ latency clarification.** Sub-microsecond latencies are for the **linear SCM** forward pass in C++ (simple matrix-vector operations), not the full GradientBoosting model. The nonlinear SCM (GradientBoosting with 100 estimators) runs in Python at ~1-2ms and is used for offline fitting. The C++ engine uses the linear coefficients extracted from the SCM.
+
+**Prior work exists.** Causal inference has been applied to fusion before: Murari et al. (transfer entropy on JET), Rossi et al. (EUROfusion causal detection project), Granger causality on WEST data. FusionMind's specific contribution is Pearl's full do-calculus and counterfactual framework integrated into a real-time control stack — not causal inference in fusion generally.
+
+**SCM R² for root nodes.** Variables identified as root nodes (no causal parents in DAG) have R²=0% by definition in the SCM. The cross-validated R² of 92.1% is computed only over non-root variables that have causal parents.
 
 ---
 
@@ -493,7 +510,7 @@ python benchmarks/realworld_benchmark.py
 
 **Dr. Mladen Mester** — Scientist & inventor, Croatia.
 
-FusionMind is the first system to apply Judea Pearl's causal inference framework (do-calculus, structural causal models, counterfactual reasoning) to tokamak plasma physics. Every existing fusion AI operates at Pearl's Level 1 (correlation). FusionMind operates at Levels 2–3 (intervention and counterfactual), enabling the only formally explainable AI control system for fusion reactors.
+FusionMind applies Judea Pearl's full causal hierarchy — do-calculus interventions, structural causal models, and three-step counterfactual reasoning — to tokamak plasma control. While prior work has applied causal methods like transfer entropy and Granger causality to fusion data, FusionMind integrates Pearl's complete framework (Levels 2–3) into a real-time control stack with sub-microsecond C++ inference, validated on real MAST tokamak data.
 
 ---
 

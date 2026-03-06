@@ -24,7 +24,7 @@ Architecture:
                  │  └─────────┘    └─────────┘    └────────┘  │
                  └─────────────────────────────────────────────┘
 
-What makes this unique (vs DeepMind TORAX-RL, KSTAR-RL, etc.):
+What makes this unique (vs DeepMind RL controller, KSTAR predictors, FRNN, etc.):
 1. RL policy is CONSTRAINED by causal graph — can't exploit spurious correlations
 2. Reward is shaped by do-calculus, not correlational metrics
 3. World model is a Neural SCM — every prediction is causally interpretable
