@@ -1,0 +1,74 @@
+{
+  "bootstrap": {
+    "n_resamples": 200,
+    "auc": {
+      "A": {
+        "mean": 0.9799,
+        "ci95": [
+          0.9466,
+          1.0
+        ]
+      },
+      "B": {
+        "mean": 0.9773,
+        "ci95": [
+          0.9348,
+          0.9994
+        ]
+      },
+      "F": {
+        "mean": 0.9805,
+        "ci95": [
+          0.9462,
+          0.9995
+        ]
+      }
+    },
+    "recall": {
+      "A": {
+        "mean": 0.862,
+        "ci95": [
+          0.6783,
+          1.0
+        ]
+      },
+      "B": {
+        "mean": 0.8522,
+        "ci95": [
+          0.6762,
+          1.0
+        ]
+      },
+      "F": {
+        "mean": 0.8611,
+        "ci95": [
+          0.6663,
+          1.0
+        ]
+      }
+    },
+    "A_B_overlap": true
+  },
+  "permutation_importance": {
+    "Ip": 0.098,
+    "wplasmd": 0.007,
+    "betat": 0.0015,
+    "elongation": 0.001,
+    "betap": 0.0002,
+    "betan": 0.0
+  },
+  "warning_time": {
+    "n_test": 17,
+    "n_detected": 0,
+    "mean_ms": 0,
+    "median_ms": 0,
+    "pct_gt_30ms": 0,
+    "pct_gt_50ms": 0,
+    "pct_gt_100ms": 0
+  },
+  "calibration": {
+    "brier_A": 0.0785,
+    "brier_B": 0.078
+  },
+  "edge_f1": 0.8889
+}
