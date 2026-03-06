@@ -1,0 +1,118 @@
+{
+  "label_type": "REAL_Ip_quench_gt40pct",
+  "n_disrupted_total": 83,
+  "n_clean_total": 249,
+  "n_test_disrupted": 19,
+  "n_test_clean": 48,
+  "n_test_tp": 5054,
+  "ablation": {
+    "A only": {
+      "auc": 0.9048,
+      "f1": 0.578,
+      "prec": 0.44,
+      "recall": 0.844
+    },
+    "B only": {
+      "auc": 0.8373,
+      "f1": 0.37,
+      "prec": 0.238,
+      "recall": 0.836
+    },
+    "C only": {
+      "auc": 0.9085,
+      "f1": 0.584,
+      "prec": 0.446,
+      "recall": 0.844
+    },
+    "A+B": {
+      "auc": 0.889,
+      "f1": 0.574,
+      "prec": 0.432,
+      "recall": 0.858
+    },
+    "A+C": {
+      "auc": 0.9078,
+      "f1": 0.579,
+      "prec": 0.441,
+      "recall": 0.842
+    },
+    "B+C": {
+      "auc": 0.8941,
+      "f1": 0.588,
+      "prec": 0.443,
+      "recall": 0.874
+    },
+    "A+B+C (FUSED)": {
+      "auc": 0.8932,
+      "f1": 0.584,
+      "prec": 0.44,
+      "recall": 0.868
+    }
+  },
+  "best_single_auc": 0.9085,
+  "fused_auc": 0.8932,
+  "fusion_lift_auc": -0.01529999999999998,
+  "disagreement": {
+    "recall_with": 0.8679,
+    "recall_without": 0.869,
+    "lift_pp": -0.1,
+    "auc_lift": -0.001,
+    "p_value": 0.7692,
+    "significant": false
+  },
+  "warning_time": {
+    "n_disrupted_test": 19,
+    "n_detected": 4,
+    "n_missed": 15,
+    "detection_rate": 0.211,
+    "mean_ms": 202.5,
+    "median_ms": 180.0,
+    "pct_gt_30ms": 75.0,
+    "pct_gt_100ms": 50.0,
+    "detected_shots": [
+      30336,
+      27074,
+      30055,
+      30322
+    ],
+    "missed_shots": [
+      30337,
+      27915,
+      30351,
+      27033,
+      30111,
+      30133,
+      30140,
+      30142,
+      27075,
+      27073,
+      27077,
+      27079,
+      30023,
+      30314,
+      29803
+    ]
+  },
+  "false_alarm": {
+    "rate_pct": 14.37,
+    "per_shot": 9.98,
+    "total_fa_tp": 479
+  },
+  "physics_violations": {
+    "total": 0,
+    "rate_pct": 0.0,
+    "per_var": {
+      "betan": 0,
+      "betap": 0,
+      "q_95": 0,
+      "q_axis": 0,
+      "elongation": 0,
+      "li": 0,
+      "wplasmd": 0,
+      "betat": 0,
+      "Ip": 0
+    }
+  },
+  "edge_f1": 0.8889,
+  "frnn_auc_reference": 0.92
+}
