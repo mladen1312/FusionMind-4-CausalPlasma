@@ -1,0 +1,76 @@
+{
+  "task": "disruption_warning_time_with_fast_diagnostics",
+  "dataset": "50 MAST shots (25 disrupted + 25 clean)",
+  "new_signals": [
+    "dalpha (D\u03b1 edge emission)",
+    "mhd_n2 (MHD n=2 amplitude)",
+    "ne_line (density)"
+  ],
+  "results": {
+    "physics_2sigma": {
+      "description": "2\u03c3 anomaly on li_rate, betap_rate, mhd_rate, dalpha_rate, ne_rate",
+      "detected": 21,
+      "total_disrupted": 25,
+      "detection_rate": 0.84,
+      "mean_warning_ms": 195,
+      "median_warning_ms": 200,
+      "pct_gt_30ms": 95,
+      "pct_gt_50ms": 90,
+      "pct_gt_100ms": 86,
+      "false_alarm_rate": 0.72,
+      "note": "High detection + long warning BUT high false alarm rate"
+    },
+    "physics_3sigma": {
+      "description": "3\u03c3 threshold \u2014 conservative",
+      "detected": 7,
+      "total_disrupted": 25,
+      "detection_rate": 0.28,
+      "mean_warning_ms": 180,
+      "median_warning_ms": 200,
+      "pct_gt_100ms": 71,
+      "note": "Low false alarm but misses 72% of disruptions"
+    },
+    "ml_efit_only_9var": {
+      "detected": 6,
+      "total_disrupted": 25,
+      "detection_rate": 0.24,
+      "mean_warning_ms": 30,
+      "note": "EFIT equilibrium params alone give almost no warning time"
+    },
+    "ml_efit_fast_12var": {
+      "detected": 4,
+      "total_disrupted": 25,
+      "detection_rate": 0.16,
+      "mean_warning_ms": 30,
+      "auc_timepoint": 0.9897,
+      "note": "ML with wrong labels (last 30%) does NOT help warning time"
+    },
+    "ml_confirmation": {
+      "detected": 2,
+      "total_disrupted": 25,
+      "detection_rate": 0.08,
+      "note": "ML confirms too few \u2014 suppresses true alarms because labels dont match physics"
+    }
+  },
+  "key_findings": {
+    "1_fast_diag_essential": "MHD n=2 and li_rate provide 100-700ms lead time that EFIT cannot see",
+    "2_physics_beats_ml": "Physics 2\u03c3 anomaly (84% det, 195ms) vastly outperforms ML (16% det, 30ms)",
+    "3_label_mismatch": "ML fails because pre-disruption labels (last 30%) dont correspond to physical precursor onset",
+    "4_false_alarm_tradeoff": "84% detection requires 72% false alarm \u2014 this is the physics-imposed limit with 0D+3fast signals",
+    "5_causal_value": "Causal model adds value NOT as ML filter but as EXPLANATION: when physics alarm fires, causal graph explains WHY"
+  },
+  "per_shot_signal_analysis": {
+    "mhd_n2": "100-630ms lead (MHD mode growth is earliest precursor)",
+    "mhd_rate": "100-630ms lead",
+    "li_rate": "590-740ms lead (internal inductance changes early)",
+    "betap_rate": "120-750ms lead",
+    "betan_rate": "40-600ms lead (late but strong)"
+  },
+  "honest_assessment": {
+    "what_works": "Fast diagnostics provide 100-700ms lead time that EFIT misses entirely",
+    "what_doesnt": "ML on timepoint labels doesn't improve over physics thresholds",
+    "vs_frnn": "FRNN achieves ~87% det @ ~300ms using 400x more data + 1D profiles \u2014 we are at 84% @ 195ms with 60x less data but higher FA",
+    "operational": "72% FA rate is not operational \u2014 needs locked mode + radiation + proper event-based labeling",
+    "value_proposition": "Physics anomaly detection + causal explanation is the right architecture for a safety advisory layer"
+  }
+}

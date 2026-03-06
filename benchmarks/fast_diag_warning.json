@@ -1,0 +1,11 @@
+{
+  "n_shots": 20,
+  "n_disrupted": 10,
+  "physics_detected": 1,
+  "physics_detection_rate": 0.1,
+  "mean_lead_ms": 490.0,
+  "median_lead_ms": 490.0,
+  "pct_gt_50ms": 100.0,
+  "pct_gt_100ms": 100.0,
+  "method": "composite_OR_of_li_betap_dalpha_mhd_rates_gt_2.5sigma"
+}
