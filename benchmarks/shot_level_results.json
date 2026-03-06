@@ -1,0 +1,36 @@
+{
+  "task": "shot_level_disruption_prediction",
+  "label_type": "REAL_Ip_quench",
+  "n_disrupted": 83,
+  "n_clean": 248,
+  "n_features": 71,
+  "cv": "stratified_5fold",
+  "results": {
+    "A (ML)":      {"auc_mean": 0.9670, "f1_mean": 0.808, "recall_mean": 0.878, "precision_mean": 0.753},
+    "B (Causal)":  {"auc_mean": 0.9668, "f1_mean": 0.775, "recall_mean": 0.878, "precision_mean": 0.701},
+    "C (Physics)": {"auc_mean": 0.9664, "f1_mean": 0.818, "recall_mean": 0.878, "precision_mean": 0.773},
+    "A+B":         {"auc_mean": 0.9692, "f1_mean": 0.797, "recall_mean": 0.902, "precision_mean": 0.721},
+    "A+C":         {"auc_mean": 0.9686, "f1_mean": 0.810, "recall_mean": 0.890, "precision_mean": 0.748},
+    "B+C":         {"auc_mean": 0.9677, "f1_mean": 0.800, "recall_mean": 0.890, "precision_mean": 0.737},
+    "FUSED":       {"auc_mean": 0.9687, "f1_mean": 0.806, "recall_mean": 0.902, "precision_mean": 0.738}
+  },
+  "best_single_auc": 0.9670,
+  "fused_auc": 0.9687,
+  "fusion_lift": 0.0017,
+  "frnn_reference_auc": 0.92,
+  "note": "FRNN tested on different dataset (DIII-D/JET) with different labels - not directly comparable",
+  "per_fold_auc": {
+    "A": [0.973, 0.963, 0.990, 0.934, 0.975],
+    "B": [0.969, 0.965, 0.982, 0.933, 0.985],
+    "C": [0.982, 0.959, 0.990, 0.920, 0.980],
+    "FUSED": [0.971, 0.972, 0.990, 0.929, 0.981]
+  },
+  "edge_f1": 0.8889,
+  "disagreement_analysis": {
+    "high_disagreement_shots": 166,
+    "A_correct_rate": 0.825,
+    "B_correct_rate": 0.795,
+    "FUSED_correct_rate": 0.789
+  },
+  "honest_assessment": "Fusion adds +0.002 AUC over best single track. Small but consistent. Real value is in recall (+2.4pp) and explainability, not AUC."
+}
