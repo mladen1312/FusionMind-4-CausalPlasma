@@ -1,0 +1,15 @@
+{
+  "best_threshold": 0.3,
+  "best_sustained": 2,
+  "detected": 5,
+  "missed": 14,
+  "detection_rate": 0.263,
+  "mean_warning_ms": 78.0,
+  "median_warning_ms": 40.0,
+  "pct_gt_30ms": 60.0,
+  "pct_gt_50ms": 40.0,
+  "pct_gt_100ms": 20.0,
+  "n_temporal_features": 120,
+  "auc_timepoint": 0.9125,
+  "improvement": "Sliding window rates + accelerations over 3/5/10 tp windows"
+}
