@@ -1,0 +1,70 @@
+{
+  "label_type": "REAL_Ip_quench",
+  "n_disrupted": 83,
+  "n_clean": 249,
+  "n_test_disrupted": 19,
+  "n_test_clean": 48,
+  "ablation": {
+    "A only": {
+      "auc": 0.9048,
+      "f1": 0.578,
+      "prec": 0.44,
+      "recall": 0.844
+    },
+    "B only": {
+      "auc": 0.8373,
+      "f1": 0.37,
+      "prec": 0.238,
+      "recall": 0.836
+    },
+    "C only": {
+      "auc": 0.9085,
+      "f1": 0.584,
+      "prec": 0.446,
+      "recall": 0.844
+    },
+    "A+B": {
+      "auc": 0.889,
+      "f1": 0.574,
+      "prec": 0.432,
+      "recall": 0.858
+    },
+    "A+C": {
+      "auc": 0.9078,
+      "f1": 0.579,
+      "prec": 0.441,
+      "recall": 0.842
+    },
+    "B+C": {
+      "auc": 0.8941,
+      "f1": 0.588,
+      "prec": 0.443,
+      "recall": 0.874
+    },
+    "A+B+C (FUSED)": {
+      "auc": 0.8932,
+      "f1": 0.584,
+      "prec": 0.44,
+      "recall": 0.868
+    }
+  },
+  "disagreement": {
+    "recall_with": 0.8679,
+    "recall_without": 0.869,
+    "lift_pp": -0.1,
+    "p_value": 0.7692
+  },
+  "warning_time": {
+    "n_detected": 4,
+    "n_missed": 15,
+    "mean_ms": 202.5,
+    "median_ms": 180.0,
+    "pct_gt_30ms": 75.0,
+    "pct_gt_50ms": 75.0
+  },
+  "false_alarm": {
+    "rate_pct": 14.37,
+    "per_shot": 9.98
+  },
+  "physics_violations": {
+    "total": 
