@@ -110,6 +110,7 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 | Phase 1 (causal check) | **83 ns** | DAG lookup + linear SCM |
 | Phase 2 (intervention) | **247 ns** | do-calculus propagation |
 | Phase 3 (counterfactual) | **705 ns** | Full 3-step reasoning |
+| **Overseer decision** | **12.9 ns** | 4-track selection + safety override |
 
 ---
 
@@ -134,6 +135,7 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 4. **Fusion lift is marginal.** Multi-track fusion adds +0.002 AUC. Overseer detects 46% vs Track A's 49%. Real value is explainability, not accuracy.
 5. **Fast-diagnostic dataset.** 70 shots have Dα + MHD + Mirnov (vs 331 with EFIT only).
 6. **Disagreement signal.** Inter-track disagreement does NOT significantly improve recall on real labels (p=0.77).
+7. **Bolometry missing.** FAIR-MAST `abm` group has 24 channels but no pre-processed radiated power signal — only raw calibration data. Radiation peaking (MARFE/detachment) is a strong disruption precursor that we cannot currently access.
 
 ---
 
