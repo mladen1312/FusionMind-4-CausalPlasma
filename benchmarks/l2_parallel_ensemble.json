@@ -1,0 +1,118 @@
+{
+  "model": "Parallel_5Branch_Ensemble",
+  "shots": 205,
+  "dis": 83,
+  "cln": 122,
+  "test_dis": 28,
+  "test_cln": 41,
+  "super_features": 96,
+  "gru_val_auc": 0.9964,
+  "gbt_test_auc": 0.94,
+  "results": {
+    "Super-GRU th=0.15/rec": {
+      "dr": 0.75,
+      "far": 0.293,
+      "mw": 155.2,
+      "det": 21,
+      "fa": 12
+    },
+    "Super-GRU th=0.20/rec": {
+      "dr": 0.75,
+      "far": 0.293,
+      "mw": 148.1,
+      "det": 21,
+      "fa": 12
+    },
+    "Super-GRU th=0.30/rec": {
+      "dr": 0.75,
+      "far": 0.244,
+      "mw": 136.7,
+      "det": 21,
+      "fa": 10
+    },
+    "Super-GRU th=0.40/rec": {
+      "dr": 0.643,
+      "far": 0.244,
+      "mw": 143.3,
+      "det": 18,
+      "fa": 10
+    },
+    "Super-GRU th=0.50/rec": {
+      "dr": 0.571,
+      "far": 0.171,
+      "mw": 145.6,
+      "det": 16,
+      "fa": 7
+    },
+    "Super-GBT th=0.15/rec": {
+      "dr": 0.643,
+      "far": 0.537,
+      "mw": 216.1,
+      "det": 18,
+      "fa": 22
+    },
+    "Super-GBT th=0.20/rec": {
+      "dr": 0.607,
+      "far": 0.341,
+      "mw": 203.5,
+      "det": 17,
+      "fa": 14
+    },
+    "Super-GBT th=0.30/rec": {
+      "dr": 0.536,
+      "far": 0.22,
+      "mw": 138.0,
+      "det": 15,
+      "fa": 9
+    },
+    "Super-GBT th=0.40/rec": {
+      "dr": 0.5,
+      "far": 0.171,
+      "mw": 119.3,
+      "det": 14,
+      "fa": 7
+    },
+    "Super-GBT th=0.50/rec": {
+      "dr": 0.464,
+      "far": 0.073,
+      "mw": 103.8,
+      "det": 13,
+      "fa": 3
+    },
+    "Ensemble(geo) th=0.15/rec": {
+      "dr": 0.679,
+      "far": 0.268,
+      "mw": 167.9,
+      "det": 19,
+      "fa": 11
+    },
+    "Ensemble(geo) th=0.20/rec": {
+      "dr": 0.607,
+      "far": 0.244,
+      "mw": 170.0,
+      "det": 17,
+      "fa": 10
+    },
+    "Ensemble(geo) th=0.30/rec": {
+      "dr": 0.571,
+      "far": 0.195,
+      "mw": 160.0,
+      "det": 16,
+      "fa": 8
+    },
+    "Ensemble(geo) th=0.40/rec": {
+      "dr": 0.536,
+      "far": 0.146,
+      "mw": 136.7,
+      "det": 15,
+      "fa": 6
+    },
+    "Ensemble(geo) th=0.50/rec": {
+      "dr": 0.5,
+      "far": 0.073,
+      "mw": 108.6,
+      "det": 14,
+      "fa": 3
+    }
+  }
+}
