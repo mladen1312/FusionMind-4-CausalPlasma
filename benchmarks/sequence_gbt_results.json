@@ -1,0 +1,225 @@
+{
+  "method": "sequence_gbt_temporal",
+  "n_seq_features": 149,
+  "held_out": true,
+  "test_dis": 20,
+  "test_cln": 20,
+  "pareto_points": [
+    {
+      "dr": 0.65,
+      "far": 0.65,
+      "mw": 213.8,
+      "th": 0.15,
+      "persist": 1,
+      "det": 13,
+      "fa": 13
+    },
+    {
+      "dr": 0.55,
+      "far": 0.5,
+      "mw": 170.9,
+      "th": 0.15,
+      "persist": 3,
+      "det": 11,
+      "fa": 10
+    },
+    {
+      "dr": 0.5,
+      "far": 0.45,
+      "mw": 220.0,
+      "th": 0.35,
+      "persist": 1,
+      "det": 10,
+      "fa": 9
+    },
+    {
+      "dr": 0.5,
+      "far": 0.35,
+      "mw": 212.0,
+      "th": 0.45,
+      "persist": 1,
+      "det": 10,
+      "fa": 7
+    },
+    {
+      "dr": 0.45,
+      "far": 0.3,
+      "mw": 152.2,
+      "th": 0.35,
+      "persist": 2,
+      "det": 9,
+      "fa": 6
+    }
+  ],
+  "all_results": {
+    "Baseline GBT_0.15_1": {
+      "dr": 0.85,
+      "far": 0.7,
+      "mw": 408.8,
+      "det": 17,
+      "fa": 14
+    },
+    "Baseline GBT_0.15_2": {
+      "dr": 0.7,
+      "far": 0.6,
+      "mw": 219.3,
+      "det": 14,
+      "fa": 12
+    },
+    "Baseline GBT_0.15_3": {
+      "dr": 0.7,
+      "far": 0.6,
+      "mw": 217.1,
+      "det": 14,
+      "fa": 12
+    },
+    "Baseline GBT_0.25_1": {
+      "dr": 0.7,
+      "far": 0.55,
+      "mw": 210.0,
+      "det": 14,
+      "fa": 11
+    },
+    "Baseline GBT_0.25_2": {
+      "dr": 0.65,
+      "far": 0.5,
+      "mw": 151.5,
+      "det": 13,
+      "fa": 10
+    },
+    "Baseline GBT_0.25_3": {
+      "dr": 0.6,
+      "far": 0.4,
+      "mw": 140.0,
+      "det": 12,
+      "fa": 8
+    },
+    "Baseline GBT_0.35_1": {
+      "dr": 0.4,
+      "far": 0.5,
+      "mw": 90.0,
+      "det": 8,
+      "fa": 10
+    },
+    "Baseline GBT_0.35_2": {
+      "dr": 0.4,
+      "far": 0.4,
+      "mw": 81.2,
+      "det": 8,
+      "fa": 8
+    },
+    "Baseline GBT_0.35_3": {
+      "dr": 0.4,
+      "far": 0.35,
+      "mw": 81.2,
+      "det": 8,
+      "fa": 7
+    },
+    "Baseline GBT_0.45_1": {
+      "dr": 0.3,
+      "far": 0.45,
+      "mw": 80.0,
+      "det": 6,
+      "fa": 9
+    },
+    "Baseline GBT_0.45_2": {
+      "dr": 0.25,
+      "far": 0.35,
+      "mw": 92.0,
+      "det": 5,
+      "fa": 7
+    },
+    "Baseline GBT_0.45_3": {
+      "dr": 0.2,
+      "far": 0.3,
+      "mw": 110.0,
+      "det": 4,
+      "fa": 6
+    },
+    "Sequence GBT_0.15_1": {
+      "dr": 0.65,
+      "far": 0.65,
+      "mw": 213.8,
+      "det": 13,
+      "fa": 13
+    },
+    "Sequence GBT_0.15_2": {
+      "dr": 0.55,
+      "far": 0.65,
+      "mw": 170.9,
+      "det": 11,
+      "fa": 13
+    },
+    "Sequence GBT_0.15_3": {
+      "dr": 0.55,
+      "far": 0.5,
+      "mw": 170.9,
+      "det": 11,
+      "fa": 10
+    },
+    "Sequence GBT_0.25_1": {
+      "dr": 0.5,
+      "far": 0.55,
+      "mw": 241.0,
+      "det": 10,
+      "fa": 11
+    },
+    "Sequence GBT_0.25_2": {
+      "dr": 0.45,
+      "far": 0.45,
+      "mw": 175.6,
+      "det": 9,
+      "fa": 9
+    },
+    "Sequence GBT_0.25_3": {
+      "dr": 0.45,
+      "far": 0.35,
+      "mw": 165.6,
+      "det": 9,
+      "fa": 7
+    },
+    "Sequence GBT_0.35_1": {
+      "dr": 0.5,
+      "far": 0.45,
+      "mw": 220.0,
+      "det": 10,
+      "fa": 9
+    },
+    "Sequence GBT_0.35_2": {
+      "dr": 0.45,
+      "far": 0.3,
+      "mw": 152.2,
+      "det": 9,
+      "fa": 6
+    },
+    "Sequence GBT_0.35_3": {
+      "dr": 0.45,
+      "far": 0.3,
+      "mw": 147.8,
+      "det": 9,
+      "fa": 6
+    },
+    "Sequence GBT_0.45_1": {
+      "dr": 0.5,
+      "far": 0.35,
+      "mw": 212.0,
+      "det": 10,
+      "fa": 7
+    },
+    "Sequence GBT_0.45_2": {
+      "dr": 0.4,
+      "far": 0.3,
+      "mw": 125.0,
+      "det": 8,
+      "fa": 6
+    },
+    "Sequence GBT_0.45_3": {
+      "dr": 0.35,
+      "far": 0.3,
+      "mw": 128.6,
+      "det": 7,
+      "fa": 6
+    }
+  },
+  "time_s": 45.8
+}
