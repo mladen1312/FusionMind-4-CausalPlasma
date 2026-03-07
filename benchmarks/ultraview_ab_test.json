@@ -1,0 +1,11 @@
+{
+  "test_dis": 28, "test_cln": 41,
+  "configs": {
+    "Proven(0D+SXR+MS)": {"nf":78,"auc":0.993,"det3":18,"fa3":16,"det5":16,"fa5":13},
+    "0D+SXR+Ultra(3sig)": {"nf":78,"auc":0.980,"det3":19,"fa3":15,"det5":18,"fa5":10},
+    "0D+Ultra(no SXR)": {"nf":62,"auc":0.973,"det3":17,"fa3":16,"det5":14,"fa5":13}
+  },
+  "ultra_signals": ["p_rad","li","betan"],
+  "ultra_views": ["sm3","sm7","sm15","velocity","acceleration","integral","energy_burst","diff_3_7","diff_7_15","dev_from_integral"],
+  "conclusion": "UltraView(3sig) marginally better than proven MultiScale at th=0.5 (64%@24% vs 57%@32%). Velocity+acceleration views add value. But ALL configs within ±10pp CI on 41 clean shots."
+}
