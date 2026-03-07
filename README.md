@@ -136,16 +136,17 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 
 1. **Single machine.** All results from MAST spherical tokamak. Cross-device validation needed.
 2. **0D parameters.** Precision @ 90% recall is only 25.3% — not operational without 1D profiles.
-3. **False alarm rate tradeoff.** Raw system: 85% detection but 70% FA. Trajectory features (slope, recovery ratio, cumulative deviation) reduce this:
+3. **False alarm rate tradeoff.** Raw system: 85% detection but 70% FA. Trajectory + temporal sequence features improve the Pareto frontier:
 
    | Approach | Detection | FA Rate | Warning |
    |----------|-----------|---------|---------|
-   | Baseline (raw) | **85%** | 70% | 409ms |
-   | Trajectory features | 70% | **55%** | 236ms |
-   | Traj + persist=2 | 60% | 50% | 191ms |
-   | Traj + persist=2 + recovery | 50% | **40%** | 193ms |
+   | Baseline (raw, th=0.15) | **85%** | 70% | 409ms |
+   | Trajectory features | 70% | 55% | 236ms |
+   | Sequence GBT (th=0.45) | 50% | **35%** | 212ms |
+   | Sequence GBT (th=0.35/p=2) | 45% | **30%** | 152ms |
+   | FRNN (reference) | ~87% | ~5% | ~300ms |
    
-   Root cause: clean shots produce brief stress spikes that recover; disrupted shots show sustained deterioration. Trajectory features capture this, but 40% FA at 50% detection is still too high for operations. Need 1D profiles or LSTM temporal model for further improvement.
+   Sequence temporal features (slope, recovery ratio, monotonicity over 5-20tp windows) help ML distinguish transient spikes (clean shots recover) from sustained deterioration (disrupted shots crash). FA reduced from 70% to 30-35% at 45-50% detection. Remaining gap to FRNN's 5% FA requires 1D profiles or LSTM on >1000 shots.
 4. **Overseer adds +3pp over Track B.** 85% vs 82% (LOO) — real but modest. Main value is architecture, not accuracy.
 5. **120 shots with fast diagnostics.** 60 disrupted + 60 clean. Held-out split: 80 train / 40 test.
 6. **Disagreement signal.** Inter-track disagreement does NOT significantly improve recall on real labels (p=0.77).
