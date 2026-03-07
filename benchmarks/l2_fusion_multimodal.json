@@ -1,0 +1,103 @@
+{
+  "model": "FusionGRU",
+  "shots": 205,
+  "dis": 83,
+  "cln": 122,
+  "test_dis": 28,
+  "test_cln": 41,
+  "features": 67,
+  "thomson_shots": 198,
+  "params": {
+    "sl": 30,
+    "hid": 128,
+    "drop": 0.4,
+    "layers": 2
+  },
+  "gru_val_auc": 0.9987,
+  "results": {
+    "Fusion th=0.15/p=2/raw": {
+      "dr": 0.571,
+      "far": 0.415,
+      "mw": 145.0,
+      "det": 16,
+      "fa": 17
+    },
+    "Fusion th=0.15/p=2/rec": {
+      "dr": 0.571,
+      "far": 0.39,
+      "mw": 128.1,
+      "det": 16,
+      "fa": 16
+    },
+    "Fusion th=0.20/p=2/raw": {
+      "dr": 0.571,
+      "far": 0.415,
+      "mw": 137.5,
+      "det": 16,
+      "fa": 17
+    },
+    "Fusion th=0.20/p=2/rec": {
+      "dr": 0.571,
+      "far": 0.39,
+      "mw": 121.2,
+      "det": 16,
+      "fa": 16
+    },
+    "Fusion th=0.25/p=2/raw": {
+      "dr": 0.571,
+      "far": 0.415,
+      "mw": 126.2,
+      "det": 16,
+      "fa": 17
+    },
+    "Fusion th=0.25/p=2/rec": {
+      "dr": 0.571,
+      "far": 0.39,
+      "mw": 116.9,
+      "det": 16,
+      "fa": 16
+    },
+    "Fusion th=0.30/p=2/raw": {
+      "dr": 0.571,
+      "far": 0.415,
+      "mw": 115.0,
+      "det": 16,
+      "fa": 17
+    },
+    "Fusion th=0.30/p=2/rec": {
+      "dr": 0.571,
+      "far": 0.366,
+      "mw": 115.0,
+      "det": 16,
+      "fa": 15
+    },
+    "Fusion th=0.40/p=2/raw": {
+      "dr": 0.536,
+      "far": 0.415,
+      "mw": 114.0,
+      "det": 15,
+      "fa": 17
+    },
+    "Fusion th=0.40/p=2/rec": {
+      "dr": 0.536,
+      "far": 0.341,
+      "mw": 114.0,
+      "det": 15,
+      "fa": 14
+    },
+    "Fusion th=0.50/p=2/raw": {
+      "dr": 0.5,
+      "far": 0.341,
+      "mw": 113.6,
+      "det": 14,
+      "fa": 14
+    },
+    "Fusion th=0.50/p=2/rec": {
+      "dr": 0.5,
+      "far": 0.293,
+      "mw": 113.6,
+      "det": 14,
+      "fa": 12
+    }
+  }
+}
