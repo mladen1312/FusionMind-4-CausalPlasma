@@ -1,0 +1,103 @@
+{
+  "dataset": "L2_205shots_ensemble",
+  "shots": 205,
+  "dis": 83,
+  "cln": 122,
+  "test_dis": 28,
+  "test_cln": 41,
+  "gru_val_auc": 0.977,
+  "params": {
+    "sl": 30,
+    "hid": 128,
+    "drop": 0.4,
+    "lr": 0.0009,
+    "pw": 1.5
+  },
+  "results": {
+    "GRU/rec/0.3": {
+      "det": 14,
+      "fa": 14,
+      "dr": 0.5,
+      "far": 0.341,
+      "mw": 196
+    },
+    "GRU/rec/0.5": {
+      "det": 14,
+      "fa": 11,
+      "dr": 0.5,
+      "far": 0.268,
+      "mw": 131
+    },
+    "SeqGBT/rec/0.3": {
+      "det": 15,
+      "fa": 17,
+      "dr": 0.536,
+      "far": 0.415,
+      "mw": 161
+    },
+    "SeqGBT/rec/0.5": {
+      "det": 12,
+      "fa": 5,
+      "dr": 0.429,
+      "far": 0.122,
+      "mw": 88
+    },
+    "Avg/rec/0.2": {
+      "det": 15,
+      "fa": 17,
+      "dr": 0.536,
+      "far": 0.415,
+      "mw": 211
+    },
+    "Avg/rec/0.3": {
+      "det": 14,
+      "fa": 13,
+      "dr": 0.5,
+      "far": 0.317,
+      "mw": 179
+    },
+    "Avg/rec/0.4": {
+      "det": 14,
+      "fa": 10,
+      "dr": 0.5,
+      "far": 0.244,
+      "mw": 136
+    },
+    "Avg/rec/0.5": {
+      "det": 13,
+      "fa": 8,
+      "dr": 0.464,
+      "far": 0.195,
+      "mw": 90
+    },
+    "Agree/rec/0.2": {
+      "det": 14,
+      "fa": 12,
+      "dr": 0.5,
+      "far": 0.293,
+      "mw": 172
+    }
+  },
+  "pareto": [
+    {
+      "fa_cap": "12%",
+      "det": "43% (12/28)",
+      "model": "SeqGBT/rec/th=0.5"
+    },
+    {
+      "fa_cap": "20%",
+      "det": "46% (13/28)",
+      "model": "Avg/rec/th=0.5"
+    },
+    {
+      "fa_cap": "24%",
+      "det": "50% (14/28)",
+      "model": "Avg/rec/th=0.4"
+    },
+    {
+      "fa_cap": "27%",
+      "det": "50% (14/28)",
+      "model": "GRU/rec/th=0.5"
+    }
+  ]
+}
