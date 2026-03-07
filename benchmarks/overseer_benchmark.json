@@ -1,0 +1,106 @@
+{
+  "n_shots": 50,
+  "n_disrupted": 25,
+  "label_type": "anomaly_onset_2sigma",
+  "methods": {
+    "A_only": {
+      "detected": 11,
+      "detection_rate": 0.44,
+      "mean_warning_ms": 199.1,
+      "median_warning_ms": 180.0,
+      "pct_gt_50ms": 90.9,
+      "pct_gt_100ms": 81.8,
+      "warning_times_ms": [
+        180,
+        210,
+        170,
+        50,
+        90,
+        270,
+        340,
+        150,
+        180,
+        350,
+        200
+      ]
+    },
+    "B_only": {
+      "detected": 11,
+      "detection_rate": 0.44,
+      "mean_warning_ms": 183.6,
+      "median_warning_ms": 150.0,
+      "pct_gt_50ms": 90.9,
+      "pct_gt_100ms": 72.7,
+      "warning_times_ms": [
+        160,
+        280,
+        100,
+        140,
+        70,
+        340,
+        150,
+        250,
+        20,
+        360,
+        150
+      ]
+    },
+    "D_only": {
+      "detected": 2,
+      "detection_rate": 0.08,
+      "mean_warning_ms": 30.0,
+      "median_warning_ms": 30.0,
+      "pct_gt_50ms": 0.0,
+      "pct_gt_100ms": 0.0,
+      "warning_times_ms": [
+        40,
+        20
+      ]
+    },
+    "overseer": {
+      "detected": 11,
+      "detection_rate": 0.44,
+      "mean_warning_ms": 181.8,
+      "median_warning_ms": 170.0,
+      "pct_gt_50ms": 90.9,
+      "pct_gt_100ms": 81.8,
+      "warning_times_ms": [
+        150,
+        170,
+        130,
+        40,
+        80,
+        190,
+        310,
+        150,
+        230,
+        350,
+        200
+      ]
+    },
+    "overseer_best": {
+      "detected": 14,
+      "detection_rate": 0.56,
+      "mean_warning_ms": 178.6,
+      "median_warning_ms": 175.0,
+      "pct_gt_50ms": 78.6,
+      "pct_gt_100ms": 64.3,
+      "warning_times_ms": [
+        180,
+        280,
+        170,
+        40,
+        50,
+        90,
+        270,
+        70,
+        340,
+        150,
+        250,
+        20,
+        390,
+        200
+      ]
+    }
+  }
+}
