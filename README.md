@@ -77,17 +77,16 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 
 **Key finding:** Track B uses only 6 causal parent variables but achieves the **same AUC** as Track A using all 71 features (bootstrap 95% CIs overlap: A [0.947–1.000], B [0.935–0.999]). The DAG correctly identifies disruption-relevant variables.
 
-### Warning Time with Dynamic Overseer (50 shots, Dα + MHD n=2 + density)
+### Warning Time with Dynamic Overseer (70 shots, Dα + MHD n=2 + density + Mirnov)
 
-| Method | Detected | Mean Warning | >100ms | Labels used |
-|--------|----------|-------------|--------|-------------|
-| Track A (ML) + anomaly labels | **11/25 (44%)** | **199ms** | 82% | Anomaly onset |
-| Dynamic Overseer (4 tracks) | **11/25 (44%)** | **182ms** | 82% | Anomaly onset |
-| Oracle (best track per-tp) | 14/25 (56%) | 179ms | 64% | Anomaly onset |
-| ML + last-30% labels (old) | 6/25 (24%) | 30ms | 0% | Last 30% ← wrong |
-| Physics 2σ (no ML) | 21/25 (84%) | 195ms | 86% | N/A (threshold) |
+| Method | Detected | Mean Warning | >100ms | 95% CI (det.) |
+|--------|----------|-------------|--------|---------------|
+| Track A (ML) + anomaly labels | **17/35 (49%)** | **216ms** | 94% | [31–66%] |
+| Track B (causal) + anomaly labels | **17/35 (49%)** | **194ms** | 88% | [34–66%] |
+| Dynamic Overseer (4 tracks) | 16/35 (46%) | 198ms | 75% | [31–62%] |
+| ML + last-30% labels (old) | ~6/25 (24%) | 30ms | 0% | — |
 
-**Key finding:** Warning time failure was caused by **wrong labels**, not wrong model. When labels are aligned to physical anomaly onset (2σ deviation in li_rate, βp_rate, MHD, Dα), ML achieves 199ms mean warning — comparable to published systems.
+**Key finding:** Warning time failure was caused by **wrong labels**, not wrong model. When labels are aligned to physical anomaly onset (2σ deviation in li_rate, βp_rate, MHD, Dα), ML achieves 216ms mean warning — comparable to published systems. The Overseer does NOT beat individual tracks on detection rate; its value is in the decision framework, safety overrides, and explainability.
 
 ### Permutation Importance (Causal Disruption Drivers)
 
@@ -131,9 +130,9 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 
 1. **Single machine.** All results from MAST spherical tokamak. Cross-device validation needed.
 2. **0D parameters.** Precision @ 90% recall is only 25.3% — not operational without 1D profiles.
-3. **Warning time detection rate.** 44% with ML / 84% with physics thresholds — below FRNN's ~87%. Needs locked mode + bolometry signals.
-4. **Fusion lift is marginal.** Multi-track fusion adds +0.002 AUC. Real value is explainability, not accuracy.
-5. **Small fast-diagnostic dataset.** Only 50 shots have Dα + MHD (vs 331 with EFIT only).
+3. **Warning time detection rate.** 49% with ML / 84% with physics thresholds — below FRNN's ~87%. Needs locked mode + bolometry signals. Bootstrap CI: [31–66%] (wide due to 35 disrupted shots).
+4. **Fusion lift is marginal.** Multi-track fusion adds +0.002 AUC. Overseer detects 46% vs Track A's 49%. Real value is explainability, not accuracy.
+5. **Fast-diagnostic dataset.** 70 shots have Dα + MHD + Mirnov (vs 331 with EFIT only).
 6. **Disagreement signal.** Inter-track disagreement does NOT significantly improve recall on real labels (p=0.77).
 
 ---
