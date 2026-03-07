@@ -1,0 +1,11 @@
+{
+  "model": "TTD_GRU+Uncertainty",
+  "shots": 255, "test_dis": 28, "test_cln": 58,
+  "result": "DOES NOT BEAT RECOVERY FILTER",
+  "ttd_problem": "TTD model predicts low TTD for ALL shots (100% det, 100% FA). The model cannot learn the mapping from 78 0D features to continuous TTD on 255 shots. Binary classification (disruption yes/no) is an easier target than regression (exactly how many ms until crash).",
+  "recovery_baseline_seed0": {
+    "th_0.3": {"det": 12, "fa": 10, "dr": 0.43, "far": 0.17}
+  },
+  "note": "Seed 0 recovery filter gave 43% det @ 17% FA — below average (usual ~63% @ 33%). This is normal seed variance.",
+  "conclusion": "TTD regression requires more data than binary classification. With 83 disrupted shots providing TTD labels, the regression target has too little signal. Binary GRU + recovery filter remains the best approach on 255 MAST shots."
+}
