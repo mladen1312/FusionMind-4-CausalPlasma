@@ -1,0 +1,60 @@
+{
+  "shots": 229,
+  "dis": 83,
+  "cln": 146,
+  "test_dis": 28,
+  "test_cln": 49,
+  "features": 78,
+  "model": "GRU(hid=96,sl=30)",
+  "n_seeds": 4,
+  "val_auc": {
+    "mean": 0.982,
+    "std": 0.0078
+  },
+  "th_0.3": {
+    "det_mean": 0.625,
+    "det_std": 0.018,
+    "fa_mean": 0.337,
+    "fa_std": 0.037
+  },
+  "th_0.5": {
+    "det_mean": 0.562,
+    "det_std": 0.03,
+    "fa_mean": 0.245,
+    "fa_std": 0.025
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "auc": 0.969,
+      "det3": 17,
+      "fa3": 16,
+      "det5": 15,
+      "fa5": 13
+    },
+    {
+      "seed": 1,
+      "auc": 0.987,
+      "det3": 18,
+      "fa3": 17,
+      "det5": 16,
+      "fa5": 12
+    },
+    {
+      "seed": 2,
+      "auc": 0.989,
+      "det3": 17,
+      "fa3": 14,
+      "det5": 15,
+      "fa5": 10
+    },
+    {
+      "seed": 3,
+      "auc": 0.983,
+      "det3": 18,
+      "fa3": 19,
+      "det5": 17,
+      "fa5": 13
+    }
+  ]
+}
