@@ -1,0 +1,36 @@
+{
+  "model": "DeviceAdaptive_GBT",
+  "approach": "dimensionless + device_token + C-Mod co-training",
+  "test_dis": 28,
+  "test_cln": 41,
+  "auto_detect": {
+    "MAST": "MAST",
+    "CMOD": "CMOD"
+  },
+  "results": {
+    "0.2": {
+      "dr": 0.714,
+      "far": 1.0,
+      "det": 20,
+      "fa": 41
+    },
+    "0.3": {
+      "dr": 0.714,
+      "far": 0.39,
+      "det": 20,
+      "fa": 16
+    },
+    "0.4": {
+      "dr": 0.607,
+      "far": 0.317,
+      "det": 17,
+      "fa": 13
+    },
+    "0.5": {
+      "dr": 0.464,
+      "far": 0.146,
+      "det": 13,
+      "fa": 6
+    }
+  }
+}
