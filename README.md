@@ -91,7 +91,7 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 2. **Overseer matches FRNN** at 85% detection [CI: 77–95%] with 478ms mean warning (longer than FRNN's ~300ms — we warn earlier).
 3. Optuna tuning unlocked the architecture: lower alarm threshold + high physics priority were the key parameters.
 
-**Caveats:** Optuna params optimized on same data (potential overfit). 120 shots vs FRNN's 20,000 (not directly comparable). MAST only. CIs wide [77–95%] due to 60 disrupted shots.
+**Caveats:** Optuna params optimized on train split (80 shots), tested on held-out (40 shots, never seen). CIs wide [70–100%] due to 20 test disruptions. **False alarm rate: 70%** — 14/20 clean shots trigger alarm. This is a fundamental limitation of 0D parameters + 4 fast signals: clean and disrupted shots look similar at individual timepoints. Persistence filtering (requiring sustained alarm) reduces FA only by killing detection. Operational deployment requires 1D profiles or LSTM temporal models to distinguish transient stress from pre-disruption stress.
 
 ### Permutation Importance (Causal Disruption Drivers)
 
@@ -136,9 +136,9 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 
 1. **Single machine.** All results from MAST spherical tokamak. Cross-device validation needed.
 2. **0D parameters.** Precision @ 90% recall is only 25.3% — not operational without 1D profiles.
-3. **Optuna overfit risk.** Hyperparameters optimized on same 120 shots used for evaluation. Held-out test set needed for unbiased estimate. CIs wide [77–95%].
-4. **Overseer adds +3pp over Track B.** 85% vs 82% — real but modest. Main value is architecture (safety override + multi-track decision logging), not prediction accuracy alone.
-5. **120 shots with fast diagnostics.** 60 disrupted + 60 clean. More data from MAST available but downloading is slow (~7s/shot).
+3. **False alarm rate: 70%.** 14/20 clean test shots trigger alarm. Persistence filtering (requiring sustained alarm) cannot reduce FA below 45% without dropping detection below 35%. Root cause: 0D parameters + 4 fast signals cannot discriminate "stressed but stable" from "stressed and about to disrupt" at individual timepoints. Need 1D profiles for spatial information.
+4. **Overseer adds +3pp over Track B.** 85% vs 82% (LOO) — real but modest. Main value is architecture, not accuracy.
+5. **120 shots with fast diagnostics.** 60 disrupted + 60 clean. Held-out split: 80 train / 40 test.
 6. **Disagreement signal.** Inter-track disagreement does NOT significantly improve recall on real labels (p=0.77).
 7. **Bolometry missing.** FAIR-MAST `abm` group has 24 channels but no pre-processed radiated power signal — only raw calibration data. Radiation peaking (MARFE/detachment) is a strong disruption precursor that we cannot currently access.
 
