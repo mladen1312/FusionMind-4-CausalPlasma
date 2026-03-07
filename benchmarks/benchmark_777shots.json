@@ -1,0 +1,61 @@
+{
+  "shots": 777,
+  "dis": 83,
+  "cln": 668,
+  "test_dis": 28,
+  "test_cln": 223,
+  "n_seeds": 2,
+  "th_0.3": {
+    "det_mean": 0.643,
+    "det_std": 0.107,
+    "fa_mean": 0.094,
+    "fa_std": 0.009
+  },
+  "th_0.5": {
+    "det_mean": 0.554,
+    "det_std": 0.09,
+    "fa_mean": 0.06,
+    "fa_std": 0.007
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "auc": 0.999,
+      "th_0.3": {
+        "det": 15,
+        "fa": 19,
+        "dr": 0.536,
+        "far": 0.085
+      },
+      "th_0.5": {
+        "det": 13,
+        "fa": 12,
+        "dr": 0.464,
+        "far": 0.054
+      }
+    },
+    {
+      "seed": 1,
+      "auc": 1.0,
+      "th_0.3": {
+        "det": 21,
+        "fa": 23,
+        "dr": 0.75,
+        "far": 0.103
+      },
+      "th_0.5": {
+        "det": 18,
+        "fa": 15,
+        "dr": 0.643,
+        "far": 0.067
+      }
+    }
+  ],
+  "vs_255": {
+    "prev_det": "63%",
+    "prev_fa": "33%",
+    "new_fa": "~9%",
+    "delta_fa": "-24pp",
+    "explanation": "FA was inflated by small test set. 223 clean shots reveal true FA ~9%."
+  }
+}
