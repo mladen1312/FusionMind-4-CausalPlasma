@@ -1,0 +1,86 @@
+{
+  "base_features": 94,
+  "mv_features": 124,
+  "mv_extra": 30,
+  "test_dis": 28,
+  "test_cln": 41,
+  "results": {
+    "Base(96) th=0.2/rec": {
+      "dr": 0.643,
+      "far": 0.366,
+      "mw": 139.4,
+      "det": 18,
+      "fa": 15
+    },
+    "Base(96) th=0.3/rec": {
+      "dr": 0.607,
+      "far": 0.366,
+      "mw": 132.9,
+      "det": 17,
+      "fa": 15
+    },
+    "Base(96) th=0.4/rec": {
+      "dr": 0.571,
+      "far": 0.366,
+      "mw": 125.6,
+      "det": 16,
+      "fa": 15
+    },
+    "Base(96) th=0.5/rec": {
+      "dr": 0.536,
+      "far": 0.317,
+      "mw": 100.0,
+      "det": 15,
+      "fa": 13
+    },
+    "MultiView(124) th=0.2/rec": {
+      "dr": 0.714,
+      "far": 0.195,
+      "mw": 171.5,
+      "det": 20,
+      "fa": 8
+    },
+    "MultiView(124) th=0.3/rec": {
+      "dr": 0.714,
+      "far": 0.146,
+      "mw": 156.0,
+      "det": 20,
+      "fa": 6
+    },
+    "MultiView(124) th=0.4/rec": {
+      "dr": 0.643,
+      "far": 0.122,
+      "mw": 151.1,
+      "det": 18,
+      "fa": 5
+    },
+    "MultiView(124) th=0.5/rec": {
+      "dr": 0.607,
+      "far": 0.122,
+      "mw": 142.4,
+      "det": 17,
+      "fa": 5
+    },
+    "Ens(B\u00d7MV) th=0.3/rec": {
+      "dr": 0.679,
+      "far": 0.146,
+      "mw": 131.6,
+      "det": 19,
+      "fa": 6
+    },
+    "Ens(B\u00d7MV) th=0.4/rec": {
+      "dr": 0.571,
+      "far": 0.122,
+      "mw": 136.9,
+      "det": 16,
+      "fa": 5
+    },
+    "Ens(B\u00d7MV) th=0.5/rec": {
+      "dr": 0.536,
+      "far": 0.122,
+      "mw": 121.3,
+      "det": 15,
+      "fa": 5
+    }
+  }
+}
