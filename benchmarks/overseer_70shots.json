@@ -1,0 +1,115 @@
+{
+  "n_shots": 70,
+  "n_disrupted": 35,
+  "n_clean": 35,
+  "n_vars": 13,
+  "vars": [
+    "betan",
+    "betap",
+    "q_95",
+    "q_axis",
+    "elongation",
+    "li",
+    "wplasmd",
+    "betat",
+    "Ip",
+    "dalpha",
+    "mhd_n2",
+    "ne_line",
+    "mirnov_rms"
+  ],
+  "label_type": "anomaly_onset_2sigma_with_mirnov",
+  "results": {
+    "A": {
+      "detected": 17,
+      "detection_rate": 0.486,
+      "mean_ms": 216.5,
+      "median_ms": 190.0,
+      "pct_gt_100": 94.1,
+      "warnings": [
+        150,
+        50,
+        250,
+        160,
+        190,
+        300,
+        160,
+        130,
+        350,
+        260,
+        240,
+        270,
+        130,
+        220,
+        140,
+        560,
+        120
+      ]
+    },
+    "B": {
+      "detected": 17,
+      "detection_rate": 0.486,
+      "mean_ms": 194.1,
+      "median_ms": 190.0,
+      "pct_gt_100": 88.2,
+      "warnings": [
+        150,
+        160,
+        70,
+        40,
+        130,
+        340,
+        160,
+        260,
+        330,
+        130,
+        120,
+        330,
+        190,
+        210,
+        230,
+        210,
+        240
+      ]
+    },
+    "D": {
+      "detected": 5,
+      "detection_rate": 0.143,
+      "mean_ms": 86.0,
+      "median_ms": 50.0,
+      "pct_gt_100": 20.0,
+      "warnings": [
+        230,
+        50,
+        80,
+        20,
+        50
+      ]
+    },
+    "overseer": {
+      "detected": 16,
+      "detection_rate": 0.457,
+      "mean_ms": 197.5,
+      "median_ms": 170.0,
+      "pct_gt_100": 75.0,
+      "warnings": [
+        150,
+        170,
+        90,
+        40,
+        50,
+        340,
+        150,
+        230,
+        280,
+        160,
+        180,
+        330,
+        170,
+        220,
+        30,
+        570
+      ]
+    }
+  }
+}
