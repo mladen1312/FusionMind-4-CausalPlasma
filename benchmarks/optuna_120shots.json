@@ -1,0 +1,32 @@
+{
+  "n_shots": 120,
+  "n_dis": 60,
+  "n_features": 56,
+  "optuna": {
+    "n_trials": 13,
+    "best_score": 1.3308,
+    "params": {
+      "sigma": 3.0,
+      "n_est": 80,
+      "depth": 5,
+      "lr": 0.15,
+      "warn_th": 0.15,
+      "sustained": 1,
+      "ov_dis": 0.1,
+      "ov_alarm": 0.25,
+      "ov_phys": 2.5
+    }
+  },
+  "overseer": {
+    "detected": 51,
+    "rate": 0.85,
+    "mean_ms": 480.8,
+    "median_ms": 380.0
+  },
+  "track_a": {
+    "detected": 44,
+    "rate": 0.733,
+    "mean_ms": 212.3
+  },
+  "time_s": 103.2
+}
