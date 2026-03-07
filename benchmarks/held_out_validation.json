@@ -1,0 +1,78 @@
+{
+  "method": "proper_held_out",
+  "train_shots": 80,
+  "train_dis": 40,
+  "test_shots": 40,
+  "test_dis": 20,
+  "test_cln": 20,
+  "optuna_params": {
+    "sigma": 2.5,
+    "n_est": 80,
+    "depth": 3,
+    "lr": 0.05,
+    "warn_th": 0.15,
+    "sus": 1,
+    "ov_dis": 0.2,
+    "ov_alarm": 0.25,
+    "ov_phys": 2.5
+  },
+  "optuna_tuned_on": "train_only",
+  "held_out_results": {
+    "overseer": {
+      "detected": 17,
+      "rate": 0.85,
+      "mean_ms": 421.8,
+      "ci95": [
+        70.0,
+        100.0
+      ],
+      "warnings": [
+        70,
+        260,
+        240,
+        310,
+        220,
+        70,
+        170,
+        180,
+        20,
+        800,
+        550,
+        380,
+        830,
+        550,
+        980,
+        970,
+        570
+      ]
+    },
+    "track_a": {
+      "detected": 17,
+      "rate": 0.85,
+      "mean_ms": 409.4,
+      "ci95": [
+        70.0,
+        100.0
+      ]
+    },
+    "track_b": {
+      "detected": 18,
+      "rate": 0.9,
+      "mean_ms": 475.6,
+      "ci95": [
+        75.0,
+        100.0
+      ]
+    }
+  },
+  "false_alarm": {
+    "count": 14,
+    "clean_shots": 20,
+    "rate": 0.7
+  },
+  "loo_comparison": {
+    "overseer_loo_rate": 0.85,
+    "overseer_loo_ms": 478
+  },
+  "time_s": 40.6
+}
