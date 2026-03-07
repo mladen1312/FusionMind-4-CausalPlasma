@@ -1,0 +1,76 @@
+{
+  "method": "trajectory_features_for_FA_reduction",
+  "n_trajectory_features": 111,
+  "held_out": true,
+  "test_dis": 20,
+  "test_cln": 20,
+  "results": {
+    "baseline (old features, persist=1)": {
+      "det": 17,
+      "dr": 0.85,
+      "fa": 14,
+      "far": 0.7,
+      "mw": 409
+    },
+    "trajectory features, persist=1": {
+      "det": 14,
+      "dr": 0.7,
+      "fa": 11,
+      "far": 0.55,
+      "mw": 236
+    },
+    "trajectory + persist=2": {
+      "det": 12,
+      "dr": 0.6,
+      "fa": 10,
+      "far": 0.5,
+      "mw": 191
+    },
+    "trajectory + persist=3": {
+      "det": 12,
+      "dr": 0.6,
+      "fa": 10,
+      "far": 0.5,
+      "mw": 191
+    },
+    "trajectory + recovery filter": {
+      "det": 12,
+      "dr": 0.6,
+      "fa": 11,
+      "far": 0.55,
+      "mw": 185
+    },
+    "trajectory + persist=2 + recovery": {
+      "det": 10,
+      "dr": 0.5,
+      "fa": 8,
+      "far": 0.4,
+      "mw": 193
+    }
+  },
+  "key_finding": "Trajectory features (slope, recovery ratio, cumulative deviation, monotonicity) reduce FA from 70% to 55% at 70% detection, or to 40% at 50% detection. Recovery filter suppresses transient spikes that clean shots produce.",
+  "tradeoff_curve": [
+    {
+      "approach": "baseline",
+      "detect": 85,
+      "fa": 70
+    },
+    {
+      "approach": "trajectory",
+      "detect": 70,
+      "fa": 55
+    },
+    {
+      "approach": "traj+persist2",
+      "detect": 60,
+      "fa": 50
+    },
+    {
+      "approach": "traj+persist2+recovery",
+      "detect": 50,
+      "fa": 40
+    }
+  ],
+  "root_cause_analysis": "Clean shots produce brief stress spikes that recover. Disrupted shots produce sustained deterioration. Trajectory features (slope, recovery ratio) capture this difference.",
+  "remaining_limitation": "40% FA at 50% detection is still high. Further improvement needs 1D profile gradients or LSTM temporal model."
+}

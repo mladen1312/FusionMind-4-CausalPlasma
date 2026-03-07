@@ -136,7 +136,16 @@ All results on **real MAST data** from FAIR-MAST open archive. No synthetic/prox
 
 1. **Single machine.** All results from MAST spherical tokamak. Cross-device validation needed.
 2. **0D parameters.** Precision @ 90% recall is only 25.3% — not operational without 1D profiles.
-3. **False alarm rate: 70%.** 14/20 clean test shots trigger alarm. Persistence filtering (requiring sustained alarm) cannot reduce FA below 45% without dropping detection below 35%. Root cause: 0D parameters + 4 fast signals cannot discriminate "stressed but stable" from "stressed and about to disrupt" at individual timepoints. Need 1D profiles for spatial information.
+3. **False alarm rate tradeoff.** Raw system: 85% detection but 70% FA. Trajectory features (slope, recovery ratio, cumulative deviation) reduce this:
+
+   | Approach | Detection | FA Rate | Warning |
+   |----------|-----------|---------|---------|
+   | Baseline (raw) | **85%** | 70% | 409ms |
+   | Trajectory features | 70% | **55%** | 236ms |
+   | Traj + persist=2 | 60% | 50% | 191ms |
+   | Traj + persist=2 + recovery | 50% | **40%** | 193ms |
+   
+   Root cause: clean shots produce brief stress spikes that recover; disrupted shots show sustained deterioration. Trajectory features capture this, but 40% FA at 50% detection is still too high for operations. Need 1D profiles or LSTM temporal model for further improvement.
 4. **Overseer adds +3pp over Track B.** 85% vs 82% (LOO) — real but modest. Main value is architecture, not accuracy.
 5. **120 shots with fast diagnostics.** 60 disrupted + 60 clean. Held-out split: 80 train / 40 test.
 6. **Disagreement signal.** Inter-track disagreement does NOT significantly improve recall on real labels (p=0.77).
