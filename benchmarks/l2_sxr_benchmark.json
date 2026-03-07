@@ -1,0 +1,55 @@
+{
+  "model": "GRU_0D+SXR",
+  "shots": 205,
+  "dis": 83,
+  "cln": 122,
+  "test_dis": 28,
+  "test_cln": 41,
+  "features": 55,
+  "sxr_coverage": 149,
+  "gru_val_auc": 0.994,
+  "results": {
+    "SXR+0D th=0.15/rec": {
+      "dr": 0.786,
+      "far": 0.39,
+      "mw": 178.2,
+      "det": 22,
+      "fa": 16
+    },
+    "SXR+0D th=0.20/rec": {
+      "dr": 0.75,
+      "far": 0.341,
+      "mw": 174.3,
+      "det": 21,
+      "fa": 14
+    },
+    "SXR+0D th=0.25/rec": {
+      "dr": 0.714,
+      "far": 0.341,
+      "mw": 171.0,
+      "det": 20,
+      "fa": 14
+    },
+    "SXR+0D th=0.30/rec": {
+      "dr": 0.714,
+      "far": 0.341,
+      "mw": 144.5,
+      "det": 20,
+      "fa": 14
+    },
+    "SXR+0D th=0.40/rec": {
+      "dr": 0.679,
+      "far": 0.268,
+      "mw": 134.7,
+      "det": 19,
+      "fa": 11
+    },
+    "SXR+0D th=0.50/rec": {
+      "dr": 0.571,
+      "far": 0.244,
+      "mw": 127.5,
+      "det": 16,
+      "fa": 10
+    }
+  }
+}
