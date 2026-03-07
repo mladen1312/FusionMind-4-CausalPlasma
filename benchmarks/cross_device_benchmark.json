@@ -1,0 +1,75 @@
+{
+  "causal": {
+    "MAST": {
+      "n_edges": 92,
+      "lambda": 0.3,
+      "top": [
+        [
+          "betan",
+          "betap",
+          -5.0
+        ],
+        [
+          "betan",
+          "q_95",
+          5.0
+        ],
+        [
+          "betan",
+          "q_axis",
+          5.0
+        ],
+        [
+          "betan",
+          "elongation",
+          -5.0
+        ],
+        [
+          "betan",
+          "li",
+          5.0
+        ]
+      ]
+    },
+    "CMod": {
+      "n_edges": 0,
+      "lambda": 0.3,
+      "top": []
+    }
+  },
+  "single": {
+    "MAST_full": 0.898,
+    "MAST_common": 0.687,
+    "CMod_full": 0.95,
+    "CMod_common": 0.99
+  },
+  "cross": {
+    "MAST_to_CMod": {
+      "auc": 0.541,
+      "tpr5": 0.0
+    },
+    "CMod_to_MAST": {
+      "auc": 0.418,
+      "tpr5": 0.036
+    },
+    "Combined_MAST": {
+      "auc": 0.699,
+      "tpr5": 0.0
+    },
+    "Combined_CMod": {
+      "auc": 0.984,
+      "tpr5": 0.909
+    }
+  },
+  "common_features": [
+    "elongation_znorm",
+    "Ip_znorm",
+    "density_znorm",
+    "+ rates"
+  ],
+  "n_shots": {
+    "MAST": 210,
+    "CMod_used": 300
+  },
+  "time_s": 22.7
+}
