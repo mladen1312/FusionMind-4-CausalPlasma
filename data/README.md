@@ -68,3 +68,44 @@ y_cmod = cmod['disruption_labels']  # per-timepoint labels
 
 MAST data: FAIR-MAST, UKAEA (https://fair-mast.readthedocs.io/)
 C-Mod data: Maris et al., "The Open Density Limit Database," MIT PSFC (2025)
+
+## ITPA Disruption Database (IDDB) — Access Guide
+
+The ITPA DDB contains ~3,500+ disruptions from 9 tokamaks: ADITYA, C-Mod, AUG, DIII-D, JET, JT-60U, TCV, MAST, NSTX.
+
+### How to access
+
+**MDSplus server:** `iddb.gat.com:9000`
+- Tree names: `DDB_D3D`, `DDB_JET`, `DDB_CMOD`, `DDB_MAST`, `DDB_NSTX`, etc.
+- Variables: see https://fusion.gat.com/itpa-ddb/MDSplusVar/
+- Shot list: https://fusion.gat.com/iter/disruptiondb/working/shots.php
+
+**SQL server:** `d3drdb.gat.com:8001`, database `DDB`
+- Variables: https://fusion.gat.com/itpa-ddb/SQLVar/
+
+**Requirements:**
+1. Install MDSplus: https://www.mdsplus.org/
+2. Request access via ITPA database guidelines (cite Eidietis et al., Nucl. Fusion 55, 063030, 2015)
+3. GA network access (VPN or institutional affiliation)
+
+**Key variables available:**
+- `\IPD` (plasma current), `\BETAND` (normalized beta), `\INTLID` (li)
+- `\Q95D` (q95), `\KAPPAD` (elongation), `\TIMED` (disruption time)
+- `\CAUSED` (disruption cause), `\VDE_E` (VDE indicator)
+- `\IPT` (Ip time trace through disruption)
+- Halo currents, impurity injection, radiation data
+
+### DisruptionBench Dataset (~30K shots)
+
+The DisruptionBench framework (MIT-PSFC/DisruptionBench) uses a processed version of data from C-Mod, DIII-D, and EAST originally published by Zhu et al. (Nuclear Communications, 2021). The benchmarking framework is open-source, but the underlying data requires MIT PSFC MDSplus server access via `disruption-py` (https://github.com/MIT-PSFC/disruption-py).
+
+**To request access:** Contact disruption-py@mit.edu or register at https://fusion.gat.com/itpa-ddb/ElecLog/
+
+### What we have (fully public, no registration needed)
+
+| Source | Shots | Access |
+|--------|-------|--------|
+| FAIR-MAST (this repo) | 210 | S3 anonymous (s3.echo.stfc.ac.uk) |
+| MIT Open Density Limit DB (this repo) | 2,333 | GitHub CC BY |
+| ITPA DDB | ~3,500+ | MDSplus + GA access required |
+| DisruptionBench | ~30,000 | MDSplus + MIT access required |
