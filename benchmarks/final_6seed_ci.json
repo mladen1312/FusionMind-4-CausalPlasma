@@ -1,0 +1,83 @@
+{
+  "model": "GRU_0D+SXR+MultiScale",
+  "features": 78,
+  "hidden": 96,
+  "seq_len": 30,
+  "shots": 205,
+  "dis": 83,
+  "cln": 122,
+  "test_dis": 28,
+  "test_cln": 41,
+  "n_seeds": 6,
+  "recovery_filter": true,
+  "th_0.3": {
+    "det_mean": 0.702,
+    "det_std": 0.045,
+    "det_median": 0.696,
+    "fa_mean": 0.337,
+    "fa_std": 0.026,
+    "fa_median": 0.329
+  },
+  "th_0.5": {
+    "det_mean": 0.619,
+    "det_std": 0.027,
+    "det_median": 0.625,
+    "fa_mean": 0.301,
+    "fa_std": 0.018,
+    "fa_median": 0.305
+  },
+  "val_auc": {
+    "mean": 0.9777,
+    "std": 0.0099
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "auc": 0.982,
+      "det3": 20,
+      "fa3": 14,
+      "det5": 18,
+      "fa5": 13
+    },
+    {
+      "seed": 1,
+      "auc": 0.957,
+      "det3": 18,
+      "fa3": 13,
+      "det5": 17,
+      "fa5": 12
+    },
+    {
+      "seed": 2,
+      "auc": 0.976,
+      "det3": 20,
+      "fa3": 14,
+      "det5": 18,
+      "fa5": 12
+    },
+    {
+      "seed": 3,
+      "auc": 0.979,
+      "det3": 19,
+      "fa3": 13,
+      "det5": 16,
+      "fa5": 11
+    },
+    {
+      "seed": 4,
+      "auc": 0.985,
+      "det3": 22,
+      "fa3": 16,
+      "det5": 18,
+      "fa5": 13
+    },
+    {
+      "seed": 5,
+      "auc": 0.987,
+      "det3": 19,
+      "fa3": 13,
+      "det5": 17,
+      "fa5": 13
+    }
+  ]
+}
