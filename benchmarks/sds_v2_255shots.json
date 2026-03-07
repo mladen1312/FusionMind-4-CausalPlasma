@@ -1,0 +1,23 @@
+{
+  "model": "GRU+SDS_v2",
+  "shots": 255,
+  "dis": 83,
+  "cln": 172,
+  "test_dis": 28,
+  "test_cln": 58,
+  "max_level2_shots": 255,
+  "remaining_clean_not_on_level2": 103,
+  "sds_result": "DOES NOT BEAT RECOVERY FILTER",
+  "diagnosis": {
+    "cusum_max_disrupted": 0.299,
+    "cusum_max_clean": 0.813,
+    "accel_max_disrupted": 0.319,
+    "accel_max_clean": 0.819,
+    "explanation": "SDS components (CUSUM of p_rad divergence, acceleration integral) are HIGHER in clean shots than disrupted. This is because MAST clean shots are high-performance with active heating (p_rad 4.1MW) while disrupted shots have lower p_rad (550kW). Any threshold that catches disrupted shots triggers on all clean shots (FA=98%)."
+  },
+  "recovery_baseline_4seed": {
+    "th_0.3": {"det_mean": "~65%", "fa_mean": "~33%"},
+    "th_0.5": {"det_mean": "~57%", "fa_mean": "~27%"}
+  },
+  "conclusion": "SDS adds no value over recovery filter on MAST. The physical signals it uses (p_rad dynamics, acceleration) are counter-indicative — higher in clean shots. Only P_GRU component discriminates, which is exactly the recovery filter."
+}

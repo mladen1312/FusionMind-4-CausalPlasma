@@ -72,3 +72,26 @@ test shots, detection is 62%±2%. The larger test set gives a more reliable esti
 1. **More MAST shots** — FAIR-MAST has 30K+; 500+ shots would halve CI
 2. **DIII-D/EAST access** — via disruption-py (email MIT PSFC); 5000+ shots with 1ms ECE
 3. **Paper submission** — all results reproducible from public data
+
+## Sustained Divergence Score (SDS) — Does NOT Work
+
+SDS_t = λ₁·CUSUM(Δ₃₋₇) + λ₂·∫|accel| + λ₃·E_burst + λ₄·P_GRU
+
+**Result: 93% detection but 98% false alarm** — worse than recovery filter.
+
+**Root cause**: CUSUM and acceleration components are HIGHER in clean shots:
+- Clean: cusum_max = 0.81, accel_max = 0.82
+- Disrupted: cusum_max = 0.30, accel_max = 0.32
+
+This is because MAST clean shots are high-performance (p_rad = 4.1 MW, active heating,
+lots of MHD activity). Disrupted shots have LOWER p_rad (550 kW) — they're
+lower-performance shots that fail. Any SDS threshold that catches disrupted
+also catches every clean shot.
+
+**Only the P_GRU component discriminates**, which reduces SDS to the recovery filter.
+
+## Data Completeness
+
+**255 shots is the MAXIMUM available on FAIR-MAST Level 2.**
+Remaining 103 clean shots from our disruption_info.json do NOT exist on Level 2
+(verified: 10/10 checked return "NOT on Level 2"). They are Level 1 only.
