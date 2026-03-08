@@ -1,0 +1,39 @@
+{
+  "shots": 2259,
+  "dis": 92,
+  "cln": 2142,
+  "test_dis": 28,
+  "test_cln": 726,
+  "auc": 0.936,
+  "note": "Preliminary \u2014 needs threshold tuning on this larger dataset",
+  "th_0.3": {
+    "det": 22,
+    "fa": 371,
+    "dr": 0.79,
+    "far": 0.51
+  },
+  "th_0.5_estimate": "Expected ~50% det @ ~20-30% FA based on scaling",
+  "scaling_table": {
+    "255_shots": {
+      "test_cln": 58,
+      "det": "63%",
+      "fa": "33%"
+    },
+    "777_shots": {
+      "test_cln": 223,
+      "det": "64%",
+      "fa": "9%"
+    },
+    "1126_shots": {
+      "test_cln": 339,
+      "det": "57%",
+      "fa": "17%"
+    },
+    "2259_shots": {
+      "test_cln": 726,
+      "det": "79%",
+      "fa": "51% (needs tuning)"
+    }
+  },
+  "class_imbalance": "1:23 (92d vs 2142c) \u2014 recovery filter needs recalibration"
+}
