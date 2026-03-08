@@ -1,0 +1,30 @@
+{
+  "result": "OPS-LOG DISRUPTED ARE A DIFFERENT POPULATION — MODEL FAILS",
+  "expert_disrupted": {
+    "count": 83, "range": "27000-30443", "median_length": 126,
+    "median_betaN": 0.91, "median_Ip": 421000,
+    "description": "High-performance H-mode shots, specific disruption types"
+  },
+  "ops_disrupted": {
+    "count": 361, "range": "11779-30335", "median_length": 71,
+    "median_betaN": 0.49, "median_Ip": 525000,
+    "description": "Diverse: VDE from FA cutout, locked modes, early termination, density limits, commissioning issues"
+  },
+  "benchmark_all_2584": {
+    "test": "148d+714c", "th0.3": "14% det @ 86% FA",
+    "note": "Model trained on expert-type disruptions cannot detect ops-type disruptions"
+  },
+  "benchmark_24000plus": {
+    "test": "83d+575c", "th0.3": "16% det @ 47% FA",
+    "note": "Still fails even restricting to same shot range"
+  },
+  "root_cause": [
+    "1. Expert disrupted (disruption-py) are a CURATED subset of specific disruption types",
+    "2. Ops disrupted include EVERYTHING operators called a disruption (FA trips, early VDEs, gas issues, etc.)",
+    "3. Our onset labeling (rate anomaly detection) doesn't work for diverse disruption types",
+    "4. The 83 expert disrupted are NOT representative of ALL MAST disruptions",
+    "5. This is a LABEL QUALITY problem, not a model problem"
+  ],
+  "implication": "Need disruption TIME from ops log (e.g. 'disrupted at 350ms') to create proper labels, not just disrupted/clean binary",
+  "next_step": "Parse disruption TIME from ops comments → proper onset labels → retrain"
+}
