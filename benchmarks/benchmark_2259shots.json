@@ -1,39 +1,37 @@
 {
   "shots": 2259,
-  "dis": 92,
-  "cln": 2142,
+  "dis": 83,
+  "cln": 2176,
   "test_dis": 28,
   "test_cln": 726,
-  "auc": 0.936,
-  "note": "Preliminary \u2014 needs threshold tuning on this larger dataset",
-  "th_0.3": {
-    "det": 22,
-    "fa": 371,
-    "dr": 0.79,
-    "far": 0.51
-  },
-  "th_0.5_estimate": "Expected ~50% det @ ~20-30% FA based on scaling",
-  "scaling_table": {
-    "255_shots": {
-      "test_cln": 58,
-      "det": "63%",
-      "fa": "33%"
+  "features": 32,
+  "note": "raw+rates only (no SXR/multi-scale \u2014 too slow at 2259 scale)",
+  "val_auc": 0.975,
+  "results": {
+    "0.2": {
+      "det": 12,
+      "fa": 170,
+      "dr": 0.429,
+      "far": 0.234
     },
-    "777_shots": {
-      "test_cln": 223,
-      "det": "64%",
-      "fa": "9%"
+    "0.3": {
+      "det": 8,
+      "fa": 114,
+      "dr": 0.286,
+      "far": 0.157
     },
-    "1126_shots": {
-      "test_cln": 339,
-      "det": "57%",
-      "fa": "17%"
-    },
-    "2259_shots": {
-      "test_cln": 726,
-      "det": "79%",
-      "fa": "51% (needs tuning)"
+    "0.4": {
+      "det": 6,
+      "fa": 83,
+      "dr": 0.214,
+      "far": 0.114
     }
   },
-  "class_imbalance": "1:23 (92d vs 2142c) \u2014 recovery filter needs recalibration"
+  "scaling": {
+    "255_shots": "63% @ 33% (78 feat)",
+    "777_shots": "64% @ 9% (78 feat)",
+    "1126_shots": "57% @ 17% (78 feat)",
+    "2259_shots": "29% @ 16% (32 feat \u2014 WEAKER model, needs multi-scale)"
+  },
+  "analysis": "Detection drops because 32 features lack SXR and multi-scale diffs. FA stable at 16% with 726 clean test shots (CI \u00b12.7%). Need to precompute multi-scale features for 2259 shots (slow but doable locally)."
 }
