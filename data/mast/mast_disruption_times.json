@@ -1,0 +1,3572 @@
+[
+  {
+    "sid": 11826,
+    "t_disruption": 0.3,
+    "comment": "GOOD SHOT, GOOD BEAM BUT DISRUPTS AT 300MS (FA TRIP)"
+  },
+  {
+    "sid": 11833,
+    "t_disruption": 0.24,
+    "comment": "GOOD SHOT, LARGE IRE AT 240MSEC"
+  },
+  {
+    "sid": 11848,
+    "t_disruption": 0.27,
+    "comment": "ZREF LOOKS LOW. NOTHING FROM I/B GAS, HENCE LOCKED MODE AT 270MS DUE TO FALLING DENSITY. XMA LOST CA"
+  },
+  {
+    "sid": 11852,
+    "t_disruption": 0.18,
+    "comment": "EARLY DISRUPTION AT 180MS. SLIDING JOINT ALARMS 149% MAX."
+  },
+  {
+    "sid": 11860,
+    "t_disruption": 0.22,
+    "comment": "DISRUPTION AT 220MS. NOT GOOD. SLIDING JOINT ALARMS 145% MAX. ALSO NOT GOOD. FA1 AND 2 UNSTABLE AND "
+  },
+  {
+    "sid": 11863,
+    "t_disruption": 0.25,
+    "comment": "DISRUPTED AT 250MS."
+  },
+  {
+    "sid": 12012,
+    "t_disruption": 0.28,
+    "comment": "'DISRUPTS AT 280MS. OXYGEN ABOUT SAME AS 12010'"
+  },
+  {
+    "sid": 12060,
+    "t_disruption": 0.095,
+    "comment": "'VDE AT 95MS SJA UP TO 155%'"
+  },
+  {
+    "sid": 12075,
+    "t_disruption": 0.25,
+    "comment": "'TERMINATES AT 250 MS'"
+  },
+  {
+    "sid": 12076,
+    "t_disruption": 0.22,
+    "comment": "'LOCK MODE 205MS DISRUPTION AT 220MS DENSITY STILL TOO HIGH'"
+  },
+  {
+    "sid": 12146,
+    "t_disruption": 0.26,
+    "comment": "'DISRUPTED AT 260MS (NORMAL FOR BEAM DRIVEN SAWTOOTHING L MODE). RADIAL CONTROL SLIGHTLY IMPROVED.'"
+  },
+  {
+    "sid": 12153,
+    "t_disruption": 0.177,
+    "comment": "'TERMINATED AT 177MS VERY SHORT PERIOD OF H-MODE JUST BEFORE END'"
+  },
+  {
+    "sid": 12228,
+    "t_disruption": 0.09,
+    "comment": "'NOT THE RIGHT THING TO DO - FATAL IRE AT 90MS'"
+  },
+  {
+    "sid": 12230,
+    "t_disruption": 0.41,
+    "comment": "'OK. DENSITY ROLLING DOWN FROM 360MS DISRUPT AT 410 - SLOWING NTM.'"
+  },
+  {
+    "sid": 12246,
+    "t_disruption": 0.286,
+    "comment": "'GOOD NBI PLASMA DISRUPTS AT 286MS (DUE TO RP INTERACTION) HOMER GOT EXPECTEDLY ROUT WRONG BUT STILL"
+  },
+  {
+    "sid": 12281,
+    "t_disruption": 0.13,
+    "comment": "'NBI TIMING PROBLEM - FIRED AT -100MS. ALSO LOOKS LIKE HSV MIS-TRIGGERED. GOOD OHMIC RAMP-UP BUT IRE"
+  },
+  {
+    "sid": 12369,
+    "t_disruption": 0.29,
+    "comment": "'STILL DISRUPTING AT 290MS DENSITY RATHER HIGH.'"
+  },
+  {
+    "sid": 12391,
+    "t_disruption": 0.27,
+    "comment": "'MANAGED TO MAKE A PLASMA. NASTY IRE AT 270MS DIDN T HELP. LOOKS LIKE P2 TRACKING DIVERTOR WAVEFORM "
+  },
+  {
+    "sid": 12406,
+    "t_disruption": 0.28,
+    "comment": "'DISRUPTS AT 280MS.'"
+  },
+  {
+    "sid": 12413,
+    "t_disruption": 0.176,
+    "comment": "'DECENT DURATION NO H-MODE IRE AT 176MS'"
+  },
+  {
+    "sid": 12416,
+    "t_disruption": 0.12,
+    "comment": "'SMALL IRE AT 120MS H-MODE AT 235MS'"
+  },
+  {
+    "sid": 12421,
+    "t_disruption": 0.144,
+    "comment": "'IRE AT 144MS LATE H-MODE AT 330MS REASONABLE CHANGEOVER'"
+  },
+  {
+    "sid": 12436,
+    "t_disruption": 0.21,
+    "comment": "'SHORT SHOT VDE AT 210MSEC'"
+  },
+  {
+    "sid": 12439,
+    "t_disruption": 0.18,
+    "comment": "'VDE AT 180MSEC LOST FAS'"
+  },
+  {
+    "sid": 12441,
+    "t_disruption": 0.26,
+    "comment": "'GOOD SHOT H-MODE STARTS 180MSEC ENDS WITH LOCKED MODE AT 260MSEC'"
+  },
+  {
+    "sid": 12442,
+    "t_disruption": 0.26,
+    "comment": "'SLIGHTLY WORSE H-MODE STILL ENDS WITH LOCKED MODE AT 260MSEC.'"
+  },
+  {
+    "sid": 12444,
+    "t_disruption": 0.32,
+    "comment": "'BEAM END SLIGHTLY EARLY PLASMA TERMINATED BY LOCKED MODE AT 320MSEC'"
+  },
+  {
+    "sid": 12449,
+    "t_disruption": 0.2,
+    "comment": "'GOOD BEAM. SIGNIFICANT DROP IN DENSITY DUE TO LOWERING GAS11-12. LATER H-MODE DUE TO IRE AT 200MS?'"
+  },
+  {
+    "sid": 12450,
+    "t_disruption": 0.2,
+    "comment": "'STILL GET IRE AT 200MS'"
+  },
+  {
+    "sid": 12460,
+    "t_disruption": 0.22,
+    "comment": "'10% DENSITY INCREASE ACHIEVED. LOCKED MODE AT 220 MS AND NOT ON SAWTOOTH'"
+  },
+  {
+    "sid": 12461,
+    "t_disruption": 0.23,
+    "comment": "'SJA 141%LOCKED MODE AT 230MS'"
+  },
+  {
+    "sid": 12465,
+    "t_disruption": 0.23,
+    "comment": "'DENSITY OK LOCKED MODE AT 230 MS'"
+  },
+  {
+    "sid": 12501,
+    "t_disruption": 0.33,
+    "comment": "'GOOD AGAIN BUT DISRUPTS AT 330MS'"
+  },
+  {
+    "sid": 12507,
+    "t_disruption": 0.2,
+    "comment": "'NBI IS A BIT TO EARLY DISRUPT AT 200MS DUE TO FA'"
+  },
+  {
+    "sid": 12519,
+    "t_disruption": 0.36,
+    "comment": "'STILL DISRUPTS AT 360MS (GAINED 20MS)'"
+  },
+  {
+    "sid": 12615,
+    "t_disruption": 0.12,
+    "comment": "'DISRUPTS AT 120 MS'"
+  },
+  {
+    "sid": 12623,
+    "t_disruption": 0.22,
+    "comment": "'DISRUPTION AT 220MS. DENSITY LOWER FROM 150MS. CORRELATION WITH FIELD COIL ENERGISATION?'"
+  },
+  {
+    "sid": 12713,
+    "t_disruption": 0.315,
+    "comment": "'SHORT BUT NON-ZERO BEAM.PLASMA TERMINATION AT 315MS. DENSITY ONLY MARGINALLY REDUCED. VLOOP REDUCED"
+  },
+  {
+    "sid": 12715,
+    "t_disruption": 0.33,
+    "comment": "'MUCH BETTER (FLATTER) DENSITY. NO HMODE. SUDDEN DISRUPTION AT 330MS. WEST GOING LOCKED MODE PERHAPS"
+  },
+  {
+    "sid": 12820,
+    "t_disruption": 0.25,
+    "comment": "'DOWNWARDS VDE AT 250MS CAUSED BY PLASMA STRICKING RP'"
+  },
+  {
+    "sid": 12848,
+    "t_disruption": 0.28,
+    "comment": "'DISRUPTED AT ~280 PROBABLY COS REP. PROBE'"
+  },
+  {
+    "sid": 12901,
+    "t_disruption": 0.26,
+    "comment": "'PLASMA DISRUPT AT ~260MS PROBABLY COS LOCKED MODE'"
+  },
+  {
+    "sid": 12930,
+    "t_disruption": 0.32,
+    "comment": "'DISRUPTION AT 320MS BEFORE BEAM ENDED.'"
+  },
+  {
+    "sid": 12963,
+    "t_disruption": 0.28,
+    "comment": "'MODE LOCKS AT 270MS THEN DISCHARGE TERMINATES AT 280MS'"
+  },
+  {
+    "sid": 12975,
+    "t_disruption": 0.188,
+    "comment": "'IRE AT 188MS'"
+  },
+  {
+    "sid": 12976,
+    "t_disruption": 0.189,
+    "comment": "'IRE AT 189MS'"
+  },
+  {
+    "sid": 12977,
+    "t_disruption": 0.285,
+    "comment": "'LOCKED MODE THEN DISRUPTS AT 285MS'"
+  },
+  {
+    "sid": 12980,
+    "t_disruption": 0.33,
+    "comment": "'LOCKED MODE THEN DISRUPTS AT 330MS. OTHERWISE GOOD COPY OF 12974 AT LOWER TF.'"
+  },
+  {
+    "sid": 13065,
+    "t_disruption": 0.3,
+    "comment": "'TERMINATED AT 300MS - FAST LOCKED MODE PERHAPS ?'"
+  },
+  {
+    "sid": 13073,
+    "t_disruption": 0.35,
+    "comment": "'DISRUPTS AT 350MS'"
+  },
+  {
+    "sid": 13079,
+    "t_disruption": 0.25,
+    "comment": "'UNCONTROLLED DENSITY AGAIN. STILL DISRUPTED AT 250MS'"
+  },
+  {
+    "sid": 13203,
+    "t_disruption": 0.08,
+    "comment": "'Tiny increase in Ip followed by disruption at 080. Better HSV picture.'"
+  },
+  {
+    "sid": 13230,
+    "t_disruption": 0.26,
+    "comment": "'good flat top density but disrupts at 260 ms due to locked mode'"
+  },
+  {
+    "sid": 13238,
+    "t_disruption": 0.27,
+    "comment": "'low flat top density -disrupts at 270 ms'"
+  },
+  {
+    "sid": 13267,
+    "t_disruption": 0.4,
+    "comment": "'good good beam. disrupted at 400. grazing c/c after 300. Clean startup hits constant radius at 60ms"
+  },
+  {
+    "sid": 13268,
+    "t_disruption": 0.38,
+    "comment": "'Acceptable density control not ringing. Curious event at 320 disrupt at 380.'"
+  },
+  {
+    "sid": 13289,
+    "t_disruption": 0.32,
+    "comment": "'disrupts  at 0.32s due to locked mode 20ms after first sawtooth  some pellet visible at 0.257s  ELM"
+  },
+  {
+    "sid": 13294,
+    "t_disruption": 0.33,
+    "comment": "'disrupts at 0.33s broken pellet at 0.253s L/H at 0.194 H/L at 0.310s'"
+  },
+  {
+    "sid": 13299,
+    "t_disruption": 0.32,
+    "comment": "'disrupts at 0.32s because of locked mode broken pellet at 0.259s'"
+  },
+  {
+    "sid": 13300,
+    "t_disruption": 0.302,
+    "comment": "'disrupts at 0.302 broken pellet at 0.263s L/H at 0.191s H/L at 0.305s'"
+  },
+  {
+    "sid": 13301,
+    "t_disruption": 0.33,
+    "comment": "'pellets broken up  :-( L/H at 0.19s H* from 0.235 (with grassy ELMs after pellets) H/L at 0.315s di"
+  },
+  {
+    "sid": 13390,
+    "t_disruption": 0.33,
+    "comment": "'good NBI  plasma disrupts at ~330ms (locked mode?)'"
+  },
+  {
+    "sid": 13391,
+    "t_disruption": 0.32,
+    "comment": "'good pelletbut shot still disrupts at 320ms HM did not set diagnostic up'"
+  },
+  {
+    "sid": 13420,
+    "t_disruption": 0.15,
+    "comment": "'vde at 150ms. Both Vloop and P6 working hard.  FAs stayed on.'"
+  },
+  {
+    "sid": 13432,
+    "t_disruption": 0.15,
+    "comment": "'Worse than 13431 large IRE at 150ms'"
+  },
+  {
+    "sid": 13521,
+    "t_disruption": 0.355,
+    "comment": "'Beam 10ms short density jumps by more than 50% between 0.03s and 0.04s shot disrupts at 0.355s due "
+  },
+  {
+    "sid": 13600,
+    "t_disruption": 0.18,
+    "comment": "'ok-ish. rapid density pumpout after 180ms associated with low frequency mode. Disrupt at 180ms. Des"
+  },
+  {
+    "sid": 13609,
+    "t_disruption": 0.23,
+    "comment": "'disruption at 230 ms'"
+  },
+  {
+    "sid": 13644,
+    "t_disruption": 0.34,
+    "comment": "'Prolonging O/B by 30ms not sufficient to compensate missing I/B (200ms would have been necessary!)."
+  },
+  {
+    "sid": 13715,
+    "t_disruption": 0.17,
+    "comment": "'IRE at 170ms made it worse.'"
+  },
+  {
+    "sid": 13731,
+    "t_disruption": 0.35,
+    "comment": "'sits long at the CC low density didn t change beam timing disrupts at 0.35s loose P2 at 0.169s shap"
+  },
+  {
+    "sid": 13736,
+    "t_disruption": 0.2,
+    "comment": "'disrupts at 0.2s because of loss of vertical control due to IRE 2 IREs one at 0.13 and the next at "
+  },
+  {
+    "sid": 13739,
+    "t_disruption": 0.3,
+    "comment": "'good shot olthough disrupts at 0.3s'"
+  },
+  {
+    "sid": 13740,
+    "t_disruption": 0.12,
+    "comment": "'Density too high disrupts at 120 ms.'"
+  },
+  {
+    "sid": 13798,
+    "t_disruption": 0.3,
+    "comment": "'Terminates at 300ms. Runs out of LV even earlier (280ms) FAs trip (295ms).Rout still not right for "
+  },
+  {
+    "sid": 13801,
+    "t_disruption": 0.26,
+    "comment": "'Disrupts at 260ms (RP interaction)'"
+  },
+  {
+    "sid": 13832,
+    "t_disruption": 0.12,
+    "comment": "'probe enters plasma at about 0.200. No xcm data on probe position etc.density about 10% low early i"
+  },
+  {
+    "sid": 13834,
+    "t_disruption": 0.28,
+    "comment": "'early IRE now absent. Terminated at 280ms preceded by SXR collapse.  Likely excessive probe interac"
+  },
+  {
+    "sid": 13837,
+    "t_disruption": 0.25,
+    "comment": "'sawtoothing from 180 sxr building from 220 (C accumulation?) disrupt at 250 probably excessive prob"
+  },
+  {
+    "sid": 13894,
+    "t_disruption": 0.29,
+    "comment": "'good lm sets in at 280ms disrupt at 290. density slightly low wrt 13884'"
+  },
+  {
+    "sid": 13904,
+    "t_disruption": 0.26,
+    "comment": "'disrupt at 260ms. HSV wrong shot. probe too deep probably. very weird Ruby TS profile'"
+  },
+  {
+    "sid": 13987,
+    "t_disruption": 0.19,
+    "comment": "'doesn t separate from the CC disrupts at 190ms. Ropey dI/dt beccause I get more initial current les"
+  },
+  {
+    "sid": 13989,
+    "t_disruption": 0.2,
+    "comment": "'only touches the CC briefly VDE at 200ms good beams'"
+  },
+  {
+    "sid": 13993,
+    "t_disruption": 0.25,
+    "comment": "'survived switching but had IRE at 0.19s touches CC after IRE beam short disrupts at 0.25'"
+  },
+  {
+    "sid": 14161,
+    "t_disruption": 0.1,
+    "comment": "'_Still_ VDE at 100 ms'"
+  },
+  {
+    "sid": 14171,
+    "t_disruption": 0.32,
+    "comment": "'good beam good plasma ELMs visibly interacting with RP. Disrupts at 320ms possibly due to large saw"
+  },
+  {
+    "sid": 14181,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 300ms after earlier  first event'"
+  },
+  {
+    "sid": 14187,
+    "t_disruption": 0.2,
+    "comment": "'disrupts at 200ms. RP interaction?'"
+  },
+  {
+    "sid": 14209,
+    "t_disruption": 0.29,
+    "comment": "'Good flat top density as expected. disruption at 290ms. instable plasma with big oscilations of FA1"
+  },
+  {
+    "sid": 14317,
+    "t_disruption": 0.31,
+    "comment": "'ANE_DENSITY loopy (real-time measurement also wrong at start but gives 8.5e19 at end which is corre"
+  },
+  {
+    "sid": 14372,
+    "t_disruption": 0.24,
+    "comment": "'Got high speed video. Disrupts at 240ms. Looks like a rotating mode slows and locks'"
+  },
+  {
+    "sid": 14402,
+    "t_disruption": 0.28,
+    "comment": "'OK copy of 13946. Density on target. Disrupt at 0.280.Grazing the c/c0.150-0.200'"
+  },
+  {
+    "sid": 14420,
+    "t_disruption": 0.24,
+    "comment": "'Better control but terminates early - FA2 tripped by IRE at 240ms. Bad hand over to density feedbac"
+  },
+  {
+    "sid": 14433,
+    "t_disruption": 0.111,
+    "comment": "'VDE at 0.111s gas flow is slightly less then 14275 but density is similar FA cut out at 0.111s slig"
+  },
+  {
+    "sid": 14487,
+    "t_disruption": 0.28,
+    "comment": "'Not so good. VDE at 280ms.'"
+  },
+  {
+    "sid": 14504,
+    "t_disruption": 0.37,
+    "comment": "'good shot terminates at 370ms together with NBI  H-mode from 280ms but no sawtooth no ELMs'"
+  },
+  {
+    "sid": 14518,
+    "t_disruption": 0.24,
+    "comment": "'IRE at 180ms disruption at 240.'"
+  },
+  {
+    "sid": 14531,
+    "t_disruption": 0.27,
+    "comment": "'good shot but locked mode at 270 ms and we loose Hmode  probably due to too long impurity injection"
+  },
+  {
+    "sid": 14547,
+    "t_disruption": 0.34,
+    "comment": "'Density tracking until 0.260 but LH transition delayed hence density doesn t take off. No Elms no s"
+  },
+  {
+    "sid": 14569,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 300 ms - FAs cut out'"
+  },
+  {
+    "sid": 14601,
+    "t_disruption": 0.2,
+    "comment": "'Worse disrupts at 200ms'"
+  },
+  {
+    "sid": 14949,
+    "t_disruption": 0.54,
+    "comment": "'long plasma shot disrupts at 540ms. No NBI.'"
+  },
+  {
+    "sid": 15007,
+    "t_disruption": 0.4,
+    "comment": "'OK shot. Density overshot target so gas was off after 0.200 started falling after 0.300 (unlike 150"
+  },
+  {
+    "sid": 15056,
+    "t_disruption": 0.23,
+    "comment": "'Almost OK. FA trip - IRE at 230ms'"
+  },
+  {
+    "sid": 15057,
+    "t_disruption": 0.22,
+    "comment": "'Still insufficient IDiv Large IRE at 220msec.'"
+  },
+  {
+    "sid": 15059,
+    "t_disruption": 0.2,
+    "comment": "'IRE at 200msec'"
+  },
+  {
+    "sid": 15061,
+    "t_disruption": 0.26,
+    "comment": "'IRE at 260msec.'"
+  },
+  {
+    "sid": 15086,
+    "t_disruption": 0.18,
+    "comment": "'Early termination at 180ms.'"
+  },
+  {
+    "sid": 15087,
+    "t_disruption": 0.2,
+    "comment": "'Early termination at 200ms.'"
+  },
+  {
+    "sid": 15109,
+    "t_disruption": 0.17,
+    "comment": "'disrupts at 0.17s initial density still too high but tracks density from 15092 well from 0.1s both "
+  },
+  {
+    "sid": 15210,
+    "t_disruption": 0.319,
+    "comment": "'density flat top there (thanks to Andy). filamentary structure during disruption in IR on upper div"
+  },
+  {
+    "sid": 15259,
+    "t_disruption": 0.18,
+    "comment": "'OK but IRE at 180ms.'"
+  },
+  {
+    "sid": 15277,
+    "t_disruption": 0.2,
+    "comment": "'Disrupted at 200 ms a la 15273 (FAs cut out just before)'"
+  },
+  {
+    "sid": 15281,
+    "t_disruption": 0.2,
+    "comment": "'Disrupts at 200 ms again'"
+  },
+  {
+    "sid": 15287,
+    "t_disruption": 0.246,
+    "comment": "':-) nice one disrupts at 0.246 asm_out rating quite high though'"
+  },
+  {
+    "sid": 15288,
+    "t_disruption": 0.242,
+    "comment": "'VDE at 0.242s :-) a bit faster dRsep ~ -5 mm a bit on the low side before VDE IR camera saturates'"
+  },
+  {
+    "sid": 15289,
+    "t_disruption": 0.245,
+    "comment": "'VDE at 0.245 :-) nice dRsep closer to 0 IR camera locally saturated'"
+  },
+  {
+    "sid": 15293,
+    "t_disruption": 0.25,
+    "comment": "'good shot VDE at 0.25s :-) IR camera data OK'"
+  },
+  {
+    "sid": 15327,
+    "t_disruption": 0.168,
+    "comment": "'Loose FAs at 0.15s VDE at 0.168s'"
+  },
+  {
+    "sid": 15331,
+    "t_disruption": 0.191,
+    "comment": "'VDE at 0.191 loose FAs at 0.176'"
+  },
+  {
+    "sid": 15334,
+    "t_disruption": 0.2,
+    "comment": "'VDE at 0.2s FAs cut out at 0.186s HFS Helios works if one uses the right waveform :-)'"
+  },
+  {
+    "sid": 15335,
+    "t_disruption": 0.231,
+    "comment": "'a bit longer but still VDE at 0.231s FAs cut out at 0.216s'"
+  },
+  {
+    "sid": 15339,
+    "t_disruption": 0.2,
+    "comment": "'Large IRE at 200msec'"
+  },
+  {
+    "sid": 15341,
+    "t_disruption": 0.21,
+    "comment": "'IRE at 210ms'"
+  },
+  {
+    "sid": 15360,
+    "t_disruption": 0.2,
+    "comment": "'good full length shot - IRE at 200 ms drops density a lot - slightly underdense in period up to IRE"
+  },
+  {
+    "sid": 15442,
+    "t_disruption": 0.2,
+    "comment": "'Good long shot 430ms (15357 ended at 100ms). IRE at 200msec. Wobble in plasma at 300ms (last point "
+  },
+  {
+    "sid": 15447,
+    "t_disruption": 0.2,
+    "comment": "'P2 reversal. IRE at 200ms.'"
+  },
+  {
+    "sid": 15448,
+    "t_disruption": 0.13,
+    "comment": "'Getting there! Kept of CC from 80-180ms (apart from small period of interaction during IRE at 130ms"
+  },
+  {
+    "sid": 15450,
+    "t_disruption": 0.15,
+    "comment": "'Still have small IRE at ~150ms. IDIV didn t increase as much as we would like.'"
+  },
+  {
+    "sid": 15521,
+    "t_disruption": 0.33,
+    "comment": "'density falling disrupts at 0.33'"
+  },
+  {
+    "sid": 15524,
+    "t_disruption": 0.12,
+    "comment": "'disrupts at 0.12 before any changes'"
+  },
+  {
+    "sid": 15527,
+    "t_disruption": 0.25,
+    "comment": "'disrupts at 0.25'"
+  },
+  {
+    "sid": 15528,
+    "t_disruption": 0.27,
+    "comment": "'disrupts at 0.27'"
+  },
+  {
+    "sid": 15530,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 0.3'"
+  },
+  {
+    "sid": 15531,
+    "t_disruption": 0.25,
+    "comment": "'disrupts at 0.25 (in fast camera s window)'"
+  },
+  {
+    "sid": 15532,
+    "t_disruption": 0.27,
+    "comment": "'disrupts at 0.27'"
+  },
+  {
+    "sid": 15555,
+    "t_disruption": 0.6,
+    "comment": "'Plasma rolled off slowly but disrupted at 600ms.'"
+  },
+  {
+    "sid": 15628,
+    "t_disruption": 0.406,
+    "comment": "'Sudden lower VDE at 406 ms.Beam continues until 250 ms.abs(Z0) closer to 0.More H-mody.'"
+  },
+  {
+    "sid": 15629,
+    "t_disruption": 0.42,
+    "comment": "'Beam didn t fire.Disrupts at 420 ms.An oddity - just as the plasma is being pushed into the lower d"
+  },
+  {
+    "sid": 15681,
+    "t_disruption": 0.2,
+    "comment": "'No H_mode. IRE at 200ms. P6 still not healthy.'"
+  },
+  {
+    "sid": 15688,
+    "t_disruption": 0.31,
+    "comment": "'last pellet triggered disruption at  310ms'"
+  },
+  {
+    "sid": 15720,
+    "t_disruption": 0.47,
+    "comment": "'still not as good as 15717 disrupts at 470ms'"
+  },
+  {
+    "sid": 15758,
+    "t_disruption": 0.28,
+    "comment": "'Looks OK but disrupts at 0.28'"
+  },
+  {
+    "sid": 15761,
+    "t_disruption": 0.32,
+    "comment": "'good repeat but disrupts at 0.32 - slow moving up'"
+  },
+  {
+    "sid": 15771,
+    "t_disruption": 0.18,
+    "comment": "'disrupts at 0.18'"
+  },
+  {
+    "sid": 15796,
+    "t_disruption": 0.3,
+    "comment": "'Ok not bad repeat but terminated at ~300ms'"
+  },
+  {
+    "sid": 15831,
+    "t_disruption": 0.2,
+    "comment": "'340 ms shot - IRE at 200 ms underdense relative to 14495 at 150 ms'"
+  },
+  {
+    "sid": 15860,
+    "t_disruption": 0.37,
+    "comment": "'Shorter beam.Disrupts at 370 ms after final pellet.Weird plasma-within-a-plasma effect after pellet"
+  },
+  {
+    "sid": 15938,
+    "t_disruption": 0.175,
+    "comment": "'short NBI  terminates at 175ms'"
+  },
+  {
+    "sid": 15962,
+    "t_disruption": 0.15,
+    "comment": "'good beam but disrupts at 150 ms'"
+  },
+  {
+    "sid": 15967,
+    "t_disruption": 0.317,
+    "comment": "'good no ANE uses more flux than 15824 disrupts at 0.317 higher SXR'"
+  },
+  {
+    "sid": 16026,
+    "t_disruption": 1.0,
+    "comment": "'Beam blip disrupts at 1MA'"
+  },
+  {
+    "sid": 16049,
+    "t_disruption": 0.6,
+    "comment": "'good beam 0.42s shot ip ramp down started but disrupts at 0.6 MA locked mode at 0.32s terminates H-"
+  },
+  {
+    "sid": 16051,
+    "t_disruption": 0.3,
+    "comment": "'good NBI VDE at 0.3s terminates shot early FAs cut out 3 good pellets before the plasma terminates "
+  },
+  {
+    "sid": 16053,
+    "t_disruption": 0.288,
+    "comment": "'short beam (0.281) no H-mode radiating core or snake illuminated by pellets VDE at  0.288s'"
+  },
+  {
+    "sid": 16077,
+    "t_disruption": 0.31,
+    "comment": "'good beam - disrupts at 310 ms'"
+  },
+  {
+    "sid": 16078,
+    "t_disruption": 0.19,
+    "comment": "'got beam - nasty IRE at 190 ms'"
+  },
+  {
+    "sid": 16085,
+    "t_disruption": 0.3,
+    "comment": "'looks like the pellet fired way too early and the plasma startup struck on the pellet! No IRE this "
+  },
+  {
+    "sid": 16122,
+    "t_disruption": 0.25,
+    "comment": "'good beam - still problem with the p2xoIRE at 250 ms'"
+  },
+  {
+    "sid": 16126,
+    "t_disruption": 0.28,
+    "comment": "'good beam - interacts with the probe at 280 ms  - disrupts at 280 ms'"
+  },
+  {
+    "sid": 16131,
+    "t_disruption": 0.3,
+    "comment": "'FF Ip ramp too slow only small increase in density ne continues to rise during flat-top (ramp speed"
+  },
+  {
+    "sid": 16145,
+    "t_disruption": 0.2,
+    "comment": "'IRE at 200ms'"
+  },
+  {
+    "sid": 16196,
+    "t_disruption": 0.185,
+    "comment": "'Large IRE at 185ms recovers by 240ms - density then OK. Runs out out of LV by 300ms.'"
+  },
+  {
+    "sid": 16208,
+    "t_disruption": 0.36,
+    "comment": "'Disrupts at 360 ms locked mode after density decline from 300 ms'"
+  },
+  {
+    "sid": 16210,
+    "t_disruption": 0.35,
+    "comment": "'Disrupts at 350 ms first sawtooth.Beams better though.'"
+  },
+  {
+    "sid": 16226,
+    "t_disruption": 0.24,
+    "comment": "'two beams !!!! but not really good repeat of 14259 IRE at 240 ms'"
+  },
+  {
+    "sid": 16240,
+    "t_disruption": 0.32,
+    "comment": "'Good shot and beam until VDE at 320ms.'"
+  },
+  {
+    "sid": 16277,
+    "t_disruption": 0.31,
+    "comment": "'long beam disrupts at 310'"
+  },
+  {
+    "sid": 16347,
+    "t_disruption": 0.2,
+    "comment": "'VDE disruption at 200ms. Over-large plasma. SW NBI ran a bit erratically.'"
+  },
+  {
+    "sid": 16348,
+    "t_disruption": 0.08,
+    "comment": "'Disruption at 80ms! SW NBI ok.'"
+  },
+  {
+    "sid": 16364,
+    "t_disruption": 0.29,
+    "comment": "'Both beams fire giving ~2MW on occasion.Disrupts at 290 ms due to sharp increase in I_p with both b"
+  },
+  {
+    "sid": 16367,
+    "t_disruption": 0.24,
+    "comment": "'Disrupts at 240 ms caused by MHD event - sawtooth?'"
+  },
+  {
+    "sid": 16369,
+    "t_disruption": 0.35,
+    "comment": "'Huge sawtooth at ~300ms almost disrupts the plasma which seems to  bounce  off the upper divertor b"
+  },
+  {
+    "sid": 16392,
+    "t_disruption": 0.3,
+    "comment": "'Very sudden first-sawtooth termination at 300 ms; axial q drops more quickly than before according "
+  },
+  {
+    "sid": 16452,
+    "t_disruption": 0.35,
+    "comment": "'disrupts at 0.35s probably FA fault no SW beam good PINI comparably only a few blibs'"
+  },
+  {
+    "sid": 16543,
+    "t_disruption": 0.12,
+    "comment": "'Short shot - doesn t survive IRE at 120ms'"
+  },
+  {
+    "sid": 16590,
+    "t_disruption": 0.07,
+    "comment": "'large IRE at 70 ms plasa a large way over dense'"
+  },
+  {
+    "sid": 16591,
+    "t_disruption": 0.06,
+    "comment": "'again - ver dense at startup and IRE at 60 ms'"
+  },
+  {
+    "sid": 16607,
+    "t_disruption": 0.167,
+    "comment": "'short pulse disrupts at 167ms'"
+  },
+  {
+    "sid": 16621,
+    "t_disruption": 0.12,
+    "comment": "'disruption at 0.12'"
+  },
+  {
+    "sid": 16695,
+    "t_disruption": 0.22,
+    "comment": "'Not good. i/b gas didnt appear til 0.120. Disrupt at 0.220 snake appears to lock - dont know what c"
+  },
+  {
+    "sid": 16704,
+    "t_disruption": 0.46,
+    "comment": "'Finished by locked mode at ~460 ms'"
+  },
+  {
+    "sid": 16936,
+    "t_disruption": 0.3,
+    "comment": "'OK disrupts at 300ms just after flux limit. Start-up duration and loop voltage are all better than "
+  },
+  {
+    "sid": 16942,
+    "t_disruption": 0.25,
+    "comment": "'Survives Z sweep but somewhat overdone for the FAs. Density had been creeping up in previous shots "
+  },
+  {
+    "sid": 16969,
+    "t_disruption": 0.29,
+    "comment": "'Bad locked hard at 0.200 and disrupted at 0.290 despite higher density than yesterday.'"
+  },
+  {
+    "sid": 16979,
+    "t_disruption": 0.3,
+    "comment": "'Interesting. Longer beam and disrupt at 0.300 but also a radiating boundary - must be exposing a ne"
+  },
+  {
+    "sid": 16981,
+    "t_disruption": 0.3,
+    "comment": "'not entirely happy still disrupts at 0.300. Blanket maybe thinner.'"
+  },
+  {
+    "sid": 17040,
+    "t_disruption": 0.23,
+    "comment": "'short beam terminates at ~230ms'"
+  },
+  {
+    "sid": 17056,
+    "t_disruption": 0.32,
+    "comment": "'good beam - disrupts at  320 ms  due to a mode which locks'"
+  },
+  {
+    "sid": 17069,
+    "t_disruption": 0.31,
+    "comment": "'short beam shot disrupts at 0.31 nevertheless useful for comparison but need to repeat with beam'"
+  },
+  {
+    "sid": 17071,
+    "t_disruption": 0.283,
+    "comment": "'nice beam good shot H-mode from 0.18s loose it at 0.24s discharge disrupts at 0.283'"
+  },
+  {
+    "sid": 17092,
+    "t_disruption": 0.22,
+    "comment": "'short beam disrupts at 220 ms'"
+  },
+  {
+    "sid": 17095,
+    "t_disruption": 0.215,
+    "comment": "'lost H mode at 0.2 and disrupts at 0.215'"
+  },
+  {
+    "sid": 17101,
+    "t_disruption": 0.37,
+    "comment": "'looks OK disrupts at 370ms'"
+  },
+  {
+    "sid": 17113,
+    "t_disruption": 0.32,
+    "comment": "'ELMing H-mode obtained.Locked mode causes VDE at 320 ms.'"
+  },
+  {
+    "sid": 17116,
+    "t_disruption": 0.2,
+    "comment": "'Big IRE at 200 ms'"
+  },
+  {
+    "sid": 17127,
+    "t_disruption": 0.18,
+    "comment": "'Good 350ms shot but no NBI. IRE at 180ms.'"
+  },
+  {
+    "sid": 17137,
+    "t_disruption": 0.29,
+    "comment": "'good beam disrupt at 0.290 - collapse of TM rotation . Good fast Elms from 0.200.'"
+  },
+  {
+    "sid": 17152,
+    "t_disruption": 0.31,
+    "comment": "'Short beam . Disrupt at 0.310 for no good reason.'"
+  },
+  {
+    "sid": 17189,
+    "t_disruption": 0.3,
+    "comment": "'Good beams but disrupted at 300 ms due to lower TF'"
+  },
+  {
+    "sid": 17215,
+    "t_disruption": 0.3,
+    "comment": "'IRE at 0.2 disrupts at 0.3'"
+  },
+  {
+    "sid": 17273,
+    "t_disruption": 0.38,
+    "comment": "'HXR down to 0.35 but disrupted at 0.380. Initial density again only slightly higher. Likely loss of"
+  },
+  {
+    "sid": 17301,
+    "t_disruption": 0.26,
+    "comment": "'Not great - plasma over-sized during startup. Disrupt at 0.260 (as did today s standard shot). Dens"
+  },
+  {
+    "sid": 17302,
+    "t_disruption": 0.23,
+    "comment": "'High initial current then falls back to 400kA. Density still below par and disrupt at 0.230.'"
+  },
+  {
+    "sid": 17388,
+    "t_disruption": 0.3,
+    "comment": "'Better but disruption at 300ms.'"
+  },
+  {
+    "sid": 17409,
+    "t_disruption": 0.15,
+    "comment": "'start and rampup OK IRE at 0.120 disrupt at 0.150. SLJ alarms up to 149%.'"
+  },
+  {
+    "sid": 17416,
+    "t_disruption": 0.27,
+    "comment": "'density pumping out after 0.150 disrupt at 0.270. otherwise OK.'"
+  },
+  {
+    "sid": 17422,
+    "t_disruption": 0.34,
+    "comment": "'Density low and falling = locked mode at 340 ms.All impurity lines much decreased from last night ("
+  },
+  {
+    "sid": 17423,
+    "t_disruption": 0.07,
+    "comment": "'Matches reference I_p and n_e well although current start-up is initially slower then over-compensa"
+  },
+  {
+    "sid": 17431,
+    "t_disruption": 0.1,
+    "comment": "'Disrupts at 100 ms'"
+  },
+  {
+    "sid": 17440,
+    "t_disruption": 0.36,
+    "comment": "'disruption at 0.36 probably due to last blow at 0.35'"
+  },
+  {
+    "sid": 17453,
+    "t_disruption": 0.15,
+    "comment": "'disruption at 0.15'"
+  },
+  {
+    "sid": 17462,
+    "t_disruption": 0.2,
+    "comment": "'Large IRE at 200 ms due to no beam in this shot - good mathc in density up when 17039 went into H-m"
+  },
+  {
+    "sid": 17464,
+    "t_disruption": 0.237,
+    "comment": "'good beam - Goes into H-mode 173 ms - drops out of H-mode at 203 ms  large IRE at 237 ms - need to "
+  },
+  {
+    "sid": 17506,
+    "t_disruption": 0.33,
+    "comment": "'disrupts at 0.33s no real sustained H-mode some STI H-modes'"
+  },
+  {
+    "sid": 17512,
+    "t_disruption": 0.355,
+    "comment": "'good beams large IRE at 0.22s plasma disrupts at 0.355s 12ms after an event killing the H-mode SS b"
+  },
+  {
+    "sid": 17513,
+    "t_disruption": 0.2,
+    "comment": "'no beam disrupt at 0.2s no colour camera IRE causes vertical displacement which killed the FAs (som"
+  },
+  {
+    "sid": 17524,
+    "t_disruption": 0.31,
+    "comment": "'interferometer went wrong from beginning where it is used for feedbackdisruption at 0.31'"
+  },
+  {
+    "sid": 17525,
+    "t_disruption": 0.33,
+    "comment": "'density OK disruption at 0.33 no H-mode'"
+  },
+  {
+    "sid": 17565,
+    "t_disruption": 0.32,
+    "comment": "'Good beams (again) Not very different plasma IRE at 0.200 though not quite as bad. Disrupt at 0.320"
+  },
+  {
+    "sid": 17645,
+    "t_disruption": 0.3,
+    "comment": "'Ah damn forgot to turn the i/b gas puff back on; result - grows way under-dense and disrupts at 300"
+  },
+  {
+    "sid": 17652,
+    "t_disruption": 0.12,
+    "comment": "'Ramp-up too ambitious loses stability and disrupts at 120 ms.'"
+  },
+  {
+    "sid": 17653,
+    "t_disruption": 0.21,
+    "comment": "'NBI delivered 3.24 MW highest ever on MAST (source: D Ciric).IRE at 210 ms.'"
+  },
+  {
+    "sid": 17657,
+    "t_disruption": 0.29,
+    "comment": "'big IRE at 0.2 disrupts at 0.29 and beams lasts to 0.37'"
+  },
+  {
+    "sid": 17658,
+    "t_disruption": 0.32,
+    "comment": "'still IRE at 0.2 disrupts at 0.32'"
+  },
+  {
+    "sid": 17667,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 0.3'"
+  },
+  {
+    "sid": 17691,
+    "t_disruption": 0.2,
+    "comment": "'very short SW breakdowns of SS in the middle of the shot IRE at 200ms'"
+  },
+  {
+    "sid": 17693,
+    "t_disruption": 0.24,
+    "comment": "'beams are fine but shot disrupted at 240ms very late H-mode'"
+  },
+  {
+    "sid": 17746,
+    "t_disruption": 0.25,
+    "comment": "'lost both FAs at 0.155 plasma returns to midplane (?!) then disrupts at 0.250.'"
+  },
+  {
+    "sid": 17795,
+    "t_disruption": 0.29,
+    "comment": "'prefill gas too high since prefill is not under flow control  bad plasma start-up disrupts at 0.29s"
+  },
+  {
+    "sid": 17796,
+    "t_disruption": 0.35,
+    "comment": "'disrupts at 0.35s no good density flat-top better start-up deviation of Ip when P2 current goes neg"
+  },
+  {
+    "sid": 17797,
+    "t_disruption": 0.123,
+    "comment": "'slightly lower density disrupts at 0.123s loose FAs at 0.11s'"
+  },
+  {
+    "sid": 17803,
+    "t_disruption": 0.297,
+    "comment": "'good shot plasma disrupts at 0.297s before the ramp-down has any real effect target density not ful"
+  },
+  {
+    "sid": 17830,
+    "t_disruption": 0.38,
+    "comment": "'Density much lower killed by locked mode at ~380 ms.Too low really; the non-linear response to the "
+  },
+  {
+    "sid": 17849,
+    "t_disruption": 0.35,
+    "comment": "'Shot terminates at 350 ms beam OK.'"
+  },
+  {
+    "sid": 17850,
+    "t_disruption": 0.34,
+    "comment": "'OK termination at 340 ms as before.'"
+  },
+  {
+    "sid": 17858,
+    "t_disruption": 0.32,
+    "comment": "'OK beam and shot. this time disrupted at 0.320. Strike points OK - ESM and ALP agree (ish). Still n"
+  },
+  {
+    "sid": 17895,
+    "t_disruption": 0.32,
+    "comment": "'disrupts at 0.32 on first sawtooth?'"
+  },
+  {
+    "sid": 17915,
+    "t_disruption": 0.32,
+    "comment": "'Good ELM-free H-mode from 220 with consequent sharp rise in density following.Disrupts at 320 ms th"
+  },
+  {
+    "sid": 17935,
+    "t_disruption": 0.36,
+    "comment": "'SS cut out at 0.200. Brief H mode from 0.220 but still disrupted at 0.360 despite lack of H mode. l"
+  },
+  {
+    "sid": 17951,
+    "t_disruption": 0.35,
+    "comment": "'Again disruption at 0.35 s.'"
+  },
+  {
+    "sid": 17971,
+    "t_disruption": 0.2,
+    "comment": "'big IRE at 200ms bad repeat of 17683 Good to ELM free H-mode at the end'"
+  },
+  {
+    "sid": 17991,
+    "t_disruption": 0.32,
+    "comment": "'Good start disrupts at 320ms'"
+  },
+  {
+    "sid": 18022,
+    "t_disruption": 0.3,
+    "comment": "'OK. Almost identical to the previous shot. Still got H-mode shortly after 0.200 s. Disrupts at 0.30"
+  },
+  {
+    "sid": 18066,
+    "t_disruption": 0.3,
+    "comment": "'2 MW beam good H-mode till disruption at 0.3'"
+  },
+  {
+    "sid": 18073,
+    "t_disruption": 0.15,
+    "comment": "'practically no beam disrupts at 0.15'"
+  },
+  {
+    "sid": 18176,
+    "t_disruption": 0.3,
+    "comment": "'camera left at short recording window from yesterday so missed end of shot. Disrupts at 300ms. No s"
+  },
+  {
+    "sid": 18244,
+    "t_disruption": 0.07,
+    "comment": "'plasma over-compressed disrupted at 70ms'"
+  },
+  {
+    "sid": 18292,
+    "t_disruption": 0.54,
+    "comment": "'Lost early H mode didn t happen till 0.300 (nel=1.9e20) Longer shot - did disrupt at 0.540 perhaps "
+  },
+  {
+    "sid": 18309,
+    "t_disruption": 0.38,
+    "comment": "'disrupts at 0.38 too low current'"
+  },
+  {
+    "sid": 18311,
+    "t_disruption": 0.22,
+    "comment": "'disruption at 0.22'"
+  },
+  {
+    "sid": 18329,
+    "t_disruption": 0.34,
+    "comment": "'ok good ELM free H-mode but not ELmy. Shot terminates at ~340ms'"
+  },
+  {
+    "sid": 18332,
+    "t_disruption": 0.4,
+    "comment": "'very strange small and rapid elms this time disrupts at 400ms'"
+  },
+  {
+    "sid": 18401,
+    "t_disruption": 0.28,
+    "comment": "'Goes ELM-free immediately at 0.230 disrupt at 0.280 (much earlier than 18028 5kHz mode is bigger)'"
+  },
+  {
+    "sid": 18446,
+    "t_disruption": 0.23,
+    "comment": "'Disruption at 230ms before flat top due to locked mode. SS NBI started badly.'"
+  },
+  {
+    "sid": 18478,
+    "t_disruption": 0.22,
+    "comment": "'disrupts at 0.22'"
+  },
+  {
+    "sid": 18480,
+    "t_disruption": 0.22,
+    "comment": "'even worse - disrupts at 0.22; plasma wobbling from 0.2 on Z gain step'"
+  },
+  {
+    "sid": 18487,
+    "t_disruption": 0.33,
+    "comment": "'big IRE at 0.3 and disruption at 0.33'"
+  },
+  {
+    "sid": 18499,
+    "t_disruption": 0.26,
+    "comment": "'good beam - IRE at 260 ms - but still recovers - inboard radius differs from required by ~ 1cm'"
+  },
+  {
+    "sid": 18500,
+    "t_disruption": 0.26,
+    "comment": "'disrupts at 260 ms'"
+  },
+  {
+    "sid": 18505,
+    "t_disruption": 0.23,
+    "comment": "'Good shot. Went into H-mode at about 277ms just before the CX measurement.Small IRE at 230ms.TF fla"
+  },
+  {
+    "sid": 18506,
+    "t_disruption": 0.235,
+    "comment": "'VDE at 235ms. Very small IRE at 225ms not sure if related. Also saw SW NBI chop at 232ms.'"
+  },
+  {
+    "sid": 18510,
+    "t_disruption": 0.26,
+    "comment": "'Disrupts at 260 ms.Density matches reference better than last shot.'"
+  },
+  {
+    "sid": 18537,
+    "t_disruption": 0.34,
+    "comment": "'IRE at 340ms. SW NBI didn t run. Inner gap increased perhaps too much.'"
+  },
+  {
+    "sid": 18538,
+    "t_disruption": 0.33,
+    "comment": "'IRE at 330ms. Good NBI. Vertical control errors apparent.'"
+  },
+  {
+    "sid": 18542,
+    "t_disruption": 0.45,
+    "comment": "'Good shot with long ELMy H-mode terminated by IRE at 450ms.'"
+  },
+  {
+    "sid": 18544,
+    "t_disruption": 0.35,
+    "comment": "'Early H mode but IRE at 350ms.'"
+  },
+  {
+    "sid": 18557,
+    "t_disruption": 0.24,
+    "comment": "'Bad shot. disrupt at 0.240.'"
+  },
+  {
+    "sid": 18558,
+    "t_disruption": 0.34,
+    "comment": "'SW only no H mode otherwise OK Disrupt at 0.340 (1st sawtooth probably).'"
+  },
+  {
+    "sid": 18565,
+    "t_disruption": 0.3,
+    "comment": "'Disrupted at 300 ms. Video very odd - plasma appears to wobble massively at start and end of shot. "
+  },
+  {
+    "sid": 18578,
+    "t_disruption": 0.266,
+    "comment": "'H-mode from 0.174s IRE at 0.08s shot disrupts at 0.266s way before reaching the 1.5 MA but during t"
+  },
+  {
+    "sid": 18600,
+    "t_disruption": 0.18,
+    "comment": "'disrupts at 180 ms - seems to be moved down too far - probably because ccbv14 is taken out of verti"
+  },
+  {
+    "sid": 18665,
+    "t_disruption": 0.35,
+    "comment": "'Running on P3 supports most of the time - still managed an early H mode but disrupted at 0.350. Not"
+  },
+  {
+    "sid": 18732,
+    "t_disruption": 0.32,
+    "comment": "'disrupts at 0.32 because of huge puff at 0.3 without any reason -it is on flow control with flat re"
+  },
+  {
+    "sid": 18744,
+    "t_disruption": 0.3,
+    "comment": "'Disrupts at 300 ms after density overshoots'"
+  },
+  {
+    "sid": 18756,
+    "t_disruption": 0.29,
+    "comment": "'OK but VDE at 290ms.'"
+  },
+  {
+    "sid": 18757,
+    "t_disruption": 0.21,
+    "comment": "'Disruption at 210ms due to VDE.'"
+  },
+  {
+    "sid": 18758,
+    "t_disruption": 0.32,
+    "comment": "'Disruption at 320ms due to VDE. No significant H-mode.'"
+  },
+  {
+    "sid": 18764,
+    "t_disruption": 0.31,
+    "comment": "' Disruption at 310ms due to VDE.'"
+  },
+  {
+    "sid": 18765,
+    "t_disruption": 0.23,
+    "comment": "'Very poor. IRE and disruption at 0.230.  18558-60 were not much better 16215 had lower density and "
+  },
+  {
+    "sid": 18795,
+    "t_disruption": 0.37,
+    "comment": "'OK. H-mode at 180 ms terminated by an IRE at 370 ms. Beams coming in late.'"
+  },
+  {
+    "sid": 18801,
+    "t_disruption": 0.25,
+    "comment": "'no h-mode disrupts at 250ms'"
+  },
+  {
+    "sid": 18837,
+    "t_disruption": 0.315,
+    "comment": "'H-mode at 277ms much later than reference. Disrupted at 315ms.'"
+  },
+  {
+    "sid": 18885,
+    "t_disruption": 0.3,
+    "comment": "'Disruption at 300ms. Initial density not significantly changed.'"
+  },
+  {
+    "sid": 18886,
+    "t_disruption": 0.3,
+    "comment": "'Disruption at 300ms caused by locked mode. Initial density responded to prefill change.'"
+  },
+  {
+    "sid": 18888,
+    "t_disruption": 0.3,
+    "comment": "'Disrupted at 300ms.'"
+  },
+  {
+    "sid": 18920,
+    "t_disruption": 0.317,
+    "comment": "'shot disrupts at 0.317s probably on the first sawtooth not long enough for measurement H-mode from "
+  },
+  {
+    "sid": 18929,
+    "t_disruption": 0.13,
+    "comment": "'disrupts at 0.13'"
+  },
+  {
+    "sid": 18931,
+    "t_disruption": 0.36,
+    "comment": "'OK H-mode from 0.28 disrupts at 0.36'"
+  },
+  {
+    "sid": 18935,
+    "t_disruption": 0.25,
+    "comment": "'disrupts at 0.25'"
+  },
+  {
+    "sid": 19352,
+    "t_disruption": 0.2,
+    "comment": "'Okay disrupted at 200ms apparently lost Z control.'"
+  },
+  {
+    "sid": 19467,
+    "t_disruption": 0.3,
+    "comment": "'better shot still disrupted at 300ms. Desnity falls below target once sawtoothing starts. Impurity "
+  },
+  {
+    "sid": 19525,
+    "t_disruption": 0.15,
+    "comment": "'VDE at ~0.15s.'"
+  },
+  {
+    "sid": 19579,
+    "t_disruption": 0.19,
+    "comment": "'good test disrupts at 0.19s slightly earlier than 19577 but was driven harder'"
+  },
+  {
+    "sid": 19623,
+    "t_disruption": 0.3,
+    "comment": "'Ran OK - early termination at 300 ms'"
+  },
+  {
+    "sid": 19803,
+    "t_disruption": 0.3,
+    "comment": "'Disruption at 0.3'"
+  },
+  {
+    "sid": 19806,
+    "t_disruption": 0.29,
+    "comment": "'Disrupts at 0.29.'"
+  },
+  {
+    "sid": 19807,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 0.3'"
+  },
+  {
+    "sid": 19808,
+    "t_disruption": 0.28,
+    "comment": "'disrupts at 0.28'"
+  },
+  {
+    "sid": 19899,
+    "t_disruption": 0.3,
+    "comment": "'Disrupts at 300ms'"
+  },
+  {
+    "sid": 19902,
+    "t_disruption": 0.36,
+    "comment": "'Disrupts at 360ms.Sawtooth occurs earlier'"
+  },
+  {
+    "sid": 19911,
+    "t_disruption": 0.25,
+    "comment": "'Disruption at 0.250s. Probably due to too high density (no GDC in between previous and current shot"
+  },
+  {
+    "sid": 19912,
+    "t_disruption": 0.325,
+    "comment": "'OK. Both Ip and density waveforms look better. So flashlamp GDC seems to do the trick. Still disrup"
+  },
+  {
+    "sid": 19962,
+    "t_disruption": 0.07,
+    "comment": "'Breakdown but VDE at 0.070.  EFPS tripped (P2).'"
+  },
+  {
+    "sid": 20033,
+    "t_disruption": 0.16,
+    "comment": "'Disruption at 160ms. Excessive fuelling?'"
+  },
+  {
+    "sid": 20038,
+    "t_disruption": 0.16,
+    "comment": "'Disruption at 160ms.'"
+  },
+  {
+    "sid": 20065,
+    "t_disruption": 0.3,
+    "comment": "'Did not get beams before 160ms. Locked mode disruption at 300ms.'"
+  },
+  {
+    "sid": 20148,
+    "t_disruption": 0.22,
+    "comment": "good NBI, good plasma. Got IRE at 220ms. Ruby TS data is junk, YAG looks like edge data only."
+  },
+  {
+    "sid": 20162,
+    "t_disruption": 0.33,
+    "comment": "'Ok L-H transition at 282 ms NBI switched off at 290 and early termination at 330 ms.'"
+  },
+  {
+    "sid": 20169,
+    "t_disruption": 0.35,
+    "comment": "'Ok. Got the H-mode at about 280 ms. Plasma terminates at 350 ms.'"
+  },
+  {
+    "sid": 20285,
+    "t_disruption": 0.3,
+    "comment": "'Good shot. Full NBI. Earlier H-mode but disrupts at 300ms.New TS trigger card also delivering burst"
+  },
+  {
+    "sid": 20307,
+    "t_disruption": 0.15,
+    "comment": "'disruption at 0.15'"
+  },
+  {
+    "sid": 20328,
+    "t_disruption": 0.35,
+    "comment": "'Not bad considering. NBI started on time (unexpectedly) IRE at 0.130. Hmode from 0.280 ELM-rfee dis"
+  },
+  {
+    "sid": 20335,
+    "t_disruption": 0.14,
+    "comment": "'NBI at 100ms this time IRE at ~140ms is back'"
+  },
+  {
+    "sid": 20337,
+    "t_disruption": 0.32,
+    "comment": "'this time one breakdown but still late shot terminated at 320ms H-mode at 260ms'"
+  },
+  {
+    "sid": 20342,
+    "t_disruption": 0.32,
+    "comment": "'NBI is late by about 30ms H-mode at the same time  ELM free again shot terminated at ~320ms'"
+  },
+  {
+    "sid": 20343,
+    "t_disruption": 0.3,
+    "comment": "'good shot - H-mode from 220 ms but terminates at 300 ms - only 1 Elm again'"
+  },
+  {
+    "sid": 20455,
+    "t_disruption": 0.56,
+    "comment": "'looks good. Disrupts at 560ms'"
+  },
+  {
+    "sid": 20491,
+    "t_disruption": 0.35,
+    "comment": "'small small pellets  shot terminated at 350ms'"
+  },
+  {
+    "sid": 20495,
+    "t_disruption": 0.3,
+    "comment": "'NBI is on time but shot still terminated at 300ms'"
+  },
+  {
+    "sid": 20563,
+    "t_disruption": 0.3,
+    "comment": "'Still disrupts at 300ms.No XMO data: didn t trigger.'"
+  },
+  {
+    "sid": 20568,
+    "t_disruption": 0.3,
+    "comment": "'Disrupts at 300ms. NBI has short 3ms blip at 200ms and a longer pulse of 84ms at 225ms.'"
+  },
+  {
+    "sid": 20575,
+    "t_disruption": 0.13,
+    "comment": "'Disruption at 130 ms.'"
+  },
+  {
+    "sid": 20576,
+    "t_disruption": 0.13,
+    "comment": "'Disruption at 130 ms.'"
+  },
+  {
+    "sid": 20577,
+    "t_disruption": 0.145,
+    "comment": "'Disruption at 145 ms.'"
+  },
+  {
+    "sid": 20603,
+    "t_disruption": 0.4,
+    "comment": "'Beam a little late again no L/H transition disrupts at 0.4s'"
+  },
+  {
+    "sid": 20604,
+    "t_disruption": 0.485,
+    "comment": "'no H-mode disrupts at 0.485s'"
+  },
+  {
+    "sid": 20607,
+    "t_disruption": 0.275,
+    "comment": "'Interferometer worked IRE at 0.164s disrupts at 0.275s one sawtooth crash.'"
+  },
+  {
+    "sid": 20618,
+    "t_disruption": 0.345,
+    "comment": "'Little H-mode flat-top about 10ms longer than reference. Ends with locked mode at 345ms.'"
+  },
+  {
+    "sid": 20649,
+    "t_disruption": 0.3,
+    "comment": "'Shot runs.Upwards VDE at 300 ms.'"
+  },
+  {
+    "sid": 20696,
+    "t_disruption": 0.28,
+    "comment": "'no beam again - no apparent reason. Z control goes into oscillation causing VDE at 0.280. He puff r"
+  },
+  {
+    "sid": 20774,
+    "t_disruption": 0.28,
+    "comment": "'ealry even less pronounced and sawteeth later - still disrupt at 0.280. Neon seen on CX.'"
+  },
+  {
+    "sid": 20791,
+    "t_disruption": 0.3,
+    "comment": "'Good shot but disrupted at 300 ms.'"
+  },
+  {
+    "sid": 20816,
+    "t_disruption": 0.3,
+    "comment": "'Still disrupts at 300msShape improved less contact with the centre columnLower density'"
+  },
+  {
+    "sid": 20819,
+    "t_disruption": 0.3,
+    "comment": "'OK. Went through and disrupted at 300ms. Starting the glow is problematic.'"
+  },
+  {
+    "sid": 20820,
+    "t_disruption": 0.33,
+    "comment": "'OK. Ran longer (disrupted at 0.33s). Shot recorded as test-shot by DATAC (Central didn t increment "
+  },
+  {
+    "sid": 20821,
+    "t_disruption": 0.33,
+    "comment": "'OK. NBI started late (0.2s). Disruption at 0.33s. Density unchanged.'"
+  },
+  {
+    "sid": 20823,
+    "t_disruption": 0.31,
+    "comment": "'OK. Disruption at 0.31s. Strong density ramp up from 0.15s to the end no flat top reached. H mode a"
+  },
+  {
+    "sid": 20825,
+    "t_disruption": 0.35,
+    "comment": "'OK. Disrupted at 0.35s. H mode between 0.305s and 0.325s.'"
+  },
+  {
+    "sid": 20826,
+    "t_disruption": 0.3,
+    "comment": "'OK but beam started late after 2 breakdowns. Early disruption at 0.3s. No data recorded for XNE.'"
+  },
+  {
+    "sid": 20827,
+    "t_disruption": 0.35,
+    "comment": "'Good. Disrupted at 350 ms after a long density flat-top.'"
+  },
+  {
+    "sid": 20828,
+    "t_disruption": 0.3,
+    "comment": "'Damn! It disrupted at 300 ms.'"
+  },
+  {
+    "sid": 20839,
+    "t_disruption": 0.13,
+    "comment": "'Plasma disrupted at ~130ms. Ip ramps up a bit too fast now because the early density is smaller and"
+  },
+  {
+    "sid": 20880,
+    "t_disruption": 0.8,
+    "comment": "'Disrupted at 800 ms probably due to high divertor current.'"
+  },
+  {
+    "sid": 20886,
+    "t_disruption": 0.48,
+    "comment": "'Disrupts at 480 msBeams on time but H-mode starts at the same time'"
+  },
+  {
+    "sid": 20892,
+    "t_disruption": 0.443,
+    "comment": "'Disruption at 443msDelayed H-mode'"
+  },
+  {
+    "sid": 20916,
+    "t_disruption": 0.28,
+    "comment": "'Plasma was vertically unstable. Disrupted at 280ms.'"
+  },
+  {
+    "sid": 20919,
+    "t_disruption": 0.4,
+    "comment": "'OK. H-mode transition at 215ms. Disrupts at 400ms.'"
+  },
+  {
+    "sid": 20962,
+    "t_disruption": 0.17,
+    "comment": "'VDE at 0.170 - starting to wobble. Substantial ZIp drift. Otherwise on track with reference.'"
+  },
+  {
+    "sid": 20996,
+    "t_disruption": 0.3,
+    "comment": "'Early disruption at 300msFA tripped'"
+  },
+  {
+    "sid": 21056,
+    "t_disruption": 0.2,
+    "comment": "'VDE at 0.2s forgot to select FA3 when restoring MCS settings XMC_FA_CURR signal is faulty (actually"
+  },
+  {
+    "sid": 21063,
+    "t_disruption": 0.244,
+    "comment": "'Beams from 0.05s good but VDE at 0.244s due to a trip in the FAs'"
+  },
+  {
+    "sid": 21066,
+    "t_disruption": 0.242,
+    "comment": "'same result disrupts at 0.242s with VDE'"
+  },
+  {
+    "sid": 21268,
+    "t_disruption": 0.4,
+    "comment": "'Disruption at 0.4'"
+  },
+  {
+    "sid": 21425,
+    "t_disruption": 0.25,
+    "comment": "'Jump on RT density => disruption at 0.25'"
+  },
+  {
+    "sid": 21426,
+    "t_disruption": 0.35,
+    "comment": "'SS starts on fourth try.Disruption at 0.35. Before disruption the plasma becomes not-symmetric; ELM"
+  },
+  {
+    "sid": 21534,
+    "t_disruption": 0.52,
+    "comment": "'Shot ended with a disruption at 520ms.SNBI goodSW 1.3MW tripped early duration only 230ms'"
+  },
+  {
+    "sid": 21638,
+    "t_disruption": 0.187,
+    "comment": "'IRE at 187 ms.  Density not quite as low as requested.'"
+  },
+  {
+    "sid": 21642,
+    "t_disruption": 0.193,
+    "comment": "'IRE at 193 ms after which we lost control of the density and run out of flux.'"
+  },
+  {
+    "sid": 21707,
+    "t_disruption": 0.4,
+    "comment": "'No interferometry density signal. YAG density shows no sign of pump-out. Plasma disrupts at 400ms.'"
+  },
+  {
+    "sid": 21744,
+    "t_disruption": 0.28,
+    "comment": "'disrupts at 0.28s beams came on 69ms late no H-mode'"
+  },
+  {
+    "sid": 21777,
+    "t_disruption": 0.32,
+    "comment": "'Beam starts later; disrupts at 0.32.'"
+  },
+  {
+    "sid": 21781,
+    "t_disruption": 0.34,
+    "comment": "'Both beam and interferometer are OK; but disrupts at 0.34.'"
+  },
+  {
+    "sid": 21804,
+    "t_disruption": 0.4,
+    "comment": "'Disruption at 400ms.'"
+  },
+  {
+    "sid": 21806,
+    "t_disruption": 0.415,
+    "comment": "'Disrupted at 415ms.'"
+  },
+  {
+    "sid": 21809,
+    "t_disruption": 0.38,
+    "comment": "'Disrupted at 380ms. No clear H-mode.'"
+  },
+  {
+    "sid": 21846,
+    "t_disruption": 0.32,
+    "comment": "'OK but disrupts at 320ms seems to correspond to when the probe is deep inPlasma is 3cm smaller this"
+  },
+  {
+    "sid": 21847,
+    "t_disruption": 0.34,
+    "comment": "'OKRadius similar to previous shotDisrupts at 340ms'"
+  },
+  {
+    "sid": 21871,
+    "t_disruption": 0.174,
+    "comment": "'IRE at 174ms. Too fast current ramp and not enough density.'"
+  },
+  {
+    "sid": 21891,
+    "t_disruption": 0.25,
+    "comment": "'Disruption at 0.25 with vertical shift.'"
+  },
+  {
+    "sid": 21904,
+    "t_disruption": 0.31,
+    "comment": "'Two beams. H-mode from 200ms. Disrupts at 310ms after first big ELM'"
+  },
+  {
+    "sid": 21907,
+    "t_disruption": 0.36,
+    "comment": "'H-mode from 310ms. Disrupts at 360ms'"
+  },
+  {
+    "sid": 21945,
+    "t_disruption": 0.2,
+    "comment": "'good beams IRE at 200ms H-mode from 0.16s until 0.194s regain mostly ELM free H-mode from 0.28s unt"
+  },
+  {
+    "sid": 21946,
+    "t_disruption": 0.241,
+    "comment": "'Good SS beam but SW cuts out between 0.1s and 0.123 breaks down completely at 0.165s shot disrupts "
+  },
+  {
+    "sid": 21947,
+    "t_disruption": 0.244,
+    "comment": "'Similar to the last one disrupts at 0.244s no H-mode mode locking again'"
+  },
+  {
+    "sid": 21967,
+    "t_disruption": 0.45,
+    "comment": "'Good shot.Nice long H-mode starts slightly earlier than reference shotDisrupts at 0.45sThe SL wante"
+  },
+  {
+    "sid": 21971,
+    "t_disruption": 0.3,
+    "comment": "'No SS beam...FAs trip at 0.268 due to dithering ELMs then plasma disrupts at 300ms'"
+  },
+  {
+    "sid": 21972,
+    "t_disruption": 0.32,
+    "comment": "'SS beam only delivered. In termittent dithery H mode. Disrupt at 0.320'"
+  },
+  {
+    "sid": 21975,
+    "t_disruption": 0.25,
+    "comment": "'brief early H mode then goes ELM free after 0.180 and disrupts at 0.250. betaP is quite high but th"
+  },
+  {
+    "sid": 21976,
+    "t_disruption": 0.33,
+    "comment": "'major event at end of Ip ramp ELMy H mode from 0.310 disrupt at 0.330'"
+  },
+  {
+    "sid": 22040,
+    "t_disruption": 0.18,
+    "comment": "'Disruption at 0.180s. Bad IRE?Lower the density ramp for the next shot.'"
+  },
+  {
+    "sid": 22044,
+    "t_disruption": 0.235,
+    "comment": "'Plasma disrupted at 0.235s. Too much/too early neon puff?'"
+  },
+  {
+    "sid": 22047,
+    "t_disruption": 0.22,
+    "comment": "'Disruption at 0.22s.'"
+  },
+  {
+    "sid": 22057,
+    "t_disruption": 0.28,
+    "comment": "'Good beams shot disrupts at 0.28s now.'"
+  },
+  {
+    "sid": 22059,
+    "t_disruption": 0.305,
+    "comment": "'Good beams disrupts at 0.305s locked mode at 0.297s no He'"
+  },
+  {
+    "sid": 22077,
+    "t_disruption": 0.325,
+    "comment": "'OK. Terminates at 325 ms.'"
+  },
+  {
+    "sid": 22078,
+    "t_disruption": 0.339,
+    "comment": "'OK. IRE at 339 ms. Plasma terminates 18 ms later.'"
+  },
+  {
+    "sid": 22083,
+    "t_disruption": 0.281,
+    "comment": "'Disrupts at 281 ms.'"
+  },
+  {
+    "sid": 22086,
+    "t_disruption": 0.305,
+    "comment": "'Possibly still to low. Terminates at 305 ms.'"
+  },
+  {
+    "sid": 22107,
+    "t_disruption": 0.18,
+    "comment": "'plant ran OK plasma disrupt at 0.180. Desnity higher than 18830 but similar to 22102Some loss of Z "
+  },
+  {
+    "sid": 22141,
+    "t_disruption": 0.15,
+    "comment": "'Disrupts at 0.15'"
+  },
+  {
+    "sid": 22144,
+    "t_disruption": 0.26,
+    "comment": "'Disruption at 0.260s. Locked mode?'"
+  },
+  {
+    "sid": 22145,
+    "t_disruption": 0.3,
+    "comment": "'Better. Disruption at 0.3s. Which is about 50ms later.'"
+  },
+  {
+    "sid": 22148,
+    "t_disruption": 0.21,
+    "comment": "'Disruption at 0.210s. Too much density too early.'"
+  },
+  {
+    "sid": 22152,
+    "t_disruption": 0.24,
+    "comment": "'Good shot. MARFE before the end of the solenoid.Disruption at 0.240s.'"
+  },
+  {
+    "sid": 22188,
+    "t_disruption": 0.1,
+    "comment": "'VDE at 0.1s because FA s are lost no SS beam shot is underdense and has too high a current for the "
+  },
+  {
+    "sid": 22189,
+    "t_disruption": 0.12,
+    "comment": "'Same again disrupts at 0.12s FA s behave a little better now again outer radius droops during the h"
+  },
+  {
+    "sid": 22191,
+    "t_disruption": 0.15,
+    "comment": "'IRE ends in VDE at 0.15s start-up is worse than before beams good though'"
+  },
+  {
+    "sid": 22229,
+    "t_disruption": 0.29,
+    "comment": "'Two short H-mode periods; disruption at 0.29.'"
+  },
+  {
+    "sid": 22237,
+    "t_disruption": 0.3,
+    "comment": "'Disruption at 0.3.'"
+  },
+  {
+    "sid": 22273,
+    "t_disruption": 0.38,
+    "comment": "'Good shot. Plasma disrupted at 0.38s. H-mode lost at 0.36s.'"
+  },
+  {
+    "sid": 22287,
+    "t_disruption": 0.27,
+    "comment": "'Not good. density pumped out and disrupted at 0.270s. ELM coils ran OK. Looks like a locked mode.'"
+  },
+  {
+    "sid": 22297,
+    "t_disruption": 0.36,
+    "comment": "'Good beams and shot. Disrupt at 0.360 probably sawtooth. Density ramping up  all 4 ECC OK.'"
+  },
+  {
+    "sid": 22298,
+    "t_disruption": 0.26,
+    "comment": "'No SW beam disrupt at 0.260 - density only slightly reduced at that time'"
+  },
+  {
+    "sid": 22300,
+    "t_disruption": 0.23,
+    "comment": "'IRE at 230ms. FAs trip at 280ms followed by VDE.'"
+  },
+  {
+    "sid": 22301,
+    "t_disruption": 0.28,
+    "comment": "'IRE at 280ms followed immediately by VDE.'"
+  },
+  {
+    "sid": 22302,
+    "t_disruption": 0.27,
+    "comment": "'IRE at 270ms plasma survivesbu degraded after this.'"
+  },
+  {
+    "sid": 22317,
+    "t_disruption": 0.36,
+    "comment": "'Good shot. IRE/VDE at 360ms.'"
+  },
+  {
+    "sid": 22351,
+    "t_disruption": 0.267,
+    "comment": "'good repeat however disrupts at 0.267s'"
+  },
+  {
+    "sid": 22381,
+    "t_disruption": 0.2,
+    "comment": "'Disruption at 200ms. Probably linked to loss of vertical control (strong oscillations phase once ag"
+  },
+  {
+    "sid": 22394,
+    "t_disruption": 0.3,
+    "comment": "'Shot lasts longer but still nicely oscillating up and down. Terminates at 300 ms.'"
+  },
+  {
+    "sid": 22402,
+    "t_disruption": 0.3,
+    "comment": "'Shot terminates at 300 ms.'"
+  },
+  {
+    "sid": 22427,
+    "t_disruption": 0.2,
+    "comment": "'Disruption at 0.2'"
+  },
+  {
+    "sid": 22431,
+    "t_disruption": 0.25,
+    "comment": "'Disruption at 0.25.'"
+  },
+  {
+    "sid": 22440,
+    "t_disruption": 0.23,
+    "comment": "'No IB puff at all; disruption at 0.23.'"
+  },
+  {
+    "sid": 22452,
+    "t_disruption": 0.2,
+    "comment": "'Beams OK.Disruption at 0.200s.Inboard helios didn t trigger: so most probably too low density.'"
+  },
+  {
+    "sid": 22455,
+    "t_disruption": 0.23,
+    "comment": "'Inboard gas puff works but disruption at 0.230s.FA trips VDE.'"
+  },
+  {
+    "sid": 22457,
+    "t_disruption": 0.15,
+    "comment": "'No beam!Inboard Helios did work.VDE at 0.150s.'"
+  },
+  {
+    "sid": 22482,
+    "t_disruption": 0.32,
+    "comment": "'Good beams and disrupt at 0.320 again with strong mode. All ELM coils fired but not long before ter"
+  },
+  {
+    "sid": 22493,
+    "t_disruption": 0.45,
+    "comment": "'Premature disruption at 0.450. ELM A cut out at peak current - maybe creating n=1 error exaggeratin"
+  },
+  {
+    "sid": 22502,
+    "t_disruption": 0.2,
+    "comment": "'Density too low IRE at 200 ms lost H-mode.'"
+  },
+  {
+    "sid": 22504,
+    "t_disruption": 0.25,
+    "comment": "'SW beam trips at 200 ms IRE at 250 ms and eventually runs out of flux at 330 ms. We still get the H"
+  },
+  {
+    "sid": 22507,
+    "t_disruption": 0.25,
+    "comment": "'Shot and NBI OK but IRE at 250ms because of FLOW_REF change.'"
+  },
+  {
+    "sid": 22510,
+    "t_disruption": 0.28,
+    "comment": "'Disrupted at 280ms. SS NBI late.'"
+  },
+  {
+    "sid": 22557,
+    "t_disruption": 0.3,
+    "comment": "'Good beams disrupts at 0.3s good shot EF coil settings are higher than in #13695 no signs of an ITB"
+  },
+  {
+    "sid": 22563,
+    "t_disruption": 0.2,
+    "comment": "'SS beam 50ms late shot disrupts at 0.2s'"
+  },
+  {
+    "sid": 22565,
+    "t_disruption": 0.21,
+    "comment": "'Good beam still disrupts at 0.21s less beam fuelling leads to a locked mode probably.'"
+  },
+  {
+    "sid": 22572,
+    "t_disruption": 0.22,
+    "comment": "'Big locked mode at 220ms. One beam breakdown. ELM coil C started OK but tripped at ~320ms.'"
+  },
+  {
+    "sid": 22577,
+    "t_disruption": 0.22,
+    "comment": "'Good beams but again there is a locked mode at 220ms as in 22572.'"
+  },
+  {
+    "sid": 22578,
+    "t_disruption": 0.22,
+    "comment": "'And again a locked mode at 220ms... So we give up on this.'"
+  },
+  {
+    "sid": 22595,
+    "t_disruption": 0.29,
+    "comment": "'Boo. Disrupt at 0.290s. Large mode slowing from 18kHz. Desnity a bit low compared with 22561'"
+  },
+  {
+    "sid": 22597,
+    "t_disruption": 0.2,
+    "comment": "'SS NBi broke down a couple of times. 7kHz mode braked sharply and disrupted at 0.200. Got much too "
+  },
+  {
+    "sid": 22600,
+    "t_disruption": 0.15,
+    "comment": "'Fast vertical oscillation followed by VDE at 0.150s'"
+  },
+  {
+    "sid": 22637,
+    "t_disruption": 0.18,
+    "comment": "'No SS beam at all. Early disruption at 180ms.'"
+  },
+  {
+    "sid": 22647,
+    "t_disruption": 0.33,
+    "comment": "'Good beam. Density larger than in 20860. Plasma disrupts at 330ms.'"
+  },
+  {
+    "sid": 22698,
+    "t_disruption": 0.2,
+    "comment": "'Large mode triggered at 0.150 disrupt at 0.200. BetaP~0.5.'"
+  },
+  {
+    "sid": 22739,
+    "t_disruption": 0.3,
+    "comment": "'No H-mode. Doesn t even look like a SND.Plasma disrupts at 0.30s: FA s for  vertical control trippe"
+  },
+  {
+    "sid": 22743,
+    "t_disruption": 0.35,
+    "comment": "'No beam (FBIS trip). No H-mode. Disruption at 0.35s.'"
+  },
+  {
+    "sid": 22758,
+    "t_disruption": 0.28,
+    "comment": "'NOt bad shot disrupt at 0.280 but OK till then.'"
+  },
+  {
+    "sid": 22793,
+    "t_disruption": 0.33,
+    "comment": "'SW stopped firing at 240ms. Disruption at 330ms.'"
+  },
+  {
+    "sid": 22799,
+    "t_disruption": 0.22,
+    "comment": "'Good beams. IRE at 220ms.'"
+  },
+  {
+    "sid": 22805,
+    "t_disruption": 0.205,
+    "comment": "'SS had 3 breakdowns. Ran out of flux at 230ms. IRE at 205ms.'"
+  },
+  {
+    "sid": 22824,
+    "t_disruption": 0.245,
+    "comment": "'Got quite a bit of density but shot disrupted at 0.245 because q95~2'"
+  },
+  {
+    "sid": 23015,
+    "t_disruption": 0.39,
+    "comment": "'All ELM coils worked. Very similar to previous shot: low density locked mode at 390ms.'"
+  },
+  {
+    "sid": 23017,
+    "t_disruption": 0.39,
+    "comment": "'All ELM coils worked. Locked mode at 390ms again although density is larger.'"
+  },
+  {
+    "sid": 23162,
+    "t_disruption": 0.37,
+    "comment": "'Disrupt at 0.370 - maybe locked mode but probably loss of Z control.  Still showing signs of satura"
+  },
+  {
+    "sid": 23287,
+    "t_disruption": 0.175,
+    "comment": "'IRE at 175 ms shot terminates at 230 ms. Beam didn t stop at 300 ms (incorrect setting).'"
+  },
+  {
+    "sid": 23303,
+    "t_disruption": 0.2,
+    "comment": "'Big vertical oscillations again (due to a problem with the velocity feedback according to Graham) a"
+  },
+  {
+    "sid": 23305,
+    "t_disruption": 0.2,
+    "comment": "'Good beams. Disruption at 200ms (IRE due to low density) but it is not a problem for the FIDA measu"
+  },
+  {
+    "sid": 23306,
+    "t_disruption": 0.335,
+    "comment": "'Beam started 20ms late.Otherwise good shot. Disrupted at 335ms.'"
+  },
+  {
+    "sid": 23307,
+    "t_disruption": 0.12,
+    "comment": "'SS had several breakdowns and so fired late (at 115ms).Early disruption at 120ms.'"
+  },
+  {
+    "sid": 23310,
+    "t_disruption": 0.125,
+    "comment": "'Only a short beam blip from 70 to 80ms. Disruption at 125ms.'"
+  },
+  {
+    "sid": 23333,
+    "t_disruption": 0.21,
+    "comment": "'Disrupts at 0.21'"
+  },
+  {
+    "sid": 23354,
+    "t_disruption": 0.4,
+    "comment": "'Disruption at 0.40s due to locked mode.Density pump-out observed before the locked mode (which was "
+  },
+  {
+    "sid": 23411,
+    "t_disruption": 0.32,
+    "comment": "'Disrupts at 0.32 as expected.'"
+  },
+  {
+    "sid": 23429,
+    "t_disruption": 0.215,
+    "comment": "'Locked mode at 215ms.'"
+  },
+  {
+    "sid": 23436,
+    "t_disruption": 0.27,
+    "comment": "'disrupts at 270 ms'"
+  },
+  {
+    "sid": 23440,
+    "t_disruption": 0.35,
+    "comment": "'good H-mode from 250 ms - might still be too high - disrupts at 350 ms'"
+  },
+  {
+    "sid": 23496,
+    "t_disruption": 0.245,
+    "comment": "'Now density feedback worked but beam was ~100 ms late. IRE at 245 ms followed by loss of vertical c"
+  },
+  {
+    "sid": 23519,
+    "t_disruption": 0.33,
+    "comment": "'Ok. Now short break down on the SS beam. IRE at 330 ms.'"
+  },
+  {
+    "sid": 23527,
+    "t_disruption": 0.23,
+    "comment": "'SS has 2 breakdowns good SW.  Plasma touches P3 upper. Loose vertical stability and disrupt at 230m"
+  },
+  {
+    "sid": 23531,
+    "t_disruption": 0.37,
+    "comment": "'The plasma touches the centre column from ~310ms and disrupts at 370ms. Elongation unchanged...'"
+  },
+  {
+    "sid": 23598,
+    "t_disruption": 0.34,
+    "comment": "'OK. Natural disruption at 340ms.'"
+  },
+  {
+    "sid": 23600,
+    "t_disruption": 0.32,
+    "comment": "'Good shot with disruption at 320ms.'"
+  },
+  {
+    "sid": 23631,
+    "t_disruption": 0.32,
+    "comment": "'Short blip of SW in the middle. Disrupted at 320ms. No H-mode.'"
+  },
+  {
+    "sid": 23677,
+    "t_disruption": 0.125,
+    "comment": "'Disrupts at 0.125s FA s at the limit of their capapbilities'"
+  },
+  {
+    "sid": 23775,
+    "t_disruption": 0.32,
+    "comment": "'Disruption at 0.32s not usual for standard shot. Density lower than reference after 0.26s. Not obvi"
+  },
+  {
+    "sid": 23883,
+    "t_disruption": 0.25,
+    "comment": "'Disruption at 0.25s. Plasma radius extremely large may have screwed up HOMER. The SL forgot to adap"
+  },
+  {
+    "sid": 23886,
+    "t_disruption": 0.3,
+    "comment": "'Disruption at 0.3s. Lost density feedback...'"
+  },
+  {
+    "sid": 24004,
+    "t_disruption": 0.25,
+    "comment": "'Disrupts at 250 ms.'"
+  },
+  {
+    "sid": 24005,
+    "t_disruption": 0.28,
+    "comment": "'Ok. Disrupts at 280 ms.'"
+  },
+  {
+    "sid": 24095,
+    "t_disruption": 0.4,
+    "comment": "'VDE at 400 ms'"
+  },
+  {
+    "sid": 24096,
+    "t_disruption": 0.35,
+    "comment": "'VDE at 350 ms'"
+  },
+  {
+    "sid": 24127,
+    "t_disruption": 0.2,
+    "comment": "'IRE at 200 ms - H-mode from 274 ms'"
+  },
+  {
+    "sid": 24175,
+    "t_disruption": 0.35,
+    "comment": "'Ok. Beam on time. IRE at 350 ms. Looks like we lost the type II ELMs.'"
+  },
+  {
+    "sid": 24212,
+    "t_disruption": 0.27,
+    "comment": "'Plasma touches nozzle at 0.21 and disrupts at 0.27.'"
+  },
+  {
+    "sid": 24219,
+    "t_disruption": 0.25,
+    "comment": "'Disruption at 0.25'"
+  },
+  {
+    "sid": 24307,
+    "t_disruption": 0.19,
+    "comment": "'Disrupts at 190 ms. Looks like vertical control was lost. FA1 and FA2 died.'"
+  },
+  {
+    "sid": 24368,
+    "t_disruption": 0.18,
+    "comment": "'Disruption at 0.18 probably caused by spike on FA current at 0.15'"
+  },
+  {
+    "sid": 24411,
+    "t_disruption": 0.22,
+    "comment": "'VDE at 0.22s lost FA s at 0.206s plasma highly vertically unstable from 0.13s good beams though and"
+  },
+  {
+    "sid": 24594,
+    "t_disruption": 0.206,
+    "comment": "'VDE at 0.206s since FA s cut-out at 0.145 (FA1) and 0.105 (FA2).'"
+  },
+  {
+    "sid": 24597,
+    "t_disruption": 0.29,
+    "comment": "'Better shot  disrupts at 290ms.'"
+  },
+  {
+    "sid": 24607,
+    "t_disruption": 0.23,
+    "comment": "'SNBI has one breakdown at the start. Plasma disrupts at 230ms'"
+  },
+  {
+    "sid": 24630,
+    "t_disruption": 0.26,
+    "comment": "'SS NBI had 1 trip at the start.Disrupts at 0.260s.ZREF was wrong (or more correctly: ZREF was wrong"
+  },
+  {
+    "sid": 24631,
+    "t_disruption": 0.29,
+    "comment": "'Good beams.Disrupts at 0.290s.Plasma is too far down now: touches the P3 coil.'"
+  },
+  {
+    "sid": 24658,
+    "t_disruption": 0.19,
+    "comment": "'Plasma touches something at 0.141 and disrupts at 0.19.'"
+  },
+  {
+    "sid": 24659,
+    "t_disruption": 0.2,
+    "comment": "'Disruption at 0.2'"
+  },
+  {
+    "sid": 24660,
+    "t_disruption": 0.18,
+    "comment": "'Disruption at 0.18'"
+  },
+  {
+    "sid": 24723,
+    "t_disruption": 0.2,
+    "comment": "'SW late SS Broke down plasma disrupts at 200 ms.'"
+  },
+  {
+    "sid": 24803,
+    "t_disruption": 0.25,
+    "comment": "'perfect beams but locked mode at 250 ms'"
+  },
+  {
+    "sid": 24804,
+    "t_disruption": 0.25,
+    "comment": "'perfect beams but locked mode at 250 ms again'"
+  },
+  {
+    "sid": 24880,
+    "t_disruption": 0.15,
+    "comment": "'Shot disrupts at 0.15s. Looks suspiciously like a locked mode.Good beam.'"
+  },
+  {
+    "sid": 24903,
+    "t_disruption": 0.2,
+    "comment": "'Good beam.plasma terminated at 200 ms.Lost FA2 at 150 ms.'"
+  },
+  {
+    "sid": 25677,
+    "t_disruption": 0.23,
+    "comment": "'lost both FAs causing VDE at 0.230s'"
+  },
+  {
+    "sid": 25732,
+    "t_disruption": 0.33,
+    "comment": "'Good shot. Terminated at ~330ms.'"
+  },
+  {
+    "sid": 25749,
+    "t_disruption": 0.25,
+    "comment": "'Disrupted at 0.25s. Oxygen signal reduced compared to previous. Current hump at start of flattop. S"
+  },
+  {
+    "sid": 25773,
+    "t_disruption": 0.29,
+    "comment": "'Shot disrupts at 290ms'"
+  },
+  {
+    "sid": 25799,
+    "t_disruption": 0.25,
+    "comment": "'DMV termination at 250ms as intended.'"
+  },
+  {
+    "sid": 25806,
+    "t_disruption": 0.25,
+    "comment": "'DMV termination at 250ms as intended.'"
+  },
+  {
+    "sid": 25813,
+    "t_disruption": 0.26,
+    "comment": "'DMV termination at 260ms as intended. Reduction in halo currents in comparison with previous shot s"
+  },
+  {
+    "sid": 25861,
+    "t_disruption": 0.5,
+    "comment": "'Okay - VDE at 500 ms'"
+  },
+  {
+    "sid": 25946,
+    "t_disruption": 0.26,
+    "comment": "'Plasma displaces downwards - but too much - FAS trip and vertical disruption at 260 ms - shows that"
+  },
+  {
+    "sid": 26041,
+    "t_disruption": 0.3,
+    "comment": "'VDE at 300 ms kills the plasma. Terminates earlier than reference.'"
+  },
+  {
+    "sid": 26068,
+    "t_disruption": 0.2,
+    "comment": "'Ok. Both beams on time. IRE at 200 ms causes density to drop. Current flat top terminated because w"
+  },
+  {
+    "sid": 26123,
+    "t_disruption": 0.21,
+    "comment": "'better shot - with ramp down although still IRE at 210 ms - up to 15 ms the current is same as prev"
+  },
+  {
+    "sid": 26127,
+    "t_disruption": 0.25,
+    "comment": "'better current ramp - IRE at 250 ms - p2 hits zero at 150ms - need to improve or use change over - "
+  },
+  {
+    "sid": 26133,
+    "t_disruption": 0.25,
+    "comment": "'clear pump out from 230ms then disrupts at 250ms'"
+  },
+  {
+    "sid": 26136,
+    "t_disruption": 0.21,
+    "comment": "'FA2 fired OK - disrupts at 210 ms'"
+  },
+  {
+    "sid": 26137,
+    "t_disruption": 0.22,
+    "comment": "'disrupts at 220 with locked mode at 200ms'"
+  },
+  {
+    "sid": 26138,
+    "t_disruption": 0.21,
+    "comment": "'disrupts at 210 ms again'"
+  },
+  {
+    "sid": 26152,
+    "t_disruption": 0.21,
+    "comment": "'Locked mode at 210 ms.'"
+  },
+  {
+    "sid": 26154,
+    "t_disruption": 0.225,
+    "comment": "'Locked mode at 225 ms.'"
+  },
+  {
+    "sid": 26175,
+    "t_disruption": 0.187,
+    "comment": "'Plasma disrupts at ~187ms due to locked mode.'"
+  },
+  {
+    "sid": 26226,
+    "t_disruption": 0.267,
+    "comment": "'Shorter than reference shot. Disrupts at 267ms after a 90ms flattop.'"
+  },
+  {
+    "sid": 26240,
+    "t_disruption": 0.298,
+    "comment": "'Good shot but IRE at 232ms. No hard x-ray alarm this time. Shot disrupted at 298ms'"
+  },
+  {
+    "sid": 26241,
+    "t_disruption": 0.385,
+    "comment": "'Good shot but below density limit. Disrupt at 385ms'"
+  },
+  {
+    "sid": 26242,
+    "t_disruption": 0.329,
+    "comment": "'Good shot higher density disrupting at 329ms after reaching line integral density of 6.9e19 m-2 - e"
+  },
+  {
+    "sid": 26244,
+    "t_disruption": 0.35,
+    "comment": "'Good shot ELM coils were still in the shot from 0.36 to 0. 44s minor IRE at 0.209s first sawtooth p"
+  },
+  {
+    "sid": 26259,
+    "t_disruption": 0.1,
+    "comment": "'disrupt at 0.100s. No TS data and no bolometer signal either.'"
+  },
+  {
+    "sid": 26270,
+    "t_disruption": 0.43,
+    "comment": "'good shot LM set in at 0.330 disrupt at 0.43.'"
+  },
+  {
+    "sid": 26276,
+    "t_disruption": 0.292,
+    "comment": "'FA4 half clamped at 0.282s then VDE at 0.292 tripped both at 3 4KA respectively'"
+  },
+  {
+    "sid": 26332,
+    "t_disruption": 0.08,
+    "comment": "'Eliminated IRE at 80 ms but still got one at 220. As for the rest similar to 26330.'"
+  },
+  {
+    "sid": 26339,
+    "t_disruption": 0.15,
+    "comment": "'Still IRE at 150 ms.'"
+  },
+  {
+    "sid": 26354,
+    "t_disruption": 0.17,
+    "comment": "'Shot worked but we got an IRE at 170 ms. Density almost identical to reference. P3 start still a bi"
+  },
+  {
+    "sid": 26381,
+    "t_disruption": 0.3,
+    "comment": "'Shorter than reference disrupts at 300ms.'"
+  },
+  {
+    "sid": 26392,
+    "t_disruption": 0.35,
+    "comment": "'Good repeat. Discharge terminates at 350ms with a 150ms flattop.'"
+  },
+  {
+    "sid": 26399,
+    "t_disruption": 0.32,
+    "comment": "'ELM coils result in expected density pumpout RP head clearly inserted in plasma edge.IRE at ~320ms "
+  },
+  {
+    "sid": 26400,
+    "t_disruption": 0.214,
+    "comment": "'Good shot.Locked mode at 214ms.'"
+  },
+  {
+    "sid": 26466,
+    "t_disruption": 0.32,
+    "comment": "'shot dies with a locked mode at 320 ms'"
+  },
+  {
+    "sid": 26487,
+    "t_disruption": 0.271,
+    "comment": "'Shot went through. Early H-mode at 212 ms shot disrupts at 271 ms after a couple of big ELMs. SS br"
+  },
+  {
+    "sid": 26496,
+    "t_disruption": 0.28,
+    "comment": "'No H-mode shot disrupts at 280 ms.'"
+  },
+  {
+    "sid": 26502,
+    "t_disruption": 0.3,
+    "comment": "'IRE at 300 ms kicks the shot out of H-mode. Shot finishes at 350 ms.'"
+  },
+  {
+    "sid": 26511,
+    "t_disruption": 0.33,
+    "comment": "'OK. Disruption at 330ms.'"
+  },
+  {
+    "sid": 26512,
+    "t_disruption": 0.34,
+    "comment": "'OK. Disruption at 340ms.'"
+  },
+  {
+    "sid": 26513,
+    "t_disruption": 0.42,
+    "comment": "'OK. Disruption at 420ms.'"
+  },
+  {
+    "sid": 26530,
+    "t_disruption": 0.1,
+    "comment": "'Shot disrupted at 100ms.'"
+  },
+  {
+    "sid": 26553,
+    "t_disruption": 0.278,
+    "comment": "'Plasma terminates at 278 ms before entering H-mode.'"
+  },
+  {
+    "sid": 26581,
+    "t_disruption": 0.42,
+    "comment": "'No IRE after the current ramp later H-mode though disrupts at 0.42s short early H-mode around 0.3s "
+  },
+  {
+    "sid": 26585,
+    "t_disruption": 0.445,
+    "comment": "'Good shot good repeat despite the later beam timing. RFEA was too far (~14cm) from the plasma edge "
+  },
+  {
+    "sid": 26586,
+    "t_disruption": 0.463,
+    "comment": "'Strong interaction with the RFEA from 0.21s but H-mode only lost between 0.244s and 0.26s L-H trans"
+  },
+  {
+    "sid": 26799,
+    "t_disruption": 0.6,
+    "comment": "'Density drop removed.Good long shot disrupts at 0.6s.'"
+  },
+  {
+    "sid": 26803,
+    "t_disruption": 0.44,
+    "comment": "'Good repeat. Density matches 26784 as required rather than 26783.Disruption at 0.44s'"
+  },
+  {
+    "sid": 26841,
+    "t_disruption": 0.2,
+    "comment": "'late beam - IRE at 200 ms'"
+  },
+  {
+    "sid": 26877,
+    "t_disruption": 0.32,
+    "comment": "'get some H-mode from 260ms but then disrupts at 320 ms - may be too far down in Z'"
+  },
+  {
+    "sid": 26928,
+    "t_disruption": 0.42,
+    "comment": "'larger effect on density and plasma ends with a locked mode at 420 ms'"
+  },
+  {
+    "sid": 26954,
+    "t_disruption": 0.2,
+    "comment": "'Success cHFS working.Discharge disrupts at 0.2s.'"
+  },
+  {
+    "sid": 26977,
+    "t_disruption": 0.292,
+    "comment": "'Not as good as before. SS beam late IRE at 292 ms.'"
+  },
+  {
+    "sid": 26980,
+    "t_disruption": 0.4,
+    "comment": "'Ok. Good shot. Terminates at 400 ms because we ran out of flux.'"
+  },
+  {
+    "sid": 26981,
+    "t_disruption": 0.4,
+    "comment": "'Good repeat - although did disrupt at 400 ms where reference had a soft landing extending out beyon"
+  },
+  {
+    "sid": 27013,
+    "t_disruption": 0.35,
+    "comment": "'SS beam late (1BD).  Plasma disrupted at ~350ms again. Density low(ish) again (similar to 26011).  "
+  },
+  {
+    "sid": 27040,
+    "t_disruption": 0.18,
+    "comment": "'Disrupted at 0.180 following vertical oscillations.  Looks like a beta limit or vertical control pr"
+  },
+  {
+    "sid": 27042,
+    "t_disruption": 0.31,
+    "comment": "'Good beams. Nice H-mode and island. Shot terminates at 310ms.TS triggering worked.'"
+  },
+  {
+    "sid": 27043,
+    "t_disruption": 0.31,
+    "comment": "'Shot goodNTM goodHowever shot still terminates at 310ms despite shorter beam.'"
+  },
+  {
+    "sid": 27145,
+    "t_disruption": 0.26,
+    "comment": "'Disrupt at 0.260s . No sliding joint warnings'"
+  },
+  {
+    "sid": 27203,
+    "t_disruption": 0.38,
+    "comment": "'Good shot - good beams - density pump out but then disrupts at 380 ms'"
+  },
+  {
+    "sid": 27254,
+    "t_disruption": 0.23,
+    "comment": "'IRE at 230ms. H mode from 330ms to 410ms. Good density match to 27251 either side of IRE.'"
+  },
+  {
+    "sid": 27258,
+    "t_disruption": 0.3,
+    "comment": "'Shorter shot disrupts at 300ms. Dithering H mode.'"
+  },
+  {
+    "sid": 27260,
+    "t_disruption": 0.4,
+    "comment": "'Good shot. Disrupts at 0.4s flattop duration 200ms. Small ELMy H mode from 250 to 270ms.'"
+  },
+  {
+    "sid": 27272,
+    "t_disruption": 0.31,
+    "comment": "'Disrupts at ~310 ms (looks like a mode-lock).'"
+  },
+  {
+    "sid": 27279,
+    "t_disruption": 0.31,
+    "comment": "'SW broke down. IRE at 310 ms.'"
+  },
+  {
+    "sid": 27283,
+    "t_disruption": 0.22,
+    "comment": "'Higher density than reference - no h-modeIRE at 220ms'"
+  },
+  {
+    "sid": 27284,
+    "t_disruption": 0.22,
+    "comment": "'Still have an IRE at 220ms.'"
+  },
+  {
+    "sid": 27361,
+    "t_disruption": 0.3,
+    "comment": "'Late NBI shot disrupts at 300 ms.'"
+  },
+  {
+    "sid": 27392,
+    "t_disruption": 0.3,
+    "comment": "'Disrupts at 300 ms again'"
+  },
+  {
+    "sid": 27399,
+    "t_disruption": 0.17,
+    "comment": "'SS beam late by 23 ms - get an IRE at 170 ms - ELM free H-mode from about 270 ms - little effect of"
+  },
+  {
+    "sid": 27401,
+    "t_disruption": 0.17,
+    "comment": "'Good beams - but IRE at 170 ms causes disruption'"
+  },
+  {
+    "sid": 27403,
+    "t_disruption": 0.17,
+    "comment": "'still IRE at 170 ms - so not early current ramp phase'"
+  },
+  {
+    "sid": 27410,
+    "t_disruption": 0.28,
+    "comment": "'disrupts at 280ms - too near to Centre column'"
+  },
+  {
+    "sid": 27427,
+    "t_disruption": 0.1,
+    "comment": "'SL forgot to reduce the IB gas pressure - so got disruption at 100 ms'"
+  },
+  {
+    "sid": 27443,
+    "t_disruption": 0.3,
+    "comment": "'SW didn t fire.No H-mode. IRE at 300 ms.Good density match up to 220 ms.'"
+  },
+  {
+    "sid": 27497,
+    "t_disruption": 0.43,
+    "comment": "'All ELM coils.Good match to reference but shot disrupts at 0.43s due to locked mode.'"
+  },
+  {
+    "sid": 27519,
+    "t_disruption": 0.16,
+    "comment": "'Longer plasma - 400ms. IRE at ~160ms H-mode from 287ms.'"
+  },
+  {
+    "sid": 27520,
+    "t_disruption": 0.15,
+    "comment": "'Still get IRE at ~150ms. Earlier H-mode transition - 165ms. Density is higher than previous from 90"
+  },
+  {
+    "sid": 27524,
+    "t_disruption": 0.15,
+    "comment": "'Good repeat. IRE at ~150ms significantly later than beam start so MSE measurement at 130 should be "
+  },
+  {
+    "sid": 27534,
+    "t_disruption": 0.19,
+    "comment": "'Shot disrupts at 0.19s probably due to the early beam but DRREF change at similar time. Early H-mod"
+  },
+  {
+    "sid": 27537,
+    "t_disruption": 0.362,
+    "comment": "'better than parent but IRE at 0.14s H-mode from 0.264s disrupts at 0.362 shortly after it lost H-mo"
+  },
+  {
+    "sid": 27550,
+    "t_disruption": 0.25,
+    "comment": "'Disrupt at 250'"
+  },
+  {
+    "sid": 27561,
+    "t_disruption": 0.265,
+    "comment": "'Not so good disrupts at 265 ms.'"
+  },
+  {
+    "sid": 27562,
+    "t_disruption": 0.3,
+    "comment": "'Less dense than reference. Disrupts at 300 ms probably because of locked mode.'"
+  },
+  {
+    "sid": 27590,
+    "t_disruption": 0.31,
+    "comment": "'OK large IRE at 310ms.'"
+  },
+  {
+    "sid": 27634,
+    "t_disruption": 0.17,
+    "comment": "'Good beam. IRE at 170ms.'"
+  },
+  {
+    "sid": 27639,
+    "t_disruption": 0.3,
+    "comment": "'Plasma disrupts at 300 ms.'"
+  },
+  {
+    "sid": 27640,
+    "t_disruption": 0.29,
+    "comment": "'Shot disrupts at 290ms.'"
+  },
+  {
+    "sid": 27655,
+    "t_disruption": 0.2,
+    "comment": "'This time SW tried to fire at 200 ms but had 2 breakdowns - back transition before the ramp down in"
+  },
+  {
+    "sid": 27700,
+    "t_disruption": 0.35,
+    "comment": "'One breakdown on SW.  Shot disrupts at 350 ms. Image shows RMPs effects plasma at a coil current of"
+  },
+  {
+    "sid": 27747,
+    "t_disruption": 0.17,
+    "comment": "'Good repeat barring IRE at 170 ms - but PIC suspects this will disappear at LSND'"
+  },
+  {
+    "sid": 27748,
+    "t_disruption": 0.1,
+    "comment": "'Not good - downwards VDE at 100 ms'"
+  },
+  {
+    "sid": 27750,
+    "t_disruption": 0.2,
+    "comment": "'LVDE at 200 ms this time. Follows substantial contact with P3.'"
+  },
+  {
+    "sid": 27752,
+    "t_disruption": 0.22,
+    "comment": "'Ip overshoots by 40 kA.Shot disrupts at 220 ms after tracking Z rather poorly.'"
+  },
+  {
+    "sid": 27754,
+    "t_disruption": 0.17,
+    "comment": "'Disrupts at 170 ms'"
+  },
+  {
+    "sid": 27762,
+    "t_disruption": 0.23,
+    "comment": "'VDE at 230ms.'"
+  },
+  {
+    "sid": 27802,
+    "t_disruption": 0.14,
+    "comment": "'IRE at 140 ms dropped density below reference; density feedback turned on at 150 => pushed density "
+  },
+  {
+    "sid": 27840,
+    "t_disruption": 0.09,
+    "comment": "'Good initial current ramp but lose the plasma on VDE at 90ms'"
+  },
+  {
+    "sid": 27842,
+    "t_disruption": 0.09,
+    "comment": "'same again VDE at 0.09s.'"
+  },
+  {
+    "sid": 27843,
+    "t_disruption": 0.1,
+    "comment": "'Slightly longer but still disrupts at 0.1s'"
+  },
+  {
+    "sid": 27844,
+    "t_disruption": 0.12,
+    "comment": "'Again disrupts at 0.12ms low current sustained for longer.'"
+  },
+  {
+    "sid": 27847,
+    "t_disruption": 0.33,
+    "comment": "'disrupts at 330 ms just before pellet - pump out larger and faster than in previous shot'"
+  },
+  {
+    "sid": 27859,
+    "t_disruption": 0.4,
+    "comment": "'Good shot but IRE at 0.09s early ramp seems to be too fast disrupts at 0.4s'"
+  },
+  {
+    "sid": 27868,
+    "t_disruption": 0.2,
+    "comment": "'Shot disrupts at 0.2s no real change in density the change is to late.'"
+  },
+  {
+    "sid": 27891,
+    "t_disruption": 0.35,
+    "comment": "'one breakdown on SS - coils effect ELMs but then causes a disruption at 350 ms'"
+  },
+  {
+    "sid": 27899,
+    "t_disruption": 0.324,
+    "comment": "'Ok. Goes into H-mode at 265 ms. H-mode killed by IRE at 324 ms. More ELMs than in reference.'"
+  },
+  {
+    "sid": 27901,
+    "t_disruption": 0.295,
+    "comment": "'Goes into ELM-free H-mode at 215 ms before ZREF is brought to zero. Disrupts at 295 ms. Density not"
+  },
+  {
+    "sid": 27934,
+    "t_disruption": 0.531,
+    "comment": "'Good shot H-mode from 0.371s disrupts at 0.531s'"
+  },
+  {
+    "sid": 27935,
+    "t_disruption": 0.496,
+    "comment": "'Good repeat long shot again H-mode from 0.374s disrupts at 0.496s'"
+  },
+  {
+    "sid": 27936,
+    "t_disruption": 0.517,
+    "comment": "'Good repeat H-mode from 0.370s disrupts at 0.517s'"
+  },
+  {
+    "sid": 27938,
+    "t_disruption": 0.502,
+    "comment": "'Good repeat H-mode from 0.372s disrupts at 0.502s got CX data.'"
+  },
+  {
+    "sid": 27941,
+    "t_disruption": 0.3,
+    "comment": "'SL forgot to select inboard gas puff. Underdense and disrupts at 300 ms. Useful for Mikhail s progr"
+  },
+  {
+    "sid": 27946,
+    "t_disruption": 0.3,
+    "comment": "'Ok. Shot similar to reference including IRE at ~300 ms.'"
+  },
+  {
+    "sid": 27970,
+    "t_disruption": 0.411,
+    "comment": "'Disrupts at 411 cHFS starts at 377.Plamsa density very close to 21712.'"
+  },
+  {
+    "sid": 28010,
+    "t_disruption": 0.25,
+    "comment": "'IRE at 250 ms - up to this point the shot is a good repeat -'"
+  },
+  {
+    "sid": 28013,
+    "t_disruption": 0.15,
+    "comment": "'IRE at 150 ms - H-mode from 250ms but over dense'"
+  },
+  {
+    "sid": 28014,
+    "t_disruption": 0.15,
+    "comment": "'IRE at 150 ms avoided but now get one at 290ms while plasma in H-mode'"
+  },
+  {
+    "sid": 28018,
+    "t_disruption": 0.164,
+    "comment": "'IRE at 164 ms'"
+  },
+  {
+    "sid": 28020,
+    "t_disruption": 0.22,
+    "comment": "'Both beams on time produces a large IRE at 220 ms'"
+  },
+  {
+    "sid": 28037,
+    "t_disruption": 0.26,
+    "comment": "'IRE at 260 ms'"
+  },
+  {
+    "sid": 28046,
+    "t_disruption": 0.32,
+    "comment": "'SW had break down at 300 ms - no effect on L-H transition - just small ELMs all the way through - H"
+  },
+  {
+    "sid": 28125,
+    "t_disruption": 0.274,
+    "comment": "'Disruption at 274 ms during rtEFIT control.Seg03 not selected in the GUI so did not participate in "
+  },
+  {
+    "sid": 28160,
+    "t_disruption": 0.4,
+    "comment": "'Disrupts at 400ms.'"
+  },
+  {
+    "sid": 28198,
+    "t_disruption": 0.21,
+    "comment": "'Still forming Z points. Fast disruption at 0.210.  P2 reversing  was still set 0 (should be 2)'"
+  },
+  {
+    "sid": 28207,
+    "t_disruption": 0.17,
+    "comment": "'VDE at 0.17s triggered by IRE ~0.14s'"
+  },
+  {
+    "sid": 28252,
+    "t_disruption": 0.25,
+    "comment": "'Both beams late. Shot disrupts at ~250 ms. Density similar to reference.'"
+  },
+  {
+    "sid": 28268,
+    "t_disruption": 0.375,
+    "comment": "'Shot ran OK in L mode. Disrupt at 0.375 about 35ms before  H mode reference - likely 1st sawtooth. "
+  },
+  {
+    "sid": 28274,
+    "t_disruption": 0.25,
+    "comment": "'shot disrupts at 250ms'"
+  },
+  {
+    "sid": 28275,
+    "t_disruption": 0.2,
+    "comment": "'shorter IRE at 200ms?'"
+  },
+  {
+    "sid": 28281,
+    "t_disruption": 0.172,
+    "comment": "'VDE at 172ms (spike at the same time on FAs in previous shots as well)'"
+  },
+  {
+    "sid": 28287,
+    "t_disruption": 0.32,
+    "comment": "'good repeat. IRE at 320ms (not in a region of interest)'"
+  },
+  {
+    "sid": 28298,
+    "t_disruption": 0.13,
+    "comment": "'good repeat IRE at 130ms as in reference'"
+  },
+  {
+    "sid": 28313,
+    "t_disruption": 0.24,
+    "comment": "'Disrupted at 240ms.'"
+  },
+  {
+    "sid": 28337,
+    "t_disruption": 0.11,
+    "comment": "'SS beam was late by 23ms disrupts at 0.11s (VDE) probably overdone the IDIV change.'"
+  },
+  {
+    "sid": 28338,
+    "t_disruption": 0.238,
+    "comment": "'Disrupts at 0.238s on a VDE strange density trace the Photron camera indicates that we may hit some"
+  },
+  {
+    "sid": 28343,
+    "t_disruption": 0.275,
+    "comment": "'good but shorter repeat. IRE at 275ms'"
+  },
+  {
+    "sid": 28751,
+    "t_disruption": 0.3,
+    "comment": "'470ms shot. 420ms SS NBI. IRE at 300ms.'"
+  },
+  {
+    "sid": 28758,
+    "t_disruption": 0.28,
+    "comment": "'460ms shot.  370ms SW NBI. IRE at 280ms.'"
+  },
+  {
+    "sid": 28765,
+    "t_disruption": 0.35,
+    "comment": "'Locked mode at 350ms - plasma disrupts.'"
+  },
+  {
+    "sid": 28767,
+    "t_disruption": 0.36,
+    "comment": "'Shorter shot that last - lost an ELM coil (D). IRE at 360ms.'"
+  },
+  {
+    "sid": 28777,
+    "t_disruption": 0.27,
+    "comment": "'Disrupted at 270ms. Too short for control test.'"
+  },
+  {
+    "sid": 28798,
+    "t_disruption": 0.18,
+    "comment": "'Disrupted at 180ms before rtefit control phase.'"
+  },
+  {
+    "sid": 28801,
+    "t_disruption": 0.26,
+    "comment": "'disrupts at 260ms'"
+  },
+  {
+    "sid": 28809,
+    "t_disruption": 0.23,
+    "comment": "'vertical disruption at 230 ms - too large a request on P2 causes vertical disruption'"
+  },
+  {
+    "sid": 28973,
+    "t_disruption": 0.25,
+    "comment": "'Good Direct induction startup but no beam - IRE at 250 ms'"
+  },
+  {
+    "sid": 28976,
+    "t_disruption": 0.34,
+    "comment": "'locked mode at 340 ms - 1 breakdown on SW but got beam from 320 ms - locked  onset at 320 ms'"
+  },
+  {
+    "sid": 28977,
+    "t_disruption": 0.28,
+    "comment": "'two beams but a short shot due to IRE at 280 ms - good reference for the FI programme'"
+  },
+  {
+    "sid": 28993,
+    "t_disruption": 0.35,
+    "comment": "'disrupts at 350 ms - locked mode onset at 355 ms'"
+  },
+  {
+    "sid": 28995,
+    "t_disruption": 0.4,
+    "comment": "' Good shot - disrupts at 400ms - beam blip from 270ms.'"
+  },
+  {
+    "sid": 29030,
+    "t_disruption": 0.135,
+    "comment": "'3 breakdowns on SW - H-mode at 395 ms (much later than parent) - IRE at 135 ms drops some density'"
+  },
+  {
+    "sid": 29031,
+    "t_disruption": 0.135,
+    "comment": "'SW beam started at 200 ms so moving 20ms earlier worked - lost the IRE at 135ms but now got one 280"
+  },
+  {
+    "sid": 29035,
+    "t_disruption": 0.23,
+    "comment": "'IRE at ~230ms kills the shot...'"
+  },
+  {
+    "sid": 29037,
+    "t_disruption": 0.15,
+    "comment": "'IRE at 150ms kills the shot.'"
+  },
+  {
+    "sid": 29039,
+    "t_disruption": 0.32,
+    "comment": "'Slightly lower density than previous at L-H transition type 3 ELMs. Density is much lower during H-"
+  },
+  {
+    "sid": 29113,
+    "t_disruption": 0.4,
+    "comment": "'Good shot. Disrupts at 0.4 s. Enters H mode at 0.28s.'"
+  },
+  {
+    "sid": 29172,
+    "t_disruption": 0.32,
+    "comment": "'two good beams both starting at 150 ms - disrupts at 320 ms - same IRE at 220 ms as was observed in"
+  },
+  {
+    "sid": 29174,
+    "t_disruption": 0.16,
+    "comment": "'Large IRE at 160 ms - so increasing the density ramp rate was not the right way to go'"
+  },
+  {
+    "sid": 29175,
+    "t_disruption": 0.225,
+    "comment": "'very large IRE at 225 ms - the density ramp rate didnt actually change even though the request did'"
+  },
+  {
+    "sid": 29208,
+    "t_disruption": 0.36,
+    "comment": "'Good RP data as seen on camerashot terminates at 360ms.Brief H-mode (270ms - 330ms)'"
+  },
+  {
+    "sid": 29229,
+    "t_disruption": 0.2,
+    "comment": "'Beam set to 0.127 ms starting at 0.15.  Disrupts at 0.2 ms due to FA trip slightly underdense betwe"
+  },
+  {
+    "sid": 29232,
+    "t_disruption": 0.19,
+    "comment": "'Disrupts at 0.19s large density drop at 0.174s due to locked mode/IRE minor IRE at 0.155s.'"
+  },
+  {
+    "sid": 29236,
+    "t_disruption": 0.3,
+    "comment": "'Termination at 300ms but good enough for expt. Beams arrived on time at 0.100 and 0.160ms respectiv"
+  },
+  {
+    "sid": 29241,
+    "t_disruption": 0.09,
+    "comment": "'Disrupts at 0.09s. Problems with ZIP estimator because of CCBV15 has TF pick-up'"
+  },
+  {
+    "sid": 29262,
+    "t_disruption": 0.32,
+    "comment": "'Good shot. SS beam broke down at the start. IRE at 320 ms.'"
+  },
+  {
+    "sid": 29406,
+    "t_disruption": 0.48,
+    "comment": "'Good shot. Disrupts at 480ms.cHFS comes in at 100ms - good.Nice long H-mode at 140ms to 330msGood i"
+  },
+  {
+    "sid": 29420,
+    "t_disruption": 0.3,
+    "comment": "'Good repeatShot disrupts at 300ms'"
+  },
+  {
+    "sid": 29502,
+    "t_disruption": 0.3,
+    "comment": "'Plasma disrupts at 300ms. No useful RFEA data.'"
+  },
+  {
+    "sid": 29538,
+    "t_disruption": 0.32,
+    "comment": "'Disrupts at 320ms. Good shot for coherence imaging.'"
+  },
+  {
+    "sid": 29548,
+    "t_disruption": 0.35,
+    "comment": "'Large probe interaction. Plasma disrupts at 350ms.Appears that carbon shell on probe has become dam"
+  },
+  {
+    "sid": 29554,
+    "t_disruption": 0.35,
+    "comment": "'All ELM coils fired.Good density match to reference - L mode throughout as required. Disrupts at 0."
+  },
+  {
+    "sid": 29557,
+    "t_disruption": 0.28,
+    "comment": "'Shot disrupts at 280ms.ELM A trips at 1.30kA.'"
+  },
+  {
+    "sid": 29631,
+    "t_disruption": 0.4,
+    "comment": "'density during chfs higher by roughly 10% from 150ms. modest changes in density throughout flow ref"
+  },
+  {
+    "sid": 29634,
+    "t_disruption": 0.35,
+    "comment": "'Disrupts at 350 ms.'"
+  },
+  {
+    "sid": 29683,
+    "t_disruption": 0.42,
+    "comment": "'H mode later than coils off at 390ms.Discharge terminates at 420ms - beam ceases at at 400msMissing"
+  },
+  {
+    "sid": 29685,
+    "t_disruption": 0.4,
+    "comment": "'Short discharge no H mode. Disrupts at 400ms.Rotation velocity does not go to zero so not rotation "
+  },
+  {
+    "sid": 29716,
+    "t_disruption": 0.18,
+    "comment": "'Again downwards VDE at 180 ms this time with no obvious precursor. Starting to appear that 800 kA L"
+  },
+  {
+    "sid": 29725,
+    "t_disruption": 0.25,
+    "comment": "'Short terminated early with IRE at 250ms.'"
+  },
+  {
+    "sid": 29747,
+    "t_disruption": 0.35,
+    "comment": "'First use of cHFS puts in a large amount of gas at 100ms.Poor shot. Terminates at 350ms no H mode.'"
+  },
+  {
+    "sid": 29753,
+    "t_disruption": 0.35,
+    "comment": "'Good - H mode from 120ms with well spaced ELMs.Disrupts at 350ms'"
+  },
+  {
+    "sid": 29754,
+    "t_disruption": 0.35,
+    "comment": "'Good shot.H mode from 200ms disrupts at 350ms.'"
+  },
+  {
+    "sid": 29759,
+    "t_disruption": 0.35,
+    "comment": "'Runs on centre column for a long period. Terminates at 350ms.EFCC 0511 over current.FA2 not enabled"
+  },
+  {
+    "sid": 29784,
+    "t_disruption": 0.62,
+    "comment": "'Good shot. H mode from 250ms change in ELM frequency at coils on (370ms).No back transition seen at"
+  },
+  {
+    "sid": 29815,
+    "t_disruption": 0.2,
+    "comment": "'Killed by locked mode at 200 ms.'"
+  },
+  {
+    "sid": 29824,
+    "t_disruption": 0.245,
+    "comment": "'Ok. Density behaved well and the shot survived for longer but still disrupted at 245 ms.'"
+  },
+  {
+    "sid": 29828,
+    "t_disruption": 0.15,
+    "comment": "'Disrupts at 150 ms possibly because of an IRE.'"
+  },
+  {
+    "sid": 29829,
+    "t_disruption": 0.13,
+    "comment": "'IRE at 130ms.'"
+  },
+  {
+    "sid": 29832,
+    "t_disruption": 0.3,
+    "comment": "'No Langmuir probes and survey spectrometer data. Starts to be underdense at 150 ms when a low frequ"
+  },
+  {
+    "sid": 29837,
+    "t_disruption": 0.19,
+    "comment": "'Disrupts at 190 ms.'"
+  },
+  {
+    "sid": 29841,
+    "t_disruption": 0.2,
+    "comment": "'Ok. IRE at 200 ms.'"
+  },
+  {
+    "sid": 29843,
+    "t_disruption": 0.23,
+    "comment": "'BT does not reach 0.5 T. Disrupts at 230 ms.'"
+  },
+  {
+    "sid": 29845,
+    "t_disruption": 0.22,
+    "comment": "'Still disrupts at 220ms possibly associated with q=2.'"
+  },
+  {
+    "sid": 29846,
+    "t_disruption": 0.3,
+    "comment": "'disrupts at 300ms... seems the problematic rational is associated with the start of the Ip flat-top"
+  },
+  {
+    "sid": 29859,
+    "t_disruption": 0.25,
+    "comment": "'Still killed by locked mode at 250 ms.'"
+  },
+  {
+    "sid": 29907,
+    "t_disruption": 0.16,
+    "comment": "'Higher density at start causes IRE at 160ms and different neutron rate.Not a good repeat.'"
+  },
+  {
+    "sid": 29926,
+    "t_disruption": 0.114,
+    "comment": "'Disrupts at 0.114s on VDE lost FA2 at 0.102s and FA4 at 0.108s.'"
+  },
+  {
+    "sid": 29969,
+    "t_disruption": 0.35,
+    "comment": "'SS did not fire (PCS stop). Shot disrupted at 350 ms.'"
+  },
+  {
+    "sid": 29993,
+    "t_disruption": 0.34,
+    "comment": "'Good plasma disrupted at ~340. Density diverges from reference from about 180 (overdense cf 29763) "
+  },
+  {
+    "sid": 30007,
+    "t_disruption": 0.42,
+    "comment": "'Lots of SW breakdowns again - SW started at 350ms - shorter shot disrupts at 420 ms before the pell"
+  },
+  {
+    "sid": 30008,
+    "t_disruption": 0.25,
+    "comment": "'SW started at 220 ms plasma disrupted at 250 ms  - event at 155 ms drops density'"
+  },
+  {
+    "sid": 30009,
+    "t_disruption": 0.18,
+    "comment": "'disrupts at 180 ms  - again due to locked mode'"
+  },
+  {
+    "sid": 30014,
+    "t_disruption": 0.35,
+    "comment": "'good beams - Hmode from 180 ms - locked mode at 350 ms = but then H-mode recovers - Pellet just bef"
+  },
+  {
+    "sid": 30036,
+    "t_disruption": 0.18,
+    "comment": "'OK.IRE at 180ms.'"
+  },
+  {
+    "sid": 30063,
+    "t_disruption": 0.19,
+    "comment": "'Disrupts at 190 ms because HOMER was not working correctly and giving a plasma radius of 1 m.'"
+  },
+  {
+    "sid": 30069,
+    "t_disruption": 0.2,
+    "comment": "'HOMER failure again disrupts at 200 ms.'"
+  },
+  {
+    "sid": 30113,
+    "t_disruption": 0.26,
+    "comment": "'Shot OK for programme. Two good beams. Big locked mode at 260ms but plasma survives.'"
+  },
+  {
+    "sid": 30121,
+    "t_disruption": 0.2,
+    "comment": "'Good beams - IRE at 200 ms - Hmode from 160ms - loss of H-mode could be correlated with he CHFS bei"
+  },
+  {
+    "sid": 30164,
+    "t_disruption": 0.35,
+    "comment": "'Good beams but no H-mode. IRE at ~350 ms. This time density much closer to reference.'"
+  },
+  {
+    "sid": 30192,
+    "t_disruption": 0.3,
+    "comment": "'beams ok - plasma locks soon after the first kick suggesting threshold for first kick too large - p"
+  },
+  {
+    "sid": 30195,
+    "t_disruption": 0.35,
+    "comment": "'Shot disrupts at 350msAll ELM coils firedLower density than referenceIncreased beampower pushes sho"
+  },
+  {
+    "sid": 30197,
+    "t_disruption": 0.29,
+    "comment": "'No SW beamShot terminates at 290msNTM kick trips the FAs at 260 ms shot then plasma VDEs at 290 ms."
+  },
+  {
+    "sid": 30285,
+    "t_disruption": 0.35,
+    "comment": "'Good shot - disrupts at 350ms when flux runs outELMs present when H mode entered at 270ms - z ref g"
+  },
+  {
+    "sid": 30286,
+    "t_disruption": 0.28,
+    "comment": "'No H mode - disrupts at 280msSouth 20 ms lateNo FIG data.'"
+  },
+  {
+    "sid": 30302,
+    "t_disruption": 0.32,
+    "comment": "'Shot enters H mode at 270ms but SW has several breakdownsTerminates at 320ms.'"
+  },
+  {
+    "sid": 30305,
+    "t_disruption": 0.42,
+    "comment": "'Good long shot - terminates at 420ms.Good beams.Kicking effective in H mode. H mode from 240ms to e"
+  },
+  {
+    "sid": 30360,
+    "t_disruption": 0.28,
+    "comment": "'plasma terminates at 470ms but IRE at 280ms spoils the shot (and modualtion)'"
+  },
+  {
+    "sid": 30361,
+    "t_disruption": 0.55,
+    "comment": "'shot terminates at 550ms density slightly increasing - but gas injection 11 and 12 has modest influ"
+  },
+  {
+    "sid": 30372,
+    "t_disruption": 0.32,
+    "comment": "'4 breakdowns on SW Density significantly lower than reference all leading to large IRE at ~320ms.'"
+  },
+  {
+    "sid": 30411,
+    "t_disruption": 0.3,
+    "comment": "'SW beam had breakdown at 0.12s. Shot still disrupts at 0.3s.'"
+  },
+  {
+    "sid": 30445,
+    "t_disruption": 0.32,
+    "comment": "'Shot terminated at 320ms but may be useful.'"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "model": "GRU(hid=64,sl=20,32feat)",
+  "dataset": "2584 shots, 291 disrupted (209 with parsed time + 82 expert)",
+  "test": "97d + 765c",
+  "results": {
+    "th0.2": {"det": "23%", "fa": "63%"},
+    "th0.3": {"det": "18%", "fa": "30%"},
+    "th0.4": {"det": "3%", "fa": "15%"},
+    "th0.5": {"det": "0%", "fa": "1%"}
+  },
+  "analysis": "Detection still low (18%) even with proper disruption times. 32 features (raw+rates) cannot distinguish diverse disruption types: VDE from FA cutout, locked modes, density limits, early termination all have different precursor signatures. Need multi-scale features (78f) or type-specific models.",
+  "key_finding": "714 shots with PARSED DISRUPTION TIME from operator comments. This is the first time we have millisecond-precision disruption onset labels for MAST. Previously only had binary disrupted/clean labels from disruption-py.",
+  "ops_disruption_times": "data/mast/mast_disruption_times.json (714 shots)"
+}
