@@ -1,0 +1,37 @@
+{
+  "shots": 2521,
+  "dis": 381,
+  "cln": 2140,
+  "test_dis": 127,
+  "test_cln": 714,
+  "features": 32,
+  "onset": "last_30pct",
+  "seed_0": {
+    "auc": 0.902,
+    "th_0.3": {
+      "det": 16,
+      "fa": 503,
+      "dr": 0.126,
+      "far": 0.705
+    },
+    "th_0.5": {
+      "det": 3,
+      "fa": 44,
+      "dr": 0.024,
+      "far": 0.062
+    }
+  },
+  "diagnosis": {
+    "problem": "Cross-campaign heterogeneity destroys model performance",
+    "expert_disrupted": "83 shots from campaigns 27xxx (2006-2007), homogeneous",
+    "ops_disrupted": "298 shots from 11xxx-30xxx (2000-2013), 15+ campaigns",
+    "signal_differences": "Ip range 0-1100kA, shot length 29-165tp, different diagnostics per campaign",
+    "solution_options": [
+      "1. Per-shot z-normalization (remove campaign bias)",
+      "2. Campaign-aware model (device token per campaign)",
+      "3. Only use shots from overlapping campaigns",
+      "4. Multi-scale features computed per-shot (not global)"
+    ]
+  },
+  "honest_conclusion": "Having 381 disrupted shots is great for statistics, but the model needs campaign-aware features to work across 15 years of MAST operation. Raw 32 features with global normalization fail."
+}
