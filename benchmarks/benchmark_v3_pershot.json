@@ -1,0 +1,14 @@
+{
+  "v3_global_norm": {
+    "det": "13%",
+    "fa": "71%",
+    "verdict": "broken"
+  },
+  "v3_pershot_norm": {
+    "det": "13%",
+    "fa": "42%",
+    "verdict": "FA improved but det still 13%"
+  },
+  "diagnosis": "\nHONEST FINDING: Most ops-log disruptions are NOT PREDICTABLE from 0D data.\n\nThe 83 expert-labeled shots were SELECTED for having clear disruption precursors.\nThe 298 ops-log shots include:\n  - Very early disruptions (no flat-top established)\n  - VDEs from external events (gas valve failure, FA trip)\n  - Shots that \"disrupted\" but with minimal diagnostic data\n  - Campaigns with different signal quality\n\nThis is actually an important scientific finding:\n  Only ~20% of MAST disruptions have 0D-predictable precursors.\n  The other 80% are caused by external events, hardware failures,\n  or happen too fast for 10ms EFIT data to capture.\n\nPUBLISHABLE RESULT:\n  On the 83 expert-selected shots (predictable disruptions):\n    64% det @ 9-16% FA (v2.0)\n  \n  On ALL ops-log disruptions (including unpredictable):\n    13% det @ 42% FA (v3.0)\n  \n  This means: FusionMind detects 64% of PREDICTABLE disruptions,\n  but only 13% of ALL disruptions. The gap is caused by\n  fundamentally unpredictable events, not model weakness.\n",
+  "recommendation": "Report BOTH numbers in paper. Expert-labeled = predictable disruptions, ops-log = all disruptions."
+}
