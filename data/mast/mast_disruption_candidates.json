@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "sid": 24037,
+      "score": 0.546,
+      "max_prob": 0.546,
+      "sustained": 10,
+      "label": "unknown"
+    }
+  ],
+  "n_high_confidence": 1,
+  "known_dis_median": 0.888,
+  "known_cln_median": 0.0
+}

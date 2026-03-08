@@ -189,3 +189,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# To focus on disrupted range (where new disrupted are most likely):
+# python scripts/download_mast_level2.py --target 3000
+# Shots in range 27000-30443 have ~4% disruption rate
+# Run GRU self-labeling after download to find disrupted candidates
