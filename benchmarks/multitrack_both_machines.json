@@ -1,0 +1,37 @@
+{
+  "title": "Multi-track Overseer \u2014 both machines",
+  "C-Mod_density_limit_only": {
+    "caveat": "DENSITY-LIMIT DISRUPTIONS ONLY \u2014 not comparable to CCNN (all types)",
+    "T1_physics": "0.949 \u00b1 0.016",
+    "T2_GBT": "0.996 \u00b1 0.005",
+    "T3_RF": "0.998 \u00b1 0.001",
+    "ensemble": "0.997 \u00b1 0.003",
+    "folds_GBT": [
+      0.998,
+      0.985,
+      0.997,
+      1.0,
+      0.997
+    ],
+    "TPR_at_5pct_per_fold": [
+      "100%",
+      "93%",
+      "100%",
+      "100%",
+      "100%"
+    ],
+    "features": "30 (8 signals \u00d7 {mean,std,max} + 6 physics: peak_fGW, late_fGW, dfGW, Hugill, time_above, 1/q95)",
+    "truncation": "40ms for disrupted (fair)"
+  },
+  "MAST_diverse": {
+    "T1_physics": "0.905 \u00b1 0.032",
+    "T3_GBT_fair": "0.942 \u00b1 0.040",
+    "ensemble": "0.925 \u00b1 0.031",
+    "v1.1_baseline": 0.842,
+    "improvement": "+0.100 AUC"
+  },
+  "summary": {
+    "C-Mod": "AUC=0.998 but on easy density-limit-only subset",
+    "MAST": "AUC=0.942 on diverse disruptions (+0.10 over v1.1) \u2014 this is the meaningful result"
+  }
+}
