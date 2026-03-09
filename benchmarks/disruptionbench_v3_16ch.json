@@ -1,0 +1,26 @@
+{
+  "model": "GRU(48,sl=15)_16ch_multiscale",
+  "features": 88,
+  "shots": 2584,
+  "dis": 291,
+  "cln": 2293,
+  "test_dis": 97,
+  "test_cln": 765,
+  "disruptionbench": {
+    "shot_auc": 0.612,
+    "best_f1": 0.315,
+    "tpr": 0.227,
+    "fpr": 0.034,
+    "tp": 22,
+    "fp": 26,
+    "fn": 75,
+    "tn": 739
+  },
+  "recovery_filter": {
+    "th0.3": {
+      "det": 97,
+      "fa": 0
+    },
+    "description": "See printed output above"
+  }
+}
