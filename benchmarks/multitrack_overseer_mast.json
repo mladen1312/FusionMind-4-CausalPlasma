@@ -1,0 +1,44 @@
+{
+  "title": "Multi-track Overseer: Physics + GBT parallel",
+  "machine": "MAST",
+  "test": "2941 shots (83d + 2858c), 5-fold CV",
+  "tracks": {
+    "T1_physics_li": {
+      "AUC": "0.905 \u00b1 0.032",
+      "params": 0,
+      "type": "deterministic formula"
+    },
+    "T2_max_mechanisms": {
+      "AUC": "0.578 \u00b1 0.022",
+      "params": 0,
+      "type": "worst-mechanism detector"
+    },
+    "T3_GBT_fair": {
+      "AUC": "0.942 \u00b1 0.040",
+      "params": "~300 trees",
+      "type": "shot-level GBT on physics stats",
+      "features": "27 (9 signals \u00d7 {mean, std, max}, 40ms truncation for disrupted, NO last/trend)",
+      "leakage_check": "PASSED \u2014 fair \u2265 unfair (0.942 \u2265 0.938)"
+    }
+  },
+  "ensembles": {
+    "mean_T1_T2_T3": "0.925 \u00b1 0.031",
+    "weighted_0.4T1_0.3T3_0.3T2": "0.924 \u00b1 0.031"
+  },
+  "comparison": {
+    "Fair GBT (this)": 0.942,
+    "Physics li alone": 0.905,
+    "v1.1 GRU ML": 0.842,
+    "improvement_over_v1.1": "+0.100 AUC"
+  },
+  "5fold_per_fold": {
+    "fair_GBT": [
+      0.974,
+      0.963,
+      0.934,
+      0.866,
+      0.974
+    ]
+  },
+  "key": "GBT on shot-level physics statistics (mean/std/max of li, q95, \u03b2N, f_GW, P_rad, etc.) gives +0.10 AUC over v1.1 GRU. No leakage \u2014 fair truncation gives same or better AUC."
+}
