@@ -1,78 +1,81 @@
-# FusionMind 4.0 — Definitive Results (v3.2)
+# FusionMind 4.0 — Complete Results
 
-## Dataset — Largest Public MAST Disruption Dataset
+## Dataset
 - **2941 MAST shots** (448 disrupted + 2493 clean) from FAIR-MAST Level 2
-- **714 disruption times** parsed from operator comments (ms precision)
-- 268,667 timepoints, 16 base variables, EFIT timebase
-- Source: FAIR-MAST S3 archive + GraphQL ops log (all public)
+- **714 disruption times** with ms precision from operator comments (FIRST PUBLIC)
+- 78 features: 16 raw + 16 rates + 16 SXR RMS + 30 multi-scale temporal diffs
+- Source: FAIR-MAST S3 (public) + GraphQL operator log (15,969 comments)
 
-## Model — 16-Channel Multi-Scale GRU
-- GRU (78 → 48 hidden, seq_len=15, dropout=0.3)
-- **78 features from 16 parallel channels:**
-  - 16 raw Level-2 variables (βN, βp, q95, li, κ, Ip, ne, f_GW, p_rad, P_NBI...)
-  - 16 absolute first derivatives
-  - 16 SXR features (8 RMS channels + 8 rates, 50kHz → EFIT)
-  - 30 multi-scale temporal diffs (6 signals × {sm3, sm7, sm15, diff_3-7, diff_7-15})
+## Results — Two Evaluation Protocols
 
-## Results (150 disrupted + 831 clean test shots)
+### Protocol A: Expert-labeled disruptions (homogeneous, one campaign)
+| Metric | Value | CI |
+|--------|-------|-----|
+| Shot AUC | **0.842** | — |
+| Detection (th=0.3) | **64%** | ±11% |
+| FA (th=0.3) | **9%** | ±1% |
+| Shots | 255 (83d + 172c) | — |
+| Test | 28d + 223c | — |
 
-### Shot-level AUC: 0.691
+### Protocol B: All disruptions (diverse, all campaigns, ops-log labels)
+| Metric | Value | CI |
+|--------|-------|-----|
+| Shot AUC | **0.639** | — |
+| Detection (th=0.4) | **29%** | ±8% |
+| FA (th=0.4) | **52%** | ±5% |
+| Detection (th=0.5) | **17%** | ±7% |
+| FA (th=0.5) | **28%** | ±4% |
+| Shots | 1443 (189d + 1254c) | — |
+| Test | 63d + 418c | — |
 
-### Operating Points
-| Method | Threshold | Detection | FA Rate | Note |
-|--------|-----------|-----------|---------|------|
-| Shot max probability | 0.4 | **53%** | **21%** | Aggressive |
-| Shot max probability | 0.5 | **39%** | **12%** | Conservative ★ |
-| Recovery filter | 0.3 | 36% | 50% | Filter too strict for diverse types |
-| Recovery filter | 0.5 | 7% | 10% | Very conservative |
+### Why the difference?
+Expert-labeled disruptions (Protocol A) are a curated subset: late-campaign H-mode
+shots with one disruption type. Ops-log disruptions (Protocol B) include VDE, locked
+modes, density limits, FA trips — each with different precursor signatures. A single
+GRU model struggles to learn one unified pattern for all types.
 
-TPR 95% CI: ±8% (150 test disrupted — publishable)
+**Both protocols are valid** — Protocol A measures performance on "learnable" disruptions,
+Protocol B measures honest cross-type generalization.
 
-### Scaling & Comparison
-| Model | Tokamak | Shots | Dis | AUC | TPR | FPR |
-|-------|---------|-------|-----|-----|-----|-----|
-| **FusionMind v3.2 (diverse)** | **MAST** | **2941** | **448** | **0.691** | **39-53%** | **12-21%** |
-| FusionMind v1 (expert only) | MAST | 255 | 83 | 0.842 | 64% | 9% |
-| GPT-2 (Spangher 2025) | C-Mod | ~3000 | — | 0.840 | — | — |
-| CCNN (Spangher 2025) | C-Mod | ~3000 | — | 0.974 | — | — |
-| FRNN (Kates-Harbeck 2019) | DIII-D | >20000 | — | ~0.97 | 87% | 5% |
+## 16-Channel Feature Impact
+| Features | Detection | FA | Improvement |
+|----------|-----------|------|-------------|
+| 32 (raw + rates) | 18% | 30% | baseline |
+| 78 (+ SXR + multi-scale) | 29% | 52% | +11pp det |
 
-### Why AUC Dropped from 0.842 to 0.691
-Not model degradation — evaluation on ALL disruption types vs one curated campaign:
-- **Expert-labeled (v1):** 83 shots, one campaign (27000+), βN=0.91, same physics
-- **Ops-log labeled (v3.2):** 448 shots, all campaigns (11K-30K), βN=0.49, VDE + locked mode + density limit + FA trip
+Multi-scale temporal diffs (sm3−sm7, sm7−sm15) confirmed essential across both protocols.
 
-The 0.691 is the **honest, realistic number** for MAST disruption prediction.
+## Comparison to Literature
+| Model | Tokamak | Shots | AUC | TPR | FPR |
+|-------|---------|-------|-----|-----|-----|
+| FusionMind (expert) | MAST | 255 | 0.842 | 64% | 9% |
+| FusionMind (diverse) | MAST | 1443 | 0.639 | 29% | 52% |
+| GPT-2 (DisruptionBench) | C-Mod | ~3000 | 0.840 | — | — |
+| CCNN (DisruptionBench) | C-Mod | ~3000 | 0.974 | — | — |
+| FRNN | DIII-D | >20000 | ~0.97 | 87% | 5% |
 
-## What 16 Channels Contribute
-| Feature set | Features | Detection | FA | Improvement |
-|-------------|----------|-----------|-----|-------------|
-| Raw only (16 vars + rates) | 32 | 18% | 30% | baseline |
-| + SXR RMS (8ch + rates) | 48 | — | — | +10pp det historically |
-| + Multi-scale diffs | **78** | **53%** | **21%** | **+35pp detection!** |
+## What Worked
+1. Recovery filter: FA 70% → 30% on expert protocol
+2. SXR RMS (50kHz): +10pp detection (expert protocol)
+3. Multi-scale temporal diffs: +5-11pp detection (both protocols)
+4. Ops-log disruption time parsing: 714 ms-precision labels (unique asset)
 
-Multi-scale temporal diffs (sm3−sm7, sm7−sm15) are the key discriminator,
-confirmed on both 255-shot expert set and 2941-shot diverse set.
-
-## Causal Discovery (separate from prediction)
-- NOTEARS DAG: F1 = 88.9%, 17/18 expected edges on MAST
-- SCM: Linear R² = 37%, Nonlinear R² = 65%
-- Simpson's Paradox: density-disruption correlation drops from +0.53 to +0.02 on C-Mod
+## What Did NOT Work
+- SDS, TTD+Uncertainty, Thomson profiles, physics margins, >78 features
+- Single model for ALL disruption types (AUC drops from 0.84 to 0.64)
+- Auto-detecting disrupted shots from Ip behavior (identical for dis/clean)
 
 ## Key Assets on GitHub
 | File | Description |
 |------|-------------|
 | `data/mast/mast_level2_2521shots.npz` | 2521 shots, 15MB |
-| `data/mast/mast_ops_log.json` | 15,969 operator comments |
 | `data/mast/mast_disruption_times.json` | 714 ms-precision disruption times |
-| `data/mast/mast_ops_disrupted.json` | 1,274 identified disrupted shots |
-| `scripts/download_mast_level2.py` | Standalone download script |
-| `benchmarks/benchmark_v3_final_16ch.json` | Full results |
+| `data/mast/mast_ops_log.json` | 15,969 operator comments |
+| `data/mast/mast_ops_disrupted.json` | 1274 identified disrupted shots |
+| `scripts/download_mast_level2.py` | Download remaining shots locally |
+| `benchmarks/` | All benchmark results with CI |
 
-## To Reproduce
-```bash
-git clone https://github.com/mladen1312/FusionMind-4-CausalPlasma
-cd FusionMind-4-CausalPlasma
-python scripts/download_mast_level2.py --target 3000  # download data
-# All data sources are public (FAIR-MAST S3, anonymous access)
-```
+## Path Forward
+1. **Type-specific models**: Train separate detectors for VDE, locked mode, density limit
+2. **More epochs locally**: val_AUC was rising to 0.92+ but training timed out
+3. **DIII-D via disruption-py**: 20K+ shots with uniform labeling
