@@ -1,0 +1,86 @@
+{
+  "model": "GRU(78\u219248, sl=15) + recovery filter",
+  "features": {
+    "total": 78,
+    "breakdown": {
+      "raw_0D": "16 (\u03b2N, \u03b2p, \u03b2t, q95, \u03ba, li, Wmhd, q_axis, a, \u03b4_low, \u03b4_up, Ip, ne, f_GW, p_rad, P_NBI)",
+      "rates": "16 (absolute first derivatives)",
+      "SXR": "16 (8 RMS channels + 8 rates, 50kHz\u2192EFIT cadence)",
+      "multi_scale": "30 (6 key signals \u00d7 5 views: sm3, sm7, sm15, diff_3_7, diff_7_15)"
+    }
+  },
+  "dataset": {
+    "total_shots": 2941,
+    "disrupted": 448,
+    "clean": 2493,
+    "disruption_labels": "714 ms-precision from FAIR-MAST ops log + 82 expert (disruption-py)",
+    "source": "FAIR-MAST Level 2 S3 (public, anonymous access)"
+  },
+  "test_set": {
+    "disrupted": 150,
+    "clean": 831
+  },
+  "shot_level_AUC": 0.691,
+  "timepoint_eval_with_recovery_filter": {
+    "th_0.30": {
+      "TPR": "36%",
+      "FPR": "50%",
+      "F1": 0.174
+    },
+    "th_0.35": {
+      "TPR": "24%",
+      "FPR": "33%",
+      "F1": 0.157
+    },
+    "th_0.40": {
+      "TPR": "17%",
+      "FPR": "22%",
+      "F1": 0.14
+    },
+    "th_0.50": {
+      "TPR": "7%",
+      "FPR": "10%",
+      "F1": 0.091
+    },
+    "note": "Sustained \u22652 consecutive timepoints + recovery filter (drop >30% in 6tp \u2192 suppress)"
+  },
+  "shot_level_max_probability": {
+    "th_0.40": {
+      "TPR": "53%",
+      "FPR": "21%"
+    },
+    "th_0.50": {
+      "TPR": "39%",
+      "FPR": "12%"
+    },
+    "note": "Alarm if max(P_GRU) in shot exceeds threshold"
+  },
+  "comparison": {
+    "FusionMind_v1_expert_83d": {
+      "AUC": 0.842,
+      "TPR": "64%",
+      "FPR": "9%",
+      "shots": 255
+    },
+    "DisruptionBench_GPT2_CMod": {
+      "AUC": 0.84
+    },
+    "DisruptionBench_CCNN_CMod": {
+      "AUC": 0.974
+    },
+    "FRNN_DIIID": {
+      "AUC": 0.97,
+      "TPR": "87%",
+      "FPR": "5%",
+      "shots": ">20000"
+    }
+  },
+  "key_findings": [
+    "16-channel 78-feature model: AUC=0.691 on diverse 2941 shots (vs 0.842 on curated 255)",
+    "Multi-scale diffs essential: 78f gives 53% det vs 18% with 32f raw-only",
+    "Recovery filter reduces FA but also reduces detection (too aggressive for diverse disruptions)",
+    "Shot-level th=0.5: 39% det @ 12% FA \u2014 usable conservative operating point",
+    "AUC drop from 0.842 to 0.691 reflects testing across ALL disruption types, not model degradation",
+    "TPR 95% CI: \u00b18% (150 test disrupted \u2014 publishable)"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "range": ">=27000",
+  "shots": 1443,
+  "dis": 189,
+  "cln": 1254,
+  "test_dis": 63,
+  "test_cln": 418,
+  "val_auc": 0.7497,
+  "shot_auc": 0.6388,
+  "model": "GRU(78\u219264,sl=15)",
+  "features": 78
+}
