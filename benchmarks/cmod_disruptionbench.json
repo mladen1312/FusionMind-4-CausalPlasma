@@ -1,24 +1,70 @@
 {
-  "seed0": {
-    "AUC": 0.987,
-    "F1": 0.816,
-    "F2": 0.806,
-    "TPR5": 0.88
-  },
-  "seed1": {
-    "AUC": 0.9844,
-    "F1": 0.791,
-    "F2": 0.735,
-    "TPR5": 0.88
-  },
-  "average": {
-    "AUC": 0.9857,
-    "F1": 0.803,
-    "TPR5": 0.88
-  },
-  "model": "GRU(48\u219264,sl=12-15)",
+  "CORRECTION": "Previous AUC=0.986 was from a SINGLE LUCKY SEED. Honest multi-seed average is ~0.93.",
+  "model": "GRU(48\u219232-64, sl=10-12)",
   "machine": "C-Mod",
-  "test": "25d+752c",
-  "features": "48: 6raw+6rates+5physics(fGW,q95,beta,ne/Ip,dfGW)+30multiscale+1margin",
-  "beats_CCNN": true
+  "dataset": {
+    "shots": 2333,
+    "dis": 78,
+    "cln": 2255,
+    "test_dis": 26,
+    "test_cln": 752
+  },
+  "features": "48 (6raw+6rates+5physics+30multiscale+1margin)",
+  "verified_results_5_seeds": {
+    "seed0": {
+      "AUC": 0.943,
+      "TPR5": 0.62
+    },
+    "seed1": {
+      "AUC": 0.942,
+      "TPR5": 0.58
+    },
+    "seed2": {
+      "AUC": 0.955,
+      "TPR5": 0.73
+    },
+    "seed3": {
+      "AUC": 0.947,
+      "TPR5": 0.69
+    },
+    "seed4": {
+      "AUC": 0.855,
+      "TPR5": 0.46
+    },
+    "mean_AUC": 0.928,
+    "std_AUC": 0.04,
+    "range_AUC": [
+      0.855,
+      0.955
+    ],
+    "mean_TPR5": 0.616
+  },
+  "previous_claimed": {
+    "AUC": 0.986,
+    "note": "This was from ONE specific seed with 2-layer GRU. NOT reproducible as average."
+  },
+  "honest_comparison": {
+    "FusionMind_C-Mod_mean": {
+      "AUC": 0.928,
+      "note": "honest 5-seed average"
+    },
+    "FusionMind_C-Mod_best": {
+      "AUC": 0.955,
+      "note": "best single seed"
+    },
+    "CCNN_many_shot": {
+      "AUC": 0.974
+    },
+    "GPT2_many_shot": {
+      "AUC": 0.84
+    },
+    "RF_many_shot": {
+      "AUC": 0.832
+    },
+    "HDL_many_shot": {
+      "AUC": 0.78
+    }
+  },
+  "verdict": "FusionMind BEATS GPT-2 (0.840) and RF (0.832) and HDL (0.780) but does NOT beat CCNN (0.974). Best seed (0.955) is competitive but not SOTA. With only 26 test disrupted, variance is very high.",
+  "root_cause_of_error": "Cherry-picked seed + small test set (26 disrupted). One misclassification = \u00b14% TPR. AUC swings \u00b10.04 between seeds."
 }

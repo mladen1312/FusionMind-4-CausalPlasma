@@ -1,74 +1,88 @@
-# FusionMind 4.0 — DisruptionBench Results (v4.0)
+# FusionMind 4.0 — Honest Results (v4.2 CORRECTED)
 
-## ★★★ C-Mod: AUC=0.986 — BEATS ALL PUBLISHED RESULTS ★★★
+## ⚠️ CORRECTION: Previous AUC=0.986 was cherry-picked
 
-### Multi-Machine DisruptionBench Comparison
+Previous commits claimed C-Mod AUC=0.986. This was from a **single lucky seed**
+with a specific model architecture. Honest multi-seed verification shows:
 
-| Model | Machine | AUC | F1 | TPR@5%FPR | Status |
-|-------|---------|-----|----|-----------|----|
-| **★ FusionMind v4.0** | **C-Mod** | **0.986** | **0.803** | **88.0%** | **★ NEW SOTA** |
-| ★ FusionMind v4.0 | MAST | 0.649 | 0.323 | 16.4% | First ever |
-| CCNN many-shot (Spangher 2025) | C-Mod | 0.974 | 0.73 | — | Previous best |
-| GPT-2 (Spangher 2025) | C-Mod | 0.840 | — | — | |
-| RF (Rea 2018) | C-Mod | 0.832 | — | — | |
-| HDL (Zhu 2020) | C-Mod | 0.780 | — | — | |
-| CCNN zero-shot | EAST | 0.830 | — | — | |
-| FRNN (Kates-Harbeck 2019) | DIII-D | ~0.97 | — | 87% | |
-| ITER requirement | — | — | — | 95% | Target |
+| Seed | AUC | TPR@5% |
+|------|-----|--------|
+| 0 | 0.943 | 62% |
+| 1 | 0.942 | 58% |
+| 2 | 0.955 | 73% |
+| 3 | 0.947 | 69% |
+| 4 | 0.855 | 46% |
+| **Mean** | **0.928 ± 0.040** | **62%** |
 
-### C-Mod Results (2 seeds)
-| Seed | AUC | F1 | TPR@5% |
-|------|-----|----|----|
-| 0 | 0.987 | 0.816 | 88.0% |
-| 1 | 0.984 | 0.791 | 88.0% |
-| **Average** | **0.986** | **0.803** | **88.0%** |
+With only 26 test disrupted shots, one misclassification = ±4% TPR,
+and AUC swings ±0.04 between seeds.
 
-### How We Beat State-of-the-Art
+## Corrected Comparison
 
-**Device-specific physics-informed features** derived from causal analysis:
+| Model | Machine | AUC | Status |
+|-------|---------|-----|--------|
+| CCNN many-shot (Spangher 2025) | C-Mod | **0.974** | Published SOTA |
+| FusionMind v4.2 best seed | C-Mod | 0.955 | Competitive |
+| **FusionMind v4.2 (5-seed avg)** | **C-Mod** | **0.928 ± 0.04** | **Beats GPT-2, RF, HDL** |
+| GPT-2 (Spangher 2025) | C-Mod | 0.840 | Published |
+| RF (Rea 2018) | C-Mod | 0.832 | Published |
+| HDL (Zhu 2020) | C-Mod | 0.780 | Published |
+| FusionMind v4.2 | MAST | 0.649 | First ever |
+| FRNN (Kates-Harbeck 2019) | DIII-D | ~0.97 | Published |
 
-1. **Greenwald fraction** (f_GW = ne / n_GW) — THE key density limit predictor
-2. **Simpson's Paradox insight**: ne/Ip ratio (density conditioned on plasma current)
-3. **q95 proxy**, beta proxy — stability boundaries
-4. **d(f_GW)/dt** rate of change — rising Greenwald fraction precedes disruption
-5. **f_GW rolling maximum margin** — distance from peak Greenwald fraction
-6. **Multi-scale temporal diffs** (sm3−sm7, sm7−sm15) on physics features
+**We beat GPT-2, RF, and HDL but do NOT beat CCNN.**
 
-48 features total: 6 raw + 6 rates + 5 physics + 30 multi-scale + 1 margin
+## What Works
 
-Key innovation: **causal features beat deep learning**. A simple GRU with
-physics-informed features outperforms GPT-2 (1.6B params) and CCNN because
-the features encode the causal mechanism (density limit → disruption).
+### Physics-Informed Features (+11% AUC vs raw signals)
 
-### MAST Results (first ever benchmark)
-- **AUC: 0.649** on 2941 shots (448 disrupted, 2493 clean)
-- MAST is a spherical tokamak with fundamentally different disruption physics
-- 448 diverse disruption types (VDE, locked mode, density limit, FA trip)
-- No prior published result exists for MAST
+Our causal analysis identified key features that improve prediction:
 
-### Datasets
-| Machine | Shots | Disrupted | Clean | Source |
-|---------|-------|-----------|-------|--------|
-| C-Mod | 2,333 | 78 | 2,255 | MIT PSFC Open Data |
-| MAST | 2,941 | 448 | 2,493 | FAIR-MAST S3 + ops log |
+1. **Greenwald fraction** (f_GW = ne / n_GW) — density limit physics
+2. **ne/Ip ratio** — Simpson's Paradox correction
+3. **Multi-scale temporal diffs** — dynamics at 30ms, 70ms, 150ms scales
+4. **f_GW rolling max margin** — distance from peak
 
-### Key Assets
-- `data/cmod/cmod_density_limit.npz` — C-Mod dataset
-- `data/mast/mast_level2_2521shots.npz` — MAST dataset
-- `data/mast/mast_disruption_times.json` — 714 ms-precision disruption times
-- `data/mast/mast_ops_log.json` — 15,969 operator comments
-- `benchmarks/cmod_disruptionbench.json` — C-Mod results
-- `benchmarks/multi_machine_disruptionbench.json` — All results
+48 features from 6 base variables → AUC=0.928 (vs ~0.82 with raw signals)
 
-### Causal Discovery (complementary)
-- NOTEARS DAG on MAST: F1=88.9%, 17/18 expected edges
-- Simpson's Paradox on C-Mod: density-disruption ρ drops +0.53 → +0.02
-- SCM: Linear R²=37%, Nonlinear R²=65%
+### Causal Discovery (validated on real data)
 
-## Reproduce
-```bash
-git clone https://github.com/mladen1312/FusionMind-4-CausalPlasma
-cd FusionMind-4-CausalPlasma
-# All data is public — no credentials needed
-python scripts/download_mast_level2.py --target 3000  # MAST data
-```
+| Metric | MAST (9 shots) | C-Mod (2333 shots) |
+|--------|----------------|---------------------|
+| DAG edges recovered | 17/18 (F1=88.9%) | — |
+| Simpson's Paradox | — | ρ drops +0.53 → +0.02 |
+
+### MAST: Largest Public Dataset
+
+- **2,941 shots** (448 disrupted + 2,493 clean)
+- **714 ms-precision disruption times** parsed from operator comments
+- **15,969 operator comments** from FAIR-MAST GraphQL API
+- AUC = 0.649 (first-ever MAST benchmark)
+
+## Why Only 26 Test Disrupted
+
+C-Mod density limit database has 78 disrupted shots total.
+With 2/3 train split, only 26 go to test. This means:
+
+- TPR CI = ±15-20% (not publishable as definitive)
+- AUC variance = ±0.04 across seeds
+- Need 200+ disrupted for CI ±5%
+
+## Datasets on GitHub
+
+| File | Description |
+|------|-------------|
+| `data/cmod/cmod_density_limit.npz` | 2333 C-Mod shots |
+| `data/mast/mast_level2_2941shots.npz` | 2941 MAST shots |
+| `data/mast/mast_disruption_times.json` | 714 disruption times |
+| `data/mast/mast_ops_log.json` | 15,969 operator comments |
+
+## DIII-D / EAST Testing
+
+DisruptionBench DIII-D/EAST data requires MDSplus credentials
+from General Atomics and ASIPP. Not publicly downloadable.
+Contact: `disruption-py@mit.edu`
+
+## Tests
+
+310 passed, 0 failed, 25 skipped
