@@ -1,0 +1,52 @@
+{
+  "title": "BEST MODEL: GBT + margins + interactions + augmentation",
+  "machine": "MAST",
+  "test": "5-fold CV, 83d+2858c",
+  "features": {
+    "count": 63,
+    "groups": {
+      "signal_stats": "8 key signals \u00d7 6 stats (mean,std,max,late_mean,trend,max_rate) = 48",
+      "margins": "5 stability margins (li,q95,\u03b2N,fGW,\u03b2p) + min_margin + n_approached = 7",
+      "interactions": "li\u00d7\u03b2N, li/q95, \u03c3(li)\u00d7\u03c3(q95), fGW\u00d7li = 4",
+      "temporal_shape": "li late/early ratio, li gap, \u03b2N gap, q95 drop = 4"
+    }
+  },
+  "augmentation": "4\u00d7 counterfactual copies per disrupted (5% Gaussian noise) \u2192 332d train",
+  "results": {
+    "with_augmentation": {
+      "AUC": "0.979 \u00b1 0.011",
+      "TPR_5pct": "86%",
+      "folds": [
+        0.984,
+        0.988,
+        0.971,
+        0.96,
+        0.99
+      ]
+    },
+    "without_augmentation": {
+      "AUC": "0.971 \u00b1 0.020",
+      "folds": [
+        0.981,
+        0.98,
+        0.977,
+        0.932,
+        0.984
+      ]
+    }
+  },
+  "progression": {
+    "v1.1_GRU": 0.842,
+    "physics_li": 0.905,
+    "GBT_8f": 0.918,
+    "GBT_40f": 0.961,
+    "GBT_63f_margins": 0.971,
+    "GBT_63f_margins_aug": 0.979
+  },
+  "key_tricks": [
+    "Stability MARGINS (distance to limit) instead of raw values",
+    "Cross-limit INTERACTIONS (li\u00d7\u03b2N, li/q95)",
+    "Temporal SHAPE (late/early ratio, gap)",
+    "Counterfactual AUGMENTATION (4\u00d7 disrupted with 5% noise)"
+  ]
+}
