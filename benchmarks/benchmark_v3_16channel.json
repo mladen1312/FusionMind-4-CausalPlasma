@@ -1,0 +1,46 @@
+{
+  "model": "GRU(96feat,hid96,sl20)",
+  "shots": 2584,
+  "dis": 444,
+  "cln": 2140,
+  "test_dis": 148,
+  "test_cln": 714,
+  "features": 96,
+  "val_auc": 0.646,
+  "per_seed": [
+    {
+      "seed": 0,
+      "auc": 0.646,
+      "th_0.2": {
+        "det": 54,
+        "fa": 714,
+        "dr": 0.365,
+        "far": 1.0
+      },
+      "th_0.3": {
+        "det": 48,
+        "fa": 714,
+        "dr": 0.324,
+        "far": 1.0
+      },
+      "th_0.4": {
+        "det": 35,
+        "fa": 443,
+        "dr": 0.236,
+        "far": 0.62
+      },
+      "th_0.5": {
+        "det": 19,
+        "fa": 32,
+        "dr": 0.128,
+        "far": 0.045
+      }
+    }
+  ],
+  "analysis": {
+    "expert_only_auc": 0.978,
+    "ops_diverse_auc": 0.646,
+    "conclusion": "Diverse ops-log disruptions include equipment failures without 0D precursors. Model correctly identifies plasma instabilities (expert-type) but cannot predict FA trips, gas issues, etc.",
+    "recommendation": "Classify disruption types separately. Plasma instability disruptions (VDE/kink/locked mode) are predictable. Equipment/commissioning failures are not."
+  }
+}
