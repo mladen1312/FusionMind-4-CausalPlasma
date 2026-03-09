@@ -1,0 +1,21 @@
+{
+  "IMPORTANT": "Our C-Mod dataset is NOT comparable to DisruptionBench",
+  "why": {
+    "our_dataset": "MIT PSFC Open Density Limit DB \u2014 contains ONLY density-limit disruptions",
+    "disruptionbench": "Full C-Mod disruption DB \u2014 ALL types: density limit, locked mode, impurity injection, VDE",
+    "implication": "Density-limit disruptions are TRIVIALLY separable (mean density AUC=0.90). Our GBT AUC=1.0 on this easy subset says NOTHING about matching CCNN on the hard full set."
+  },
+  "single_feature_baselines": {
+    "mean_density": 0.9,
+    "mean_greenwald_fraction": 0.936,
+    "max_density": 0.944
+  },
+  "our_results_on_density_limit_db": {
+    "GBT_5fold_shot_level": "1.000 \u00b1 0.000 (trivially separable)",
+    "GRU_6ep_3seed": "0.894 \u00b1 0.047 (timepoint-level, harder task)",
+    "v1.1_ensemble": 0.842
+  },
+  "what_ccnn_0.974_means": "Tested on ALL disruption types including fast impurity injection (millisecond precursors) and locked modes. This is MUCH harder than density-limit-only.",
+  "to_fairly_compare": "Need full C-Mod disruption database from MDSplus (alcdata.psfc.mit.edu). Contact disruption-py@mit.edu.",
+  "honest_verdict": "We cannot claim to beat or match CCNN because we're solving a fundamentally easier problem."
+}
