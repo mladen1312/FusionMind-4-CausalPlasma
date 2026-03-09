@@ -1,0 +1,10 @@
+{
+  "machine": "C-Mod",
+  "GBT+GRU_AUC": 0.9974,
+  "GBT_AUC": 0.9998,
+  "GRU_AUC": 0.9446,
+  "test": "26d+752c",
+  "features": 33,
+  "shots": 2333,
+  "n_dis": 78
+}
