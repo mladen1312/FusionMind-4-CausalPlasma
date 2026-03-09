@@ -1,0 +1,44 @@
+{
+  "model": "FusionMind_v3.2_GRU",
+  "tokamak": "MAST",
+  "n_shots": 2941,
+  "n_disrupted": 448,
+  "n_clean": 2493,
+  "n_test_dis": 150,
+  "n_test_cln": 831,
+  "features": "16 Level-2 vars + rates + SXR RMS + multi-scale diffs = 78",
+  "labels_source": "FAIR-MAST GraphQL operator comments (714 ms-precision times)",
+  "shot_level_AUC": 0.679,
+  "operating_points": {
+    "th_0.4": {
+      "TPR": 0.527,
+      "FPR": 0.213,
+      "F1": 0.389,
+      "precision": 0.309,
+      "det": 79,
+      "fa": 177
+    },
+    "th_0.5": {
+      "TPR": 0.16,
+      "FPR": 0.037,
+      "det": 24,
+      "fa": 31
+    }
+  },
+  "comparison": {
+    "v1_expert_only": {
+      "AUC": 0.842,
+      "TPR": 0.64,
+      "FPR": 0.09,
+      "n_dis": 83
+    },
+    "DisruptionBench_GPT2_CMod": {
+      "AUC": 0.84
+    },
+    "FRNN_D3D": {
+      "AUC": 0.97,
+      "TPR": 0.87,
+      "FPR": 0.05
+    }
+  }
+}
