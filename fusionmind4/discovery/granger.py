@@ -351,7 +351,8 @@ class SpectralGrangerCausality:
                 if ratio > 1.0:
                     spectral_gc[fi] = np.log(ratio)
 
-        total_gc = float(np.trapezoid(spectral_gc, freqs))
+        _trapz = getattr(np, 'trapezoid', np.trapz)
+        total_gc = float(_trapz(spectral_gc, freqs))
         peak_idx = np.argmax(spectral_gc)
 
         return {
