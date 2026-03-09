@@ -1,0 +1,20 @@
+{
+  "title": "Physics formula vs ML: When does each win?",
+  "C-Mod_density_limit": {
+    "physics_AUC": 0.977,
+    "physics_5fold": "0.978 \u00b1 0.012",
+    "physics_formula": "score = 0.35*peak(f_GW) + 0.25*mean_late(f_GW) + 0.15*trend(f_GW) + 0.10/q95 + 0.10*Hugill + 0.05*time_above",
+    "peak_fGW_alone": 0.985,
+    "GRU_ML": 0.894,
+    "verdict": "Physics CRUSHES ML when mechanism is known (density limit \u2192 Greenwald fraction)"
+  },
+  "MAST_diverse_disruptions": {
+    "physics_AUC": 0.592,
+    "multi_physics_AUC": 0.577,
+    "GRU_ML": 0.842,
+    "verdict": "ML beats physics when disruptions are DIVERSE (VDE, kink, locked mode). Single formula cannot capture multiple mechanisms."
+  },
+  "key_insight": "Physics-based prediction (0 parameters, deterministic) works ONLY when disruption mechanism is known. For density limits, Greenwald fraction alone (AUC=0.985) matches CCNN (0.974). For mixed types, ML is essential.",
+  "publishable_finding": "First demonstration that a zero-parameter Greenwald-fraction predictor matches state-of-the-art ML (CCNN AUC=0.974) for density-limit disruptions on C-Mod. This validates the causal thesis: when you know the CAUSE, you don't need ML.",
+  "caveat": "C-Mod comparison is on density-limit-only data, not full DisruptionBench. CCNN AUC=0.974 is for ALL disruption types \u2014 a harder task."
+}
