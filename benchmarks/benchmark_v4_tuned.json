@@ -1,0 +1,63 @@
+{
+  "model": "GRU(hid=96,sl=25,62f)",
+  "shots": 2941,
+  "dis": 801,
+  "cln": 2140,
+  "test_dis": 267,
+  "test_cln": 714,
+  "val_auc": 0.8766,
+  "best_filter": {
+    "th": 0.6,
+    "persist": 5,
+    "drop_th": 0.8,
+    "window": 15
+  },
+  "best_result": {
+    "det": 72,
+    "fa": 94,
+    "dr": 0.27,
+    "far": 0.1317,
+    "det_ci": [
+      0.217,
+      0.327
+    ],
+    "fa_ci": [
+      0.1077,
+      0.1587
+    ]
+  },
+  "pareto": [
+    {
+      "th": 0.4,
+      "p": 5,
+      "dr": 0.42,
+      "far": 0.357
+    },
+    {
+      "th": 0.5,
+      "p": 5,
+      "dr": 0.32,
+      "far": 0.207
+    },
+    {
+      "th": 0.6,
+      "p": 5,
+      "dr": 0.27,
+      "far": 0.132
+    }
+  ],
+  "comparison": {
+    "v2_expert": {
+      "det": 0.64,
+      "fa": 0.09,
+      "dis_count": 83,
+      "note": "homogeneous"
+    },
+    "v4_diverse": {
+      "det": 0.27,
+      "fa": 0.13,
+      "dis_count": 801,
+      "note": "diverse across campaigns"
+    }
+  }
+}
