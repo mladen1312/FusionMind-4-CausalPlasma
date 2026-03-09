@@ -1,0 +1,54 @@
+{
+  "framework": "DisruptionBench (Spangher et al. J Fusion Energ 44, 26, 2025)",
+  "model": "FusionMind v3.2 GRU(78\u219248, sl=15, dropout=0.3)",
+  "machine": "MAST (spherical tokamak \u2014 NOT in original DisruptionBench)",
+  "dataset": {
+    "total": 2941,
+    "disrupted": 448,
+    "clean": 2493,
+    "test_disrupted": 150,
+    "test_clean": 831,
+    "labels": "714 ms-precision ops-log times + 82 expert"
+  },
+  "features": "78 (16 raw + 16 rates + 16 SXR + 30 multi-scale)",
+  "results": {
+    "shot_AUC": 0.696,
+    "best_F1": 0.401,
+    "best_F1_threshold": 0.45,
+    "TPR_at_5pct_FPR": 0.173,
+    "TPR_at_10pct_FPR": 0.32,
+    "note": "Consistent with/without \u03bd=40ms truncation (0.696 vs 0.695)"
+  },
+  "comparison": {
+    "CCNN_CMod_manyshot": {
+      "AUC": 0.974,
+      "F1": 0.73,
+      "F2": 0.89
+    },
+    "GPT2_CMod_manyshot": {
+      "AUC": 0.84
+    },
+    "RF_CMod_manyshot": {
+      "AUC": 0.832
+    },
+    "HDL_CMod_manyshot": {
+      "AUC": 0.78
+    },
+    "CCNN_EAST_zeroshot": {
+      "AUC": 0.83
+    },
+    "FRNN_DIIID": {
+      "AUC": 0.97,
+      "TPR_5pct": 0.87
+    },
+    "ITER_target": {
+      "TPR_5pct": 0.95
+    }
+  },
+  "analysis": {
+    "vs_published": "AUC=0.696 on MAST is below C-Mod (0.84-0.97) and DIII-D (0.97). MAST is a spherical tokamak with fundamentally different disruption physics (VDE, kink) vs conventional (density limit, locked mode).",
+    "vs_FusionMind_v1": "v1 on expert-only 83d: AUC=0.842. v3.2 on diverse 448d: AUC=0.696. The gap is due to diverse disruption types, not model quality.",
+    "TPR_at_5pct": "17.3% \u2014 far below ITER requirement (95%). With 0D signals at 10ms, cannot achieve >40ms early warning on MAST.",
+    "what_works": "F1=0.401 at th=0.45 is usable for offline analysis. TPR=32% at 10% FPR is the practical operating point."
+  }
+}
