@@ -1,0 +1,10 @@
+{
+  "model": "GRU(96feat,hid96)",
+  "type": "predictable_only",
+  "dis_types": "VDE+locked_mode+IRE+density_limit+generic",
+  "dis_count": 513,
+  "cln_count": 2140,
+  "test_dis": 171,
+  "test_cln": 714,
+  "val_auc": 0.6511
+}
