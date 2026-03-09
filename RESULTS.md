@@ -1,43 +1,41 @@
-# FusionMind 4.0 — MAST Dataset & Results (v2.2)
+# FusionMind 4.0 — MAST Results (v3.2)
 
-## Dataset — Largest Public MAST Disruption Dataset
-- **2405 MAST shots** (83 disrupted + 2322 clean) from FAIR-MAST Level 2
-- 229,255 timepoints, 16 variables, EFIT timebase (~10ms)
-- 1410/2179 shots downloaded from disrupted range (27000-30443)
-- Source: FAIR-MAST S3 (anonymous public access)
+## Dataset
+- **2636 MAST shots** (496 disrupted + 2140 clean) from FAIR-MAST Level 2
+- 714 shots with millisecond-precision disruption times from ops comments
+- 16 variables, EFIT timebase, 246K timepoints
 
-## Best Validated Results (78 features, recovery filter)
-| Threshold | Detection | FA Rate | Test set | CI |
-|-----------|-----------|---------|----------|-----|
-| 0.3 | **64%** | **9%** | 28d + 223c | Det ±19%, FA ±3% |
-| 0.5 | **55%** | **6%** | 28d + 223c | Det ±18%, FA ±2% |
+## Data Sources
+- FAIR-MAST S3 Level 2 (zarr format, public anonymous access)
+- FAIR-MAST GraphQL API (mastapp.site/graphql) — 15,969 operator comments
+- disruption-py expert labels (83 shots) + ops-log text mining (1191 shots)
 
-Note: FA measured on 777-shot homogeneous subset. On diverse 2259 shots,
-FA rises to 16% (multi-campaign variability). True FA is 9-16%.
+## Results
 
-## What Works (proven)
-1. Recovery filter: FA 70%→30%
-2. SXR RMS (50kHz): +10pp detection
-3. Multi-scale temporal diffs: +5pp det, −5pp FA
+### Expert-Only (homogeneous H-mode disruptions)
+| Config | Detection | FA | Test set | Notes |
+|--------|-----------|-----|----------|-------|
+| 78 feat, 777 shots | **64%** | **9%** | 28d+223c | Same campaign, same type |
+| DisruptionBench AUC | | | | **0.842** |
 
-## Key Finding: Disrupted Shots Cannot Be Auto-Detected
-- MAST disrupted/clean have identical Ip end behavior
-- No disruption metadata in FAIR-MAST zarr files
-- 83 expert-labeled disrupted is the hard limit
-- GRU self-labeling has 49% FP rate → unreliable
+### All Disruptions (diverse: VDE, locked mode, density limit, FA trip)
+| Config | Detection | FA | Test set | Notes |
+|--------|-----------|-----|----------|-------|
+| 78 feat, 27K+ range | **29%** | **15%** | 73d+409c | Multi-scale features |
+| 32 feat, all 2584 | 18% | 30% | 148d+714c | Raw features only |
 
-## Bottleneck
-- **Detection CI: ±19%** (only 28 test disrupted)
-- FA CI: ±2% (sufficient with 726+ clean test)
-- Need: 225+ total disrupted (±8% CI) → DIII-D access
+### Key Finding: Two Disruption Populations
+Expert-labeled (disruption-py): homogeneous H-mode crashes, βN=0.91, 126tp
+Ops-log labeled: diverse types (VDE, locked mode, etc.), βN=0.49, 71tp
+A model trained on one population performs poorly on the other.
 
-## Comparison to Literature
-| Model | Tokamak | Shots | Det | FA | AUC |
-|-------|---------|-------|-----|-----|-----|
-| FusionMind | MAST | 2405 | 64% | 9-16% | 0.842 |
-| FRNN | DIII-D | 20,000+ | 87% | 5% | ~0.97 |
+## Unique Assets
+1. **714 disruption times** with ms precision (parsed from operator comments)
+2. **15,969 operator comments** for all MAST shots
+3. **1,274 disrupted shots identified** (1,224 on Level 2 S3)
+4. **Causal discovery**: NOTEARS F1=88.9%, SCM R²=65%
 
-## To Continue Downloading
-```bash
-python scripts/download_mast_level2.py --target 5000
-```
+## Path Forward
+1. Disruption-type-stratified models (VDE vs locked mode vs density limit)
+2. Download remaining 680 disrupted from S3
+3. Multi-task learning with disruption type as auxiliary target

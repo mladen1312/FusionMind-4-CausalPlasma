@@ -1,0 +1,43 @@
+{
+  "dataset": "27000+ range, 1443 shots (217d+1226c), 78 features",
+  "test": "73 disrupted + 409 clean",
+  "results_seed0": {
+    "th0.2": {
+      "det": "40%",
+      "fa": "86%"
+    },
+    "th0.3": {
+      "det": "32%",
+      "fa": "40%"
+    },
+    "th0.4": {
+      "det": "29%",
+      "fa": "15%"
+    },
+    "th0.5": {
+      "det": "27%",
+      "fa": "11%"
+    }
+  },
+  "comparison": {
+    "expert_only_78f": "64% @ 9% (83d, same campaign, same disruption type)",
+    "ops_diverse_32f": "18% @ 30% (291d, diverse types, weak features)",
+    "ops_27k_78f": "29% @ 15% (217d, 27K+ range, multi-scale features)"
+  },
+  "analysis": [
+    "78 features improve over 32 (29%@15% vs 18%@30%)",
+    "But detection still 29% vs 64% on expert-only",
+    "Root cause: diverse disruption types have different precursors",
+    "Expert disrupted (83) are homogeneous H-mode crashes",
+    "Ops disrupted (217) include VDE, locked modes, FA trips, density limits",
+    "Single GRU model cannot learn all disruption signatures simultaneously",
+    "Next: type-stratified models or multi-task learning"
+  ],
+  "disruption_types_from_ops": {
+    "VDE": "vertical displacement events (FA cutout)",
+    "locked_mode": "magnetic island locking",
+    "density_limit": "Greenwald fraction exceeded",
+    "early_termination": "various causes",
+    "H_mode_crash": "what expert-labeled shots are (minority)"
+  }
+}
