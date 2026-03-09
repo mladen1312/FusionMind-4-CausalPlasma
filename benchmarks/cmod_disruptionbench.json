@@ -1,10 +1,24 @@
 {
+  "seed0": {
+    "AUC": 0.987,
+    "F1": 0.816,
+    "F2": 0.806,
+    "TPR5": 0.88
+  },
+  "seed1": {
+    "AUC": 0.9844,
+    "F1": 0.791,
+    "F2": 0.735,
+    "TPR5": 0.88
+  },
+  "average": {
+    "AUC": 0.9857,
+    "F1": 0.803,
+    "TPR5": 0.88
+  },
+  "model": "GRU(48\u219264,sl=12-15)",
   "machine": "C-Mod",
-  "GBT+GRU_AUC": 0.9974,
-  "GBT_AUC": 0.9998,
-  "GRU_AUC": 0.9446,
-  "test": "26d+752c",
-  "features": 33,
-  "shots": 2333,
-  "n_dis": 78
+  "test": "25d+752c",
+  "features": "48: 6raw+6rates+5physics(fGW,q95,beta,ne/Ip,dfGW)+30multiscale+1margin",
+  "beats_CCNN": true
 }
