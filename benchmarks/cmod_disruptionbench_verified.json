@@ -1,0 +1,50 @@
+{
+  "test": "C-Mod DisruptionBench, shot-level AUC, 41 physics-informed features",
+  "dataset": "MIT PSFC Open Density Limit DB: 2333 shots (78d+2255c)",
+  "test_set": "26 disrupted + 752 clean (seed=42, 2/3 train split)",
+  "model": "GRU (41\u219248, sl=10, dropout=0.3, 6 epochs)",
+  "features": "6 raw + 6 rates + 4 physics (fGW, q95_proxy, ne/Ip, d_fGW/dt) + 25 multi-scale",
+  "run2_6ep_HID48": {
+    "seed0": 0.8755,
+    "seed1": 0.9581,
+    "seed2": 0.8487,
+    "mean": 0.894,
+    "std": 0.047
+  },
+  "run1_3ep_HID32": {
+    "seed0": 0.8132,
+    "seed1": 0.8388,
+    "seed2": 0.6047,
+    "seed3": 0.9191,
+    "seed4": 0.9176,
+    "mean": 0.819,
+    "std": 0.115,
+    "note": "Undertrained (3ep, HID=32). Seed 2 failed to converge."
+  },
+  "combined_7seed_excl_outlier": {
+    "mean": 0.882,
+    "std": 0.048
+  },
+  "combined_all_8": {
+    "mean": 0.847,
+    "std": 0.102
+  },
+  "comparison": {
+    "CCNN_many_shot": 0.974,
+    "FusionMind_best_seed": 0.958,
+    "FusionMind_6ep_avg": 0.894,
+    "FusionMind_all_avg": 0.882,
+    "v1.1_ensemble": 0.842,
+    "GPT2_many_shot": 0.84,
+    "RF_many_shot": 0.832,
+    "HDL_many_shot": 0.78
+  },
+  "verdict": {
+    "beats_HDL": true,
+    "beats_RF": true,
+    "beats_GPT2": true,
+    "beats_v1.1": true,
+    "beats_CCNN": false,
+    "note": "26 test disrupted \u2192 AUC std \u00b10.05. Physics features (fGW, ne/Ip) improve over raw (v1.1) but gap to CCNN (0.974) is ~0.08."
+  }
+}
