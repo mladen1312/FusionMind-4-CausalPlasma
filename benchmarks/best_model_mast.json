@@ -1,0 +1,45 @@
+{
+  "title": "BEST MODEL: GBT on physics features \u2014 MAST",
+  "verified": true,
+  "permutation_test": "PASSED (real=0.918 vs shuffled=0.47 on 8f)",
+  "feature_sweep": {
+    "8f_core_physics": {
+      "AUC": "0.918 \u00b1 0.039",
+      "TPR5": "54%",
+      "feats": "max_li, mean_li, std_li, min_q95, max_bN, max_fGW, li*bN, li/q95"
+    },
+    "20f_extended": {
+      "AUC": "0.956 \u00b1 0.021",
+      "TPR5": "67%",
+      "feats": "+late/trend/rate for li,q95,bN,fGW"
+    },
+    "40f_all_signals": {
+      "AUC": "0.961 \u00b1 0.015",
+      "TPR5": "72%",
+      "feats": "+betap,Prad,Wmhd,Ip,ne stats"
+    }
+  },
+  "best": {
+    "features": 40,
+    "AUC": "0.961 \u00b1 0.015",
+    "TPR_at_5pct": "72% \u00b1 8%",
+    "folds": [
+      0.975,
+      0.977,
+      0.953,
+      0.936,
+      0.965
+    ]
+  },
+  "progression": {
+    "v1.1_GRU_78f": 0.842,
+    "physics_li_0param": 0.905,
+    "GBT_8f": 0.918,
+    "GBT_20f": 0.956,
+    "GBT_40f": 0.961,
+    "total_improvement": "+0.119 AUC over v1.1"
+  },
+  "model": "GradientBoosting(n_est=100, depth=3, lr=0.1, subsample=0.8)",
+  "fair_evaluation": "40ms truncation for disrupted (DisruptionBench protocol)",
+  "data": "MAST 2941 shots (83 expert-disrupted + 2858 clean), 5-fold CV"
+}
