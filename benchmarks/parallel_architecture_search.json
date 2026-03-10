@@ -1,0 +1,51 @@
+{
+  "title": "Parallel architecture search \u2014 hitting the 83-disrupted ceiling",
+  "tested_approaches": {
+    "GBT_100t_d4_63f_aug": {
+      "AUC": "0.979 \u00b1 0.011",
+      "note": "STILL BEST"
+    },
+    "GBT_50t_d3_63f_aug": {
+      "AUC": "0.973 \u00b1 0.016"
+    },
+    "RF_200_balanced_63f": {
+      "AUC": "0.964 \u00b1 0.016"
+    },
+    "ET_200_balanced_63f": "0.964 (partial \u2014 timeout)",
+    "GBT_top20_features": "0.97x (partial)",
+    "Stack_GBT+RF_mean": {
+      "AUC": "0.972 \u00b1 0.016"
+    },
+    "Stack_0.6G+0.4R": {
+      "AUC": "0.973 \u00b1 0.016"
+    },
+    "B+C_87f_aug": {
+      "AUC": "0.972 \u00b1 0.019"
+    },
+    "B+C+E_97f_aug": {
+      "AUC": "0.975 \u00b1 0.014"
+    },
+    "All_113f_aug": {
+      "AUC": "0.971 \u00b1 0.022"
+    }
+  },
+  "extra_feature_tracks": {
+    "C_trajectory": "24 features \u2014 thirds comparison (end/start ratios)",
+    "E_pairwise": "10 features \u2014 signal pair products and ratios",
+    "F_rate_extremes": "16 features \u2014 max rates, late volatility"
+  },
+  "conclusion": {
+    "best_remains": "GBT 63f + augmentation = 0.979 \u00b1 0.011",
+    "why_parallel_doesnt_help": [
+      "83 disrupted shots = statistical ceiling around 0.98",
+      "Adding features (63\u2192113) adds noise, not signal",
+      "Stacking (GBT+RF) doesn't improve \u2014 models agree on the same easy/hard cases",
+      "The information is already captured by 63 physics features"
+    ],
+    "what_would_actually_improve": [
+      "MORE DISRUPTED SHOTS (ops-log: potentially 448 \u2192 5x more data)",
+      "DIFFERENT MACHINE data (C-Mod full, DIII-D via MDSplus)",
+      "TIMEPOINT-LEVEL prediction (like CCNN) instead of shot-level"
+    ]
+  }
+}
