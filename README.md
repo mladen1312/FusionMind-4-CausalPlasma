@@ -128,7 +128,7 @@ Reproducible: `python scripts/reproduce_all_results.py` (seed=42, ~40s)
 
 ---
 
-## Codebase: 28K Lines, 8 Patent Families
+## Codebase: 32K Lines, 8 Patent Families
 
 ```
 fusionmind4/
@@ -150,6 +150,12 @@ fusionmind4/
 ├── predictor/           Unified Multi-Track Disruption Predictor
 │   └── engine.py        CausalDisruptionPredictor — 6 tracks, auto-config
 │
+├── advanced/            Future-Ready Modules (activate when conditions met)
+│   ├── deep_learning.py GRU + TemporalCNN + Transformer (≥200 disrupted + GPU)
+│   ├── pino.py          Physics-Informed Neural Operator (needs 1D profiles)
+│   ├── self_supervised.py  Contrastive + masked pretraining (needs ≥1M timepoints)
+│   └── pinn_tgn.py      Hybrid PINN + Temporal Graph Network (≥10 vars + DAG)
+│
 ├── foundation/          PF3: UPFM — Universal Plasma Foundation Model
 │   └── core.py          Dimensionless tokenization for cross-device transfer
 │
@@ -169,8 +175,28 @@ fusionmind4/
 │   ├── fast_bindings.py C++ AVX-512 bindings (0.27μs on synthetic)
 │   └── control_bridge.py Real-time control interface
 │
-└── utils/               FM3-Lite simulator, plasma variable definitions
+└── utils/
+    ├── fm3lite.py       Simplified physics simulator (known causal DAG)
+    ├── fm3_physics.py   FM3 physics features (22f: rational-q, Troyon, li, radiation)
+    ├── agpi.py          AGPI soft gate: σ(4.2-q95)×(3.5/A) per machine
+    ├── profile_generator.py  H-mode profiles for PINO testing
+    └── plasma_vars.py   Variable definitions and ground truth
 ```
+
+### Progressive Module Activation
+
+Modules auto-activate as data conditions improve:
+
+| Module | MAST (now) | C-Mod | +Ops-Log | DIII-D | Future (profiles) |
+|--------|:---:|:---:|:---:|:---:|:---:|
+| Physics Track A | ✓ | ✓ | ✓ | ✓ | ✓ |
+| GBT (Track B-F) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| AGPI soft gate | ✓ (10%) | ✓ (78%) | ✓ | ✓ (100%) | ✓ |
+| PINN+TGN Mode A | ✓ | — | ✓ | ✓ | ✓ |
+| DL: GRU | — | — | ✓ | ✓ | ✓ |
+| DL: CNN+Transformer | — | — | — | ✓ | ✓ |
+| Self-Supervised | — | — | — | ✓ | ✓ |
+| PINO | — | — | — | — | ✓ |
 
 ### Patent Families
 
@@ -213,6 +239,32 @@ pip install numpy scikit-learn scipy
 python scripts/reproduce_all_results.py
 ```
 Output: 6 tests, all verified, ~40 seconds. See `VERIFICATION.md` for details.
+
+### Production prediction (single shot with explanation)
+```bash
+python scripts/predict_production.py \
+    --data data/mast/mast_level2_2941shots.npz \
+    --labels data/mast/disruption_info.json \
+    --shot 27000
+
+# Output:
+#   Shot 27000: 🟠 HIGH
+#   P(disruption) = 0.748 ± 0.137
+#   Recommendation: ALARM
+#   Closest limit: li (margin=-1.000)
+#   Explanation: li at 200% of kink limit
+#   Inference: 2.1 ms
+```
+
+### Batch prediction (all shots to JSON)
+```bash
+python scripts/predict_production.py \
+    --data data/mast/mast_level2_2941shots.npz \
+    --labels data/mast/disruption_info.json \
+    --output predictions.json
+# → 2941 predictions in 8.7s (3.0ms/shot)
+# → 31 ALARM / 2780 MONITOR / 130 SAFE
+```
 
 ### Run the full predictor
 ```python
