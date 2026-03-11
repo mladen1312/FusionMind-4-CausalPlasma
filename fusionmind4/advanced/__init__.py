@@ -2,10 +2,12 @@
 
 PINO:               Needs 1D+ profile data (Te(r), ne(r)) at ≥1kHz
 SelfSupervisedPT:   Needs ≥1M unlabeled timepoints
-HybridPINNTGN:      Needs 1D+ profile data + spatial grid
+HybridPINNTGN:      Needs 1D+ profile data + spatial grid OR ≥10 vars + DAG
+DeepLearning:       Needs PyTorch + GPU + ≥200 disrupted shots
 
 All modules check activation conditions and gracefully skip if not met.
 """
 from .pino import PhysicsInformedNeuralOperator
 from .self_supervised import SelfSupervisedPretrainer
 from .pinn_tgn import HybridPINNTemporalGraphNetwork
+from .deep_learning import DeepLearningTrack
