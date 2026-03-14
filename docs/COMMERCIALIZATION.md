@@ -67,7 +67,7 @@ Use Limitation: Production use in fusion reactor control systems
 Change Date:   2030-03-05
 Change License: Apache License 2.0
 
-For commercial licensing inquiries: mladen@fusionmind.ai
+For commercial licensing inquiries: mladen@nexellum.com
 ```
 
 ### What's Protected by Patents (independent of software license)
