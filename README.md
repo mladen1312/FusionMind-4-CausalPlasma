@@ -338,4 +338,11 @@ For each disrupted shot, we create 4 copies with 5% Gaussian noise on all featur
 
 ## License
 
-MIT
+**Business Source License 1.1 (BSL-1.1)**
+
+- **Research, academic, educational, and evaluation use**: Free and unrestricted
+- **Production use** (plasma control systems, tokamak facilities, commercial products operating on plasma diagnostic data): Requires a commercial license
+- **Change Date**: March 5, 2030 — converts to Apache License 2.0
+- **Patent Notice**: Methods covered by pending patent applications PF1–PF8 (see LICENSE file)
+
+For commercial licensing inquiries, contact Dr. Mladen Mester.

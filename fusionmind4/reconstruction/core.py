@@ -13,7 +13,7 @@ Validated: 130:1 compression, 14% Te error, 30% ne error (PoC)
 
 Author: Dr. Mladen Mester
 Date: March 2026
-License: MIT
+License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """
 
 import numpy as np
