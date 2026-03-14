@@ -202,4 +202,4 @@ print(f"P50: {bench['p50_ns']:.0f}ns, P95: {bench['p95_ns']:.0f}ns")
 ## Need Help?
 
 - **Issues:** [github.com/mladen1312/FusionMind-4-CausalPlasma/issues](https://github.com/mladen1312/FusionMind-4-CausalPlasma/issues)
-- **Author:** Dr. Mladen Mester — mladen@nexellum.com
+- **Author:** Dr. Mladen Mester — mladen@nexellum.com or mladen.mester@gmail.com

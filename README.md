@@ -10,7 +10,7 @@ While all existing fusion AI (CCNN, FRNN, GPT-2, Random Forest) learns *correlat
   Causal discovery F1:       88.9%                  (17/18 edges on real MAST data)
 ```
 
-**Author:** Dr. Mladen Mester, Zagreb, Croatia — mladen@nexellum.com
+**Author:** Dr. Mladen Mester, Zagreb, Croatia — mladen@nexellum.com | mladen.mester@gmail.com
 
 ---
 
@@ -343,4 +343,4 @@ For each disrupted shot, we create 4 copies with 5% Gaussian noise on all featur
 - **Change Date**: March 5, 2030 — converts to Apache License 2.0
 - **Patent Notice**: Methods covered by pending patent applications PF1–PF8 (see LICENSE file)
 
-For commercial licensing inquiries: **mladen@nexellum.com**
+For commercial licensing inquiries: **mladen@nexellum.com** | **mladen.mester@gmail.com**
