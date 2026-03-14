@@ -10,8 +10,7 @@ While all existing fusion AI (CCNN, FRNN, GPT-2, Random Forest) learns *correlat
   Causal discovery F1:       88.9%                  (17/18 edges on real MAST data)
 ```
 
-**Author:** Dr. Mladen Mester, Zagreb, Croatia  
-**Repo:** https://github.com/mladen1312/FusionMind-4-CausalPlasma
+**Author:** Dr. Mladen Mester, Zagreb, Croatia
 
 ---
 
@@ -22,7 +21,7 @@ Every disruption predictor today — CCNN, FRNN, Random Forest, GPT-2 — treats
 FusionMind changes this with three capabilities no competitor has:
 
 1. **Causal Discovery**: CPDE identifies the causal DAG from data → finds that `li` drives disruptions on MAST, `f_GW` drives them on C-Mod
-2. **Counterfactual Reasoning**: SCM answers "what if we had reduced heating power by 10%?" → P(disruption) drops from 0.87 to 0.23
+2. **Counterfactual Reasoning**: SCM answers "what if we had reduced heating power?" — enabling intervention planning, not just alarm triggering
 3. **Physics-Informed Prediction**: stability margins (distance to each limit) give a 0-parameter predictor that matches ML
 
 ---
@@ -36,7 +35,7 @@ Using CPDE (Causal Plasma Discovery Engine) we discover the true disruption driv
 | Machine | Primary Driver | Single-Variable AUC | 78-Feature GRU AUC |
 |---------|---------------|--------------------|--------------------|
 | MAST (spherical) | **li** (internal inductance) | **0.908** | 0.842 |
-| C-Mod (conventional) | **f_GW** (Greenwald fraction) | **0.985** | 0.894 |
+| C-Mod (conventional) | **f_GW** (Greenwald fraction) | **0.985** | — |
 
 One physics variable, zero parameters, no training — and it beats a 78-feature neural network. This is the first time that causal analysis directly outperforms deep learning on a disruption prediction task.
 
@@ -128,7 +127,7 @@ Reproducible: `python scripts/reproduce_all_results.py` (seed=42, ~40s)
 
 ---
 
-## Codebase: 32K Lines, 8 Patent Families
+## Codebase: 31K Lines, 8 Patent Families
 
 ```
 fusionmind4/
@@ -200,16 +199,16 @@ Modules auto-activate as data conditions improve:
 
 ### Patent Families
 
-| PF | Name | Novelty | Module |
-|----|------|---------|--------|
-| PF1 | CPDE — Causal Plasma Discovery Engine | 9/10 | discovery/ |
-| PF2 | CPC — Counterfactual Plasma Controller | 10/10 | control/ |
-| PF3 | UPFM — Universal Plasma Foundation Model | 8/10 | foundation/ |
-| PF4 | D3R — Diffusion 3D Reconstruction | 7/10 | reconstruction/ |
-| PF5 | AEDE — Active Experiment Design Engine | 8/10 | experiment/ |
-| PF6 | Integrated System | 7/10 | realtime/ |
-| PF7 | CausalShield-RL | 8/10 | learning/ |
-| PF8 | LLM Copilot | 6/10 | copilot/ |
+| PF | Name | Module |
+|----|------|--------|
+| PF1 | CPDE — Causal Plasma Discovery Engine | discovery/ |
+| PF2 | CPC — Counterfactual Plasma Controller | control/ |
+| PF3 | UPFM — Universal Plasma Foundation Model | foundation/ |
+| PF4 | D3R — Diffusion 3D Reconstruction | reconstruction/ |
+| PF5 | AEDE — Active Experiment Design Engine | experiment/ |
+| PF6 | Integrated System | realtime/ |
+| PF7 | CausalShield-RL | learning/ |
+| PF8 | LLM Copilot | copilot/ |
 
 ---
 
@@ -245,15 +244,14 @@ Output: 6 tests, all verified, ~40 seconds. See `VERIFICATION.md` for details.
 python scripts/predict_production.py \
     --data data/mast/mast_level2_2941shots.npz \
     --labels data/mast/disruption_info.json \
-    --shot 27000
+    --shot 27095
 
 # Output:
-#   Shot 27000: 🟠 HIGH
-#   P(disruption) = 0.748 ± 0.137
+#   Shot 27095: 🔴 CRITICAL
+#   P(disruption) = 0.961 ± 0.054
 #   Recommendation: ALARM
-#   Closest limit: li (margin=-1.000)
-#   Explanation: li at 200% of kink limit
-#   Inference: 2.1 ms
+#   Active tracks: [physics, stats, trajectory, rates, pairwise, causal]
+#   Inference: 3 ms
 ```
 
 ### Batch prediction (all shots to JSON)
@@ -345,4 +343,4 @@ For each disrupted shot, we create 4 copies with 5% Gaussian noise on all featur
 - **Change Date**: March 5, 2030 — converts to Apache License 2.0
 - **Patent Notice**: Methods covered by pending patent applications PF1–PF8 (see LICENSE file)
 
-For commercial licensing inquiries, contact Dr. Mladen Mester.
+For commercial licensing inquiries: **mladen@fusionmind.ai**
