@@ -76,6 +76,7 @@ class StreamingPrediction:
     """Output of one predict() call."""
     timestamp_ms: float
     probability: float
+    probability_calibrated: float     # Platt-calibrated true probability
     uncertainty: float
     risk_level: RiskLevel
     alarm_state: AlarmState
@@ -85,6 +86,11 @@ class StreamingPrediction:
     ttd_ms: Optional[float]       # Time-to-disruption estimate
     ipda_existence: Dict[str, float]  # Per-signal existence probability
     imm_regime: Dict[str, float]      # Per-signal unstable probability
+    hotelling_t2: float               # Multivariate anomaly score (operator dashboard)
+    hotelling_status: str             # NORMAL/ELEVATED/HIGH/CRITICAL
+    conformal_set: List[int]          # Prediction set with coverage guarantee
+    conformal_certain: bool           # True if prediction set has 1 element
+    conformal_description: str        # Human-readable conformal result
     recommended_action: Optional[str]  # Phase 3: actuator command
     latency_us: float                  # Inference latency in microseconds
     cycle_count: int
@@ -615,7 +621,8 @@ class StreamingPredictor:
     def __init__(self, signal_names: List[str],
                  config: StreamingConfig = None,
                  gbt_model=None,
-                 dt_ms: float = 10.0):
+                 dt_ms: float = 10.0,
+                 cross_domain: Optional[Dict] = None):
         self.signal_names = signal_names
         self.n_signals = len(signal_names)
         self.cfg = config or StreamingConfig()
@@ -633,6 +640,18 @@ class StreamingPredictor:
         self.phantom = StreamingPHANTOM(signal_names, self.cfg)
         self.alarm = AlarmStateMachine(self.cfg)
         self.ttd = TTDEstimator(self.cfg, dt_ms)
+        
+        # Cross-domain components (Hotelling T², Platt, Conformal)
+        # Pass pre-calibrated suite or None (will use defaults)
+        if cross_domain is not None:
+            self.hotelling = cross_domain.get('hotelling')
+            self.platt = cross_domain.get('platt')
+            self.conformal = cross_domain.get('conformal')
+        else:
+            from .cross_domain import StreamingHotellingT2, PlattCalibrator, ConformalWrapper
+            self.hotelling = StreamingHotellingT2(self.n_signals)
+            self.platt = PlattCalibrator()
+            self.conformal = ConformalWrapper()
         
         # Cached GBT features (recomputed every N cycles)
         self._cached_gbt_prob = 0.0
@@ -717,25 +736,52 @@ class StreamingPredictor:
         
         probability = float(np.clip(probability, 0, 1))
         
-        # 6. Uncertainty (disagreement between tracks)
+        # 6. Cross-domain: Platt calibration (medical diagnostics)
+        if self.platt is not None and self.platt.fitted:
+            prob_calibrated = self.platt.calibrate(probability)
+        else:
+            prob_calibrated = probability
+        
+        # 7. Cross-domain: Hotelling T² (semiconductor MSPC)
+        if self.hotelling is not None and self.hotelling.fitted and self.buffer.count >= 10:
+            stats = self.buffer.rolling_stats()
+            t2_score = self.hotelling.score_from_buffer(stats)
+            t2_status = self.hotelling.get_status(t2_score)
+        else:
+            t2_score = 0.0
+            t2_status = "N/A"
+        
+        # 8. Cross-domain: Conformal prediction (CERN)
+        if self.conformal is not None and self.conformal.calibrated:
+            conf_result = self.conformal.predict(probability)
+            conf_set = conf_result.prediction_set
+            conf_certain = conf_result.is_certain
+            conf_desc = conf_result.set_description
+        else:
+            conf_set = [1 if probability >= 0.5 else 0]
+            conf_certain = True
+            conf_desc = "uncalibrated"
+        
+        # 9. Uncertainty (disagreement between tracks)
         track_probs = [p_physics, p_ipda, p_imm]
         if p_gbt > 0:
             track_probs.append(p_gbt)
         uncertainty = float(np.std(track_probs))
         
-        # 7. Alarm state machine
-        alarm_state = self.alarm.update(probability)
+        # 10. Alarm state machine (uses calibrated probability if available)
+        alarm_prob = prob_calibrated if self.platt and self.platt.fitted else probability
+        alarm_state = self.alarm.update(alarm_prob)
         
-        # 8. Risk level
-        risk_level = self._assign_risk(probability)
+        # 11. Risk level
+        risk_level = self._assign_risk(alarm_prob)
         
-        # 9. TTD estimate
+        # 12. TTD estimate
         ttd_ms = self.ttd.update(min_margin)
         
-        # 10. Explanation
+        # 13. Explanation
         explanation = self._explain(margins, closest, existence, regime)
         
-        # 11. IPDA/IMM per-signal state
+        # 14. IPDA/IMM per-signal state
         ipda_dict = {self.signal_names[i]: float(existence[i])
                      for i in range(self.n_signals)}
         imm_dict = {self.signal_names[i]: float(regime[i])
@@ -746,6 +792,7 @@ class StreamingPredictor:
         return StreamingPrediction(
             timestamp_ms=self.cycle * self.dt_ms,
             probability=probability,
+            probability_calibrated=prob_calibrated,
             uncertainty=uncertainty,
             risk_level=risk_level,
             alarm_state=alarm_state,
@@ -755,6 +802,11 @@ class StreamingPredictor:
             ttd_ms=ttd_ms,
             ipda_existence=ipda_dict,
             imm_regime=imm_dict,
+            hotelling_t2=t2_score,
+            hotelling_status=t2_status,
+            conformal_set=conf_set,
+            conformal_certain=conf_certain,
+            conformal_description=conf_desc,
             recommended_action=None,  # Phase 3
             latency_us=latency_us,
             cycle_count=self.cycle,
