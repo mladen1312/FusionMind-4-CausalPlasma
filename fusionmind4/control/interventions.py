@@ -13,7 +13,7 @@ Level 3 — COUNTERFACTUALS: P(Y_x | X=x', Y=y')
   Implementation: Abduction (infer noise) → Action (intervene) → Prediction
 
 Part of: FusionMind 4.0 / Patent Family PF2
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

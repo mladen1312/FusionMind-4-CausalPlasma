@@ -26,7 +26,7 @@ to tokamak disruption prediction:
      - Operator understanding: "WHY this alarm?"
      - Model debugging: catch spurious feature dependence
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """
 

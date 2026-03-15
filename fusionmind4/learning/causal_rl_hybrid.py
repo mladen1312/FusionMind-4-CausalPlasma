@@ -33,7 +33,7 @@ What makes this unique (vs DeepMind RL controller, KSTAR predictors, FRNN, etc.)
 
 This is Patent Family PF7: CausalShield-RL.
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

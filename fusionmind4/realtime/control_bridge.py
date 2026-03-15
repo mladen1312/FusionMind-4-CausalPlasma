@@ -34,7 +34,7 @@ Safety layers (defense in depth):
   L5: Emergency override (MGI/SMBI trigger)
 
 Patent Families: PF2 (CPC), PF7 (CausalShield-RL)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

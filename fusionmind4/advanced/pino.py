@@ -35,7 +35,7 @@ Based on: Li et al. (2021) "Physics-Informed Neural Operator"
 Adapted for: Tokamak transport equations
 
 Patent Family: PF7 extension
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 """
 
 import numpy as np

@@ -19,7 +19,7 @@ Control loop:
   7. Explain WHY via causal path tracing
 
 Part of: FusionMind 4.0 / Patent Family PF2
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

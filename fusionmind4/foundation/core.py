@@ -13,7 +13,7 @@ without retraining — first such approach in fusion AI.
 
 Validated: CV=0.267 across 6 simulated devices, FM3→ITER transfer working.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """

@@ -8,5 +8,5 @@ to tokamak plasma physics.
 Patent Portfolio: PF1-PF8 (filing in progress)
 """
 __version__ = "4.7.1"
-__author__ = "Dr. Mladen Mester"
+__author__ = "Dr. Mladen Mešter, dr.med."
 __license__ = "Proprietary"

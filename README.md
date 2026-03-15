@@ -10,7 +10,7 @@ While all existing fusion AI (CCNN, FRNN, GPT-2, Random Forest) learns *correlat
   Causal discovery F1:       88.9%                  (17/18 edges on real MAST data)
 ```
 
-**Author:** Dr. Mladen Mester, Zagreb, Croatia — mladen@nexellum.com | mladen.mester@gmail.com
+**Author:** Dr. Mladen Mešter, dr.med., Zagreb, Croatia — mladen@nexellum.com | mladen.mester@gmail.com
 
 ---
 

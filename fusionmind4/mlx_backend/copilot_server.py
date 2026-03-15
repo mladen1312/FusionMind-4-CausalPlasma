@@ -23,7 +23,7 @@ Usage:
     answer = server.query("What happens if I increase NBI power by 2MW?",
                           causal_context=copilot.build_context(scm, dag))
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import json

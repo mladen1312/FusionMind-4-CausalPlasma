@@ -17,7 +17,7 @@ Solved via augmented Lagrangian:
     L(W, α, ρ) = ½n||X - XW||²_F + λ₁||W||₁ + α·h(W) + ½ρ·h(W)²
 
 Part of: FusionMind 4.0 / Patent Family PF1
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import mlx.core as mx

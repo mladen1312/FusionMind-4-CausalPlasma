@@ -34,7 +34,7 @@ Two modes:
     Nodes = radial zones, edges = transport connections
     Needs 1D profile data — future activation
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 """
 
 import numpy as np

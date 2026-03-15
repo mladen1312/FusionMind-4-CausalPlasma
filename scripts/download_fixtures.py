@@ -16,7 +16,7 @@ Requirements:
 Source: UKAEA FAIR-MAST (https://s3.echo.stfc.ac.uk/mast/level1/shots/)
 Citation: Jackson et al., IEEE Trans. Plasma Sci., 2025
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 """
 

@@ -50,7 +50,7 @@ Data flow (full stack):
                         → Actuators (or VETO + safe alternative)
 
 Patent Families: PF1 (CPDE), PF2 (CPC), PF6 (Integrated System), PF7 (Causal RL)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

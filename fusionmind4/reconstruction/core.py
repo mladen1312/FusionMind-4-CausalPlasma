@@ -11,7 +11,7 @@ to generate physically consistent 3D state samples.
 
 Validated: 130:1 compression, 14% Te error, 30% ne error (PoC)
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """

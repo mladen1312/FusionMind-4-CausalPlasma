@@ -24,7 +24,7 @@ Three sub-models (activated progressively):
 
 Each produces shot-level P(disruption) for meta-learner integration.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 """
 
 import numpy as np

@@ -10,7 +10,7 @@ Tests CPDE causal discovery on:
 Fixtures in tests/fixtures/ are committed to git for reproducibility.
 To regenerate from live S3: python scripts/download_fixtures.py
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 """
 

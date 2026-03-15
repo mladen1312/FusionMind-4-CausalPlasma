@@ -3,7 +3,7 @@
 **From offline prediction to real-time tokamak control.**
 
 Last updated: March 15, 2026
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 
 ---
 

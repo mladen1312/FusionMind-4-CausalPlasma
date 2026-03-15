@@ -19,7 +19,7 @@ Usage:
     python scripts/run_real_data.py --synthetic   # Use synthetic stand-in
 
 Part of: FusionMind 4.0 / Patent Family PF1
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import argparse
@@ -249,7 +249,7 @@ def main():
     print("╔══════════════════════════════════════════════════════════╗")
     print("║  Real Data Pipeline: MIT PSFC Alcator C-Mod              ║")
     print("║  FusionMind 4.0 · Patent Family PF1                      ║")
-    print("║  Dr. Mladen Mester · March 2026                          ║")
+    print("║  Dr. Mladen Mešter, dr.med. · March 2026                          ║")
     print("╚══════════════════════════════════════════════════════════╝")
 
     if args.download:

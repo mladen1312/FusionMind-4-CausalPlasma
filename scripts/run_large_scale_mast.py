@@ -19,7 +19,7 @@ Target results:
   - Simpson's Paradox detection on real data
   - Statistical significance (p < 0.05 for causal > correlational)
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

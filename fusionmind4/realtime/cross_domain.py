@@ -26,7 +26,7 @@ VALIDATED ON REAL MAST DATA:
 
 All O(1) per cycle — negligible impact on 165μs latency budget.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 Origin: semiconductor MSPC, medical diagnostics, CERN particle physics
 """

@@ -8,7 +8,7 @@ for validation of CPDE causal discovery and CPC counterfactual reasoning.
 Based on the full FM3 physics (see FusionMind_3_0_Ultimate.py) but reduced
 to 14 key plasma variables with explicit causal DAG.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """

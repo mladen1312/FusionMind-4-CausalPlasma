@@ -12,7 +12,7 @@ Key innovation: Neural networks are CONSTRAINED to the DAG topology.
 Only parent → child connections exist, so the model stays causal.
 
 Part of: FusionMind 4.0 / Patent Family PF7 (CausalShield-RL)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np
@@ -217,7 +217,7 @@ class NeuralSCM:
     This serves as the differentiable world model for CausalShield-RL.
     
     Part of: Patent Family PF7 (CausalShield-RL)
-    Author: Dr. Mladen Mester, March 2026
+    Author: Dr. Mladen Mešter, dr.med., March 2026
     """
     
     def __init__(self, variable_names: List[str], dag: np.ndarray,

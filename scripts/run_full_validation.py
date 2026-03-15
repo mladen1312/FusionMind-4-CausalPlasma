@@ -27,7 +27,7 @@ def main():
     print("╔══════════════════════════════════════════════════════════╗")
     print("║  CPDE v3.2 — Causal Plasma Discovery Engine              ║")
     print("║  FusionMind 4.0 · Patent Family PF1                      ║")
-    print("║  Dr. Mladen Mester · March 2026                          ║")
+    print("║  Dr. Mladen Mešter, dr.med. · March 2026                          ║")
     print("╚══════════════════════════════════════════════════════════╝")
 
     # Generate data

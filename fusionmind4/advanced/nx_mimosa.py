@@ -27,7 +27,7 @@ VALIDATED ON REAL DATA (2941 MAST shots, seed=42):
 
 Each algorithm produces per-signal features. Total: 13 features × N_signals.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 Origin: NX-MIMOSA radar tracking system (AGPL-v3), adapted for fusion plasma
 """

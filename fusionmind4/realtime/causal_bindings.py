@@ -11,7 +11,7 @@ Usage:
     W = fast_notears(data, lambda1=0.05, w_threshold=0.10)
     gc = fast_granger(data, max_lag=5, alpha=0.05)
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import ctypes

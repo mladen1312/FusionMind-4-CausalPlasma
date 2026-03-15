@@ -8,7 +8,7 @@
  *   g++ -O3 -march=native -ffast-math -shared -fPIC \
  *       -o libfusionmind_rt.so fast_engine_api.cpp
  *
- * Author: Dr. Mladen Mester, March 2026
+ * Author: Dr. Mladen Mešter, dr.med., March 2026
  */
 
 #include "fast_engine.hpp"

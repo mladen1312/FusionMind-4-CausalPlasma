@@ -17,7 +17,7 @@ Architecture:
   do() interventions via graph surgery are differentiable end-to-end.
 
 Part of: FusionMind 4.0 / Patent Family PF2 + PF7
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import mlx.core as mx

@@ -18,7 +18,7 @@ Core innovations:
    posterior on edge probabilities
 
 Patent Family: PF5
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

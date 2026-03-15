@@ -37,7 +37,7 @@ Protocol:
     }
 
 Patent Families: PF1 (CPDE), PF2 (CPC)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

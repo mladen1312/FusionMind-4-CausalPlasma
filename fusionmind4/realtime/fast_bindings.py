@@ -15,7 +15,7 @@ Usage:
     result = engine.predict(values, timestamp)
     print(f"Prob: {result.fused_prob:.3f}, Latency: {result.total_latency_ns:.0f} ns")
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import ctypes

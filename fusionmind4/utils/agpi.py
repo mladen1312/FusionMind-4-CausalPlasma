@@ -24,7 +24,7 @@ Better than binary on/off because:
 TESTED ON MAST: No AUC improvement (weight=10% ≈ off).
 Expected improvement on conventional tokamaks when data available.
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

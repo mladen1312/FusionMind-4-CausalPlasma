@@ -9,7 +9,7 @@ Components:
     CausalReward      — Causal reward shaping using discovered DAG
     CausalRLHybrid    — Main integration: CPDE + CPC + PPO with causal safety shield
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 from .neural_scm import NeuralSCM

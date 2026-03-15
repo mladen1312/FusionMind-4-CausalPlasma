@@ -58,7 +58,7 @@ This is ideal because:
 ```
 Business Source License 1.1
 
-Licensor:  Dr. Mladen Mester
+Licensor:  Dr. Mladen Mešter, dr.med.
 Software:  FusionMind 4.0
 
 Use Limitation: Production use in fusion reactor control systems

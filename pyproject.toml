@@ -9,7 +9,7 @@ description = "Causal AI for Fusion Plasma Control — Pearl's do-calculus appli
 readme = "README.md"
 license = {text = "BSL-1.1"}
 requires-python = ">=3.10"
-authors = [{name = "Dr. Mladen Mester", email = "mladen@nexellum.com"}]
+authors = [{name = "Dr. Mladen Mešter, dr.med.", email = "mladen@nexellum.com"}]
 keywords = [
     "fusion", "plasma", "causal-inference", "tokamak", "do-calculus",
     "structural-causal-model", "reinforcement-learning", "pearl",

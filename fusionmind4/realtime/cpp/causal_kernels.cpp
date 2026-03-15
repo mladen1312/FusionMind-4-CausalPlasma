@@ -15,7 +15,7 @@
  *       -std=c++17 -o libfusionmind_causal.so causal_kernels.cpp
  *
  * Patent Family: PF1 (CPDE)
- * Author: Dr. Mladen Mester, March 2026
+ * Author: Dr. Mladen Mešter, dr.med., March 2026
  */
 
 #include <cmath>

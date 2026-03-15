@@ -28,7 +28,7 @@ fine-tune on labeled disruptions.
 Estimated gain: +5-15% AUC when ≥10M timepoints available.
 Current data (268K tp): marginal gain, not worth the complexity.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 """
 
 import numpy as np

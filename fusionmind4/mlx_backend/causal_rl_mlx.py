@@ -14,7 +14,7 @@ The PPO agent uses the NeuralSCM as a differentiable world model,
 enabling model-based planning through backpropagation along causal paths.
 
 Part of: FusionMind 4.0 / Patent Family PF7 (CausalShield-RL)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import mlx.core as mx

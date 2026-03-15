@@ -11,7 +11,7 @@ Usage:
     result = stack.step(values, timestamp, actuators, act_map)
     print(f"Risk: {result.risk_score}, Latency: {result.latency_total_ns:.0f}ns")
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import ctypes

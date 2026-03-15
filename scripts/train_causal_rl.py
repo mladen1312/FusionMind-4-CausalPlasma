@@ -15,7 +15,7 @@ Usage:
     python scripts/train_causal_rl.py --episodes 1000 --eval-every 100
 
 Part of: FusionMind 4.0 / Patent Family PF7 (CausalShield-RL)
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import sys

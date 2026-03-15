@@ -39,7 +39,7 @@ NX-MIMOSA streaming advantage:
   Update = 1 Bayes multiplication per signal per cycle.
   Designed for radar scan-by-scan → perfect for tokamak EFIT-by-EFIT.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """
 

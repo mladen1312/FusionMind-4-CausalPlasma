@@ -11,7 +11,7 @@ Usage:
     python run_pipeline.py --cpc        # Run only CPC
     python run_pipeline.py --all        # Run all with detailed output
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import sys

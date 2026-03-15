@@ -16,7 +16,7 @@ Usage:
 
 If MLX is not installed, importing will raise ImportError with install instructions.
 
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import warnings

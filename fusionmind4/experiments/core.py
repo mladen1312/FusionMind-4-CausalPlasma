@@ -8,7 +8,7 @@ causal ambiguities discovered by CPDE.
 Instead of random exploration, AEDE uses information-theoretic
 criteria to select interventions that maximize causal knowledge gain.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 License: BSL-1.1 (converts to Apache-2.0 on 2030-03-05)
 """

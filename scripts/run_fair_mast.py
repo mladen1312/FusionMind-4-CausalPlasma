@@ -21,7 +21,7 @@ Citation:
   Jackson et al., "An Open Data Service for Supporting Research in
   Machine Learning on Tokamak Data", IEEE Trans. Plasma Sci., 2025.
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 Date: March 2026
 """
 

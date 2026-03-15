@@ -10,7 +10,7 @@ Implements Pearl's SCM framework adapted for plasma physics:
 This is the mathematical backbone of the Counterfactual Controller.
 
 Part of: FusionMind 4.0 / Patent Family PF2
-Author: Dr. Mladen Mester, March 2026
+Author: Dr. Mladen Mešter, dr.med., March 2026
 """
 
 import numpy as np

@@ -52,7 +52,7 @@ Key innovations vs CCNN/FRNN:
   4. Interpretable: "WHY" comes from physics, not sensitivity analysis
   5. Cross-machine: dimensionless features transfer naturally
 
-Author: Dr. Mladen Mester
+Author: Dr. Mladen Mešter, dr.med.
 """
 
 import numpy as np
