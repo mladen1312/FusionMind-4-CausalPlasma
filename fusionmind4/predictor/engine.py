@@ -106,9 +106,13 @@ class TrackConfig:
     gbt_learning_rate: float = 0.1
     random_state: int = 42
     min_shot_length: int = 8
+    enable_nx_mimosa: bool = False   # Track G: NX-MIMOSA domain-agnostic features
     
     def __post_init__(self):
         self.limits = StabilityLimits.for_machine(self.machine_type)
+        # Auto-enable NX-MIMOSA for unknown machines
+        if self.machine_type == MachineType.UNKNOWN:
+            self.enable_nx_mimosa = True
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -669,6 +673,23 @@ class CausalDisruptionPredictor:
         # Track F: pairwise
         if n_resolved >= 4:
             self.tracks['F_pairwise'] = TrackF_Pairwise(sm)
+        
+        # Track G: NX-MIMOSA domain-agnostic features
+        # Auto-enabled for UNKNOWN machines, optional for known machines
+        if self.config.enable_nx_mimosa and n_resolved >= 3:
+            try:
+                from ..advanced.nx_mimosa import TrackG_NXMimosa
+                machine_str = self.config.machine_type.value
+                self.tracks['G_nx_mimosa'] = TrackG_NXMimosa(
+                    sm, machine_type=machine_str)
+                if self.config.machine_type == MachineType.UNKNOWN:
+                    print(f"  Track G (NX-MIMOSA): PRIMARY — unknown machine, "
+                          f"no physics limits needed")
+                else:
+                    print(f"  Track G (NX-MIMOSA): supplementary — "
+                          f"ensemble diversity")
+            except ImportError:
+                pass  # NX-MIMOSA module not available
         
         active = list(self.tracks.keys())
         print(f"  Active tracks ({len(active)}): {active}")
