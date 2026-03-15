@@ -407,6 +407,44 @@
 ##    Temporal attention over graph snapshots
 ##    Physics: transport residual, energy balance
 ##    └──→ 12 features for meta-learner
+##
+## E. NX-MIMOSA (Track G)                           [nx_mimosa.py]
+##    Origin: github.com/mladen1312/nx-mimosa (radar tracking)
+##    Condition: ≥3 signals, ≥50 shots
+##    AUTO-ACTIVATES for MachineType.UNKNOWN (cold-start)
+##    Optional for known machines (enable_nx_mimosa=True)
+##
+##    5 algorithms adapted from radar → plasma:
+##
+##    E1. IPDA Existence Tracker (Musicki 1994)
+##        r(t) = δ(t)·r(t-1) / [δ(t)·r(t-1) + (1-r(t-1))]
+##        δ = (1-Pd+Pd·L/λ) if detection, (1-Pd) if miss
+##        → 3 features: final/peak/late existence probability
+##
+##    E2. IMM Regime Switcher (Blom & Bar-Shalom 1988)
+##        μ_j(t) = L_j·c_j / Σ L_k·c_k  (mode probability)
+##        Model 0: stable, Model 1: unstable
+##        → 2 features: unstable fraction, late instability ratio
+##
+##    E3. PHANTOM Feasibility (Nexellum patent)
+##        Φ = floor + (1-floor) · σ(sharpness · margin)
+##        margin = distance to stability boundary per signal
+##        → 3 features: final/min/late feasibility
+##
+##    E4. SPECTER Deviation (Nexellum patent)
+##        Fit linear model to first 50%, extrapolate to second 50%
+##        Residual = actual - predicted, normalized by ref std
+##        → 2 features: max deviation, late deviation
+##
+##    E5. FORGE NIS Monitor (Nexellum patent)
+##        NIS = innovation² / S (Kalman-based anomaly score)
+##        NIS ~ χ²(1) under normal operation, NIS > 4 = anomaly
+##        → 3 features: late NIS, peak NIS, exceedance count
+##
+##    Total: 13 features × N_signals (182 for MAST 14 signals)
+##
+##    Validated on MAST: AUC = 0.977 (zero domain engineering)
+##    Value: cold-start on new machine without physics limits
 
 
 ## ══════════════════════════════════════════════════════

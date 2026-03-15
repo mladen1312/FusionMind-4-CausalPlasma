@@ -127,7 +127,7 @@ Reproducible: `python scripts/reproduce_all_results.py` (seed=42, ~40s)
 
 ---
 
-## Codebase: 31K Lines, 8 Patent Families
+## Codebase: 32K Lines, 8 Patent Families
 
 ```
 fusionmind4/
@@ -153,7 +153,8 @@ fusionmind4/
 │   ├── deep_learning.py GRU + TemporalCNN + Transformer (≥200 disrupted + GPU)
 │   ├── pino.py          Physics-Informed Neural Operator (needs 1D profiles)
 │   ├── self_supervised.py  Contrastive + masked pretraining (needs ≥1M timepoints)
-│   └── pinn_tgn.py      Hybrid PINN + Temporal Graph Network (≥10 vars + DAG)
+│   ├── pinn_tgn.py      Hybrid PINN + Temporal Graph Network (≥10 vars + DAG)
+│   └── nx_mimosa.py     Track G: NX-MIMOSA domain-agnostic features (cold-start)
 │
 ├── foundation/          PF3: UPFM — Universal Plasma Foundation Model
 │   └── core.py          Dimensionless tokenization for cross-device transfer
@@ -186,16 +187,17 @@ fusionmind4/
 
 Modules auto-activate as data conditions improve:
 
-| Module | MAST (now) | C-Mod | +Ops-Log | DIII-D | Future (profiles) |
-|--------|:---:|:---:|:---:|:---:|:---:|
-| Physics Track A | ✓ | ✓ | ✓ | ✓ | ✓ |
-| GBT (Track B-F) | ✓ | ✓ | ✓ | ✓ | ✓ |
-| AGPI soft gate | ✓ (10%) | ✓ (78%) | ✓ | ✓ (100%) | ✓ |
-| PINN+TGN Mode A | ✓ | — | ✓ | ✓ | ✓ |
-| DL: GRU | — | — | ✓ | ✓ | ✓ |
-| DL: CNN+Transformer | — | — | — | ✓ | ✓ |
-| Self-Supervised | — | — | — | ✓ | ✓ |
-| PINO | — | — | — | — | ✓ |
+| Module | MAST (now) | C-Mod | +Ops-Log | DIII-D | Future (profiles) | Unknown Machine |
+|--------|:---:|:---:|:---:|:---:|:---:|:---:|
+| Physics Track A | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| GBT (Track B-F) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| AGPI soft gate | ✓ (10%) | ✓ (78%) | ✓ | ✓ (100%) | ✓ | — |
+| **NX-MIMOSA Track G** | opt-in | opt-in | opt-in | opt-in | opt-in | **✓ PRIMARY** |
+| PINN+TGN Mode A | ✓ | — | ✓ | ✓ | ✓ | — |
+| DL: GRU | — | — | ✓ | ✓ | ✓ | — |
+| DL: CNN+Transformer | — | — | — | ✓ | ✓ | — |
+| Self-Supervised | — | — | — | ✓ | ✓ | — |
+| PINO | — | — | — | — | ✓ | — |
 
 ### Patent Families
 
